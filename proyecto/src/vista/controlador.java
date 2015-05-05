@@ -9,6 +9,11 @@ package vista;
  *
  * @author Ruben
  */
+
 public class controlador {
-    
+   public static principal vp = new principal();
+   public static void abrirPrincipal(){
+   vp.setVisible(true);
+   
+   }
 }
