@@ -9,7 +9,7 @@ package controlador;
  *
  * @author Ruben
  */
-public class Controlador {
+public class Main {
 
     /**
      * @param args the command line arguments
