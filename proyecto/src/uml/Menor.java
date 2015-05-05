@@ -1,18 +1,20 @@
 package uml;
 
-import java.util.Calendar;
+import java.util.Date;
+
+
 
 public class Menor extends persona {
 
 	private String sexo;
 	private String dni;
-	private Calendar fechaNac;
+	private Date fechaNac;
 	private boolean discapacidad;
 
     public Menor() {
     }
 
-    public Menor(String sexo, String dni, Calendar fechaNac, boolean discapacidad) {
+    public Menor(String sexo, String dni, Date fechaNac, boolean discapacidad) {
         this.sexo = sexo;
         this.dni = dni;
         this.fechaNac = fechaNac;
@@ -45,7 +47,7 @@ public class Menor extends persona {
 		this.dni = dni;
 	}
 
-	public Calendar getFechaNac() {
+	public Date getFechaNac() {
 		return this.fechaNac;
 	}
 
@@ -53,7 +55,7 @@ public class Menor extends persona {
 	 * 
 	 * @param fechaNac
 	 */
-	public void setFechaNac(Calendar fechaNac) {
+	public void setFechaNac(Date fechaNac) {
 		this.fechaNac = fechaNac;
 	}
 
