@@ -163,7 +163,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="01362006-44E4-D3E7-EA6A-D53B5AF9D223" referredColumn="A1733B11-F59A-1CF2-460D-BEB37019C9E3"/>
+<colAssociation fkAssociation="390A94F1-F977-30A8-2FEE-F922D0B58147" referredColumn="A1733B11-F59A-1CF2-460D-BEB37019C9E3"/>
 </associations>
 </Column>
 </columns>
@@ -249,9 +249,9 @@
 <colUsage columnID="6FA97E0D-F4C6-3EE6-5ECD-E578B76327EC"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="233CCEFF-DC89-7C36-5D6B-E8ECD8EB8564" name="Menor_Centro_FK">
+<ind_PK_UK id="5AF30EBE-EE2C-612B-CC1B-69369D6EF0BA" name="Menor_Centro_FKv1">
 <createdBy>jon</createdBy>
-<createdTime>2015-05-05 10:01:25 UTC</createdTime>
+<createdTime>2015-05-05 10:19:18 UTC</createdTime>
 <generatorID>90572C23-0967-449A-5EE7-C866E14FFB81</generatorID>
 <ownerDesignName>Entidad_RelacionV2</ownerDesignName>
 <indexState>Foreign Key</indexState>

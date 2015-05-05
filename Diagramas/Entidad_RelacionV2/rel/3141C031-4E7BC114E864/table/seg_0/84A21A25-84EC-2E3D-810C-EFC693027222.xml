@@ -19,12 +19,11 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="orden" id="34A9FAE6-660D-A3A2-433C-95F9A61C2014">
+<Column name="fecha" id="34A9FAE6-660D-A3A2-433C-95F9A61C2014">
 <createdBy>jon</createdBy>
 <createdTime>2015-05-04 11:55:03 UTC</createdTime>
 <generatorID>B2B8E14D-3871-0504-3616-17CCA775A188</generatorID>
 <ownerDesignName>Entidad_RelacionV2</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT008</logicalDatatype>
@@ -45,6 +44,17 @@
 <associations>
 <colAssociation fkAssociation="8DFF7B6D-A396-20E4-55D6-71A87E9073D2" referredColumn="763231FC-81C2-B324-4A07-05404A2C000B"/>
 </associations>
+</Column>
+<Column name="hora" id="305A3B0D-2BD5-178C-B63C-E1426401A7ED">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 10:19:18 UTC</createdTime>
+<generatorID>61C31CC8-463F-5B78-EB92-4EFA6FEF14C3</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

@@ -29,7 +29,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="orden" id="B2B8E14D-3871-0504-3616-17CCA775A188">
+<Attribute name="fecha" id="B2B8E14D-3871-0504-3616-17CCA775A188">
 <createdBy>jon</createdBy>
 <createdTime>2015-05-04 11:32:03 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
@@ -37,10 +37,22 @@
 <engineerTo>
 <item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="hora" id="61C31CC8-463F-5B78-EB92-4EFA6FEF14C3">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 10:18:28 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="idSorteo" id="846691EA-83CB-835F-8C9B-3CC00B3972EB">
