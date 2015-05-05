@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2AB21177-E14F-10BB-9268-4F1D1DD88945" name="Persona">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 10:52:10 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="nombre" id="4A7DB893-FE60-498D-75F1-5169C6483DC0">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 10:52:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>45</dataTypeSize>
+<ownDataTypeParameters>45,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ape1" id="BC3EE706-5168-D529-9A69-7F93B7449C3D">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 10:52:53 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>45</dataTypeSize>
+<ownDataTypeParameters>45,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ape2" id="49B9DEF8-CD39-2153-8890-8CF5E09B348F">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 10:54:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>45</dataTypeSize>
+<ownDataTypeParameters>45,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

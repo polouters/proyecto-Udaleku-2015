@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="viviendaDireccion" directorySegmentName="seg_0" id="D466D587-CDE4-FB7A-7373-D82DDA132431">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:36:38 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<sourcePk>D36E0927-98E3-8C8A-859D-3183F7056C8C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B60BC590-8CAF-B4B6-BE5E-DEF99D1C7FB7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7C9BBD7E-635D-CE16-D31B-1E019E23B5D0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

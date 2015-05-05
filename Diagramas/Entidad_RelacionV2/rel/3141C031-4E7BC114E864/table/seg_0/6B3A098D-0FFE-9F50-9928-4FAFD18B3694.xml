@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6B3A098D-0FFE-9F50-9928-4FAFD18B3694" name="Sorteo">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 09:57:58 UTC</createdTime>
+<generatorID>3E0A6596-B685-E715-5C03-83ACE6F9C68A</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idSorteo" id="763231FC-81C2-B324-4A07-05404A2C000B">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 09:57:59 UTC</createdTime>
+<generatorID>8F6EB014-679E-D185-30D3-9B1B22E0BA75</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="diaInicio" id="68B8C326-7EE3-8A2A-CBA1-5CAC44DF3A22">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 09:57:59 UTC</createdTime>
+<generatorID>FA383577-B8B8-8B17-1CDA-8CE77567D89F</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="diaFin" id="E70FFB0D-954F-1448-477D-D8044DBED56E">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 09:57:59 UTC</createdTime>
+<generatorID>4687DCD7-186B-4A79-C7DF-9511F1E60A07</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pNumero" id="5D5D29C4-446F-A231-04F9-D50955428D01">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 09:57:59 UTC</createdTime>
+<generatorID>A6AD5BB5-422A-76E1-DBA7-3ED5B190826E</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cadencia" id="224E1958-E36D-67E8-DADA-9F0FD808AC18">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 09:57:59 UTC</createdTime>
+<generatorID>349BDC63-ABF7-F796-8355-9FA7322D8C59</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2343C4F0-74BC-2ECA-A84D-4EC980AA5B03" name="Sorteo_PK">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 09:57:59 UTC</createdTime>
+<generatorID>CB1B41BA-4A81-75DD-D185-ED27E04B5190</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="763231FC-81C2-B324-4A07-05404A2C000B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

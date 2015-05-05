@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="sorteoSolicitud" directorySegmentName="seg_0" id="76872F71-E45B-341C-10DB-A75A475FC46A">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 09:47:27 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<sourcePk>E6CC2682-89C3-6821-846A-B5DACEFCB0A9</sourcePk>
+<targetPk>CB1B41BA-4A81-75DD-D185-ED27E04B5190</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>75105725-1851-BB67-32D0-614610BED9E6</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>3E0A6596-B685-E715-5C03-83ACE6F9C68A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4D6D5A89-9C5E-2459-4C6A-C1F185E671B2" name="Inscripcion">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:35:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idIns" id="E5E87D72-7E86-2873-B896-187D12FF80C1">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:41:53 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nSolicitud" id="CD42F47F-F7AE-5BE3-5C2C-68717521F66A">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:38:52 UTC</createdTime>
+<generatorID>9521CA59-F421-C12B-9B5B-613E18055501</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<referedAttribute>D2F063AC-9736-FC91-7ADB-6732BC53BC2C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codMenor" id="1E999174-F312-A0A7-8573-855F0856AB22">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:45:43 UTC</createdTime>
+<generatorID>77BAB375-0349-7944-A41C-239DE260DDE4</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<referedAttribute>EF3EE7EA-BF63-199D-AEA2-68E13714976D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dni" id="B502FF0F-56AC-14AD-4E54-337BEF9E4A1C">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:45:58 UTC</createdTime>
+<generatorID>C0C789DE-777B-6DAA-C209-449D8497777E</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<referedAttribute>DCAE18D2-A700-F441-882D-79CD60582B6B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="41CB0957-8FC1-9B24-F893-5445CA071D2D" name="Inscripcion PK">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:38:52 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E5E87D72-7E86-2873-B896-187D12FF80C1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

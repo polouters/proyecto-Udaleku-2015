@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="menorDireccion" directorySegmentName="seg_0" id="61A711B2-A1EA-3DCF-300F-E0906B049442">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:37:21 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7C9BBD7E-635D-CE16-D31B-1E019E23B5D0</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>52AAB604-0CC4-E063-84F3-49EF02972BE1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

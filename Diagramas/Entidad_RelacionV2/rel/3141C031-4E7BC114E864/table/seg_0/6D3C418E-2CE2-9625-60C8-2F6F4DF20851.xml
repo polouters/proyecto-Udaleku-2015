@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6D3C418E-2CE2-9625-60C8-2F6F4DF20851" name="Municipio">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:55:03 UTC</createdTime>
+<generatorID>43F13A7D-5C11-8824-0F1F-ABE350D5FB4D</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idMunicipio" id="E87896BA-4263-9493-BEAB-92722D2F5FE9">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:55:03 UTC</createdTime>
+<generatorID>27F08AE3-190E-53FD-C8EA-58F00A1A63FD</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="5D48343A-B824-68EA-762B-58B612EB7D33">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:55:03 UTC</createdTime>
+<generatorID>832A8F37-FCBF-D66A-011F-C60F1E8B4049</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>45</dataTypeSize>
+<ownDataTypeParameters>45,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Provincia_idProv" id="F513A0AC-D2D0-1750-F091-1F4219A7BFDC">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:55:03 UTC</createdTime>
+<generatorID>FAF44DF5-19F1-5C49-2CFD-5DC8EBF642B7</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9EDCFB86-86B1-C77B-3C8C-65E5C67B58D4" referredColumn="7762D901-2369-AF95-A746-3D4CA0D1B9B1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="62DA39D5-F130-BC4D-2951-8F3A522BFA6A" name="Municipio_PK">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:55:03 UTC</createdTime>
+<generatorID>43981A7F-B02F-7437-2DCF-C118C981E43E</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E87896BA-4263-9493-BEAB-92722D2F5FE9"/>
+<colUsage columnID="F513A0AC-D2D0-1750-F091-1F4219A7BFDC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="28028C54-82ED-57BB-29C0-A423D12FB5FC" name="Municipio_Provincia_FK">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:55:03 UTC</createdTime>
+<generatorID>D15F0315-2267-32C6-FA29-5014F004E66A</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F513A0AC-D2D0-1750-F091-1F4219A7BFDC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

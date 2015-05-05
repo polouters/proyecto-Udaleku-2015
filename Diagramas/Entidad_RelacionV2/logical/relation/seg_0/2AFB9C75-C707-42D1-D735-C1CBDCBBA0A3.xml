@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="MuniCalle" directorySegmentName="seg_0" id="2AFB9C75-C707-42D1-D735-C1CBDCBBA0A3">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:53:08 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<sourcePk>43981A7F-B02F-7437-2DCF-C118C981E43E</sourcePk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>43F13A7D-5C11-8824-0F1F-ABE350D5FB4D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>77B24933-7037-6753-9304-2E09D928ECA0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

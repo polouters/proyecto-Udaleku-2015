@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="95B00FC2-7C49-C602-9C35-1D44DD71D2B9" name="Direccion">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:38:00 UTC</createdTime>
+<generatorID>7C9BBD7E-635D-CE16-D31B-1E019E23B5D0</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<ordsAlias>direccionv1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cp" id="E66623AF-E9FC-96FF-0FE8-70AD53CE01E9">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:38:00 UTC</createdTime>
+<generatorID>80B92D61-E151-4AFD-DAF9-356E19100A81</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Calle_idCalle" id="522287C7-F644-5EA1-CDF6-5B6D0EEA5086">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:38:00 UTC</createdTime>
+<generatorID>B83C7039-1FB0-A10C-0222-46CD6E01CC10</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F779F5E-382D-75B7-5B54-B0ED4C42A6D8" referredColumn="B7A3020B-B8F7-217D-3312-45AC87E83861"/>
+</associations>
+</Column>
+<Column name="Calle_Municipio_idMunicipio" id="CD8C870D-F69A-A02E-032C-C8F646637C45">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:38:00 UTC</createdTime>
+<generatorID>C139931A-9913-5057-18E0-4BA0F0A4DC97</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F779F5E-382D-75B7-5B54-B0ED4C42A6D8" referredColumn="791CB4A3-D3D1-DBC0-6C50-AA908A0E9666"/>
+</associations>
+</Column>
+<Column name="Calle_Municipio_Provincia_idProv" id="0F3000D4-9D7C-4015-A3F1-4E6BD5E3BC2F">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:38:00 UTC</createdTime>
+<generatorID>7AF060A2-2B23-9AC9-8FAD-5EC73D7F6496</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F779F5E-382D-75B7-5B54-B0ED4C42A6D8" referredColumn="3D1C95B1-98A5-BE43-D835-8C15E10C6526"/>
+</associations>
+</Column>
+<Column name="Vivienda_idVivienda" id="1888480B-129B-14EE-66CF-A583D0CCC5EF">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:38:00 UTC</createdTime>
+<generatorID>39502F3D-86B4-B735-796B-BF91477D82DB</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6F1B7EB7-3D5C-34D2-6B8F-5D14B0E11B3E" referredColumn="0541928B-A10A-2EB6-F67C-D555F6C2E253"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EFFAA697-1FE0-58E9-C807-A887DE618F53" name="Direccionv1_PKv1">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:38:00 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="522287C7-F644-5EA1-CDF6-5B6D0EEA5086"/>
+<colUsage columnID="1888480B-129B-14EE-66CF-A583D0CCC5EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F84D39F2-3BED-602B-13CC-CA6DB6CC3C7F" name="Direccion_Calle_FK">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:38:00 UTC</createdTime>
+<generatorID>2018865C-CAC6-523A-CC46-92D5A213E3BB</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="522287C7-F644-5EA1-CDF6-5B6D0EEA5086"/>
+<colUsage columnID="CD8C870D-F69A-A02E-032C-C8F646637C45"/>
+<colUsage columnID="0F3000D4-9D7C-4015-A3F1-4E6BD5E3BC2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4925C05B-32CD-6211-E8CB-E1D3FA716759" name="Direccion_Vivienda_FK">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 08:38:00 UTC</createdTime>
+<generatorID>D466D587-CDE4-FB7A-7373-D82DDA132431</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1888480B-129B-14EE-66CF-A583D0CCC5EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="77B24933-7037-6753-9304-2E09D928ECA0" name="Calle">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:26:58 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idCalle" id="719DA701-4AF0-5E03-CEE3-D1AE929D50DE">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:27:09 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="77E9F0F0-CB5A-F826-8ED1-3C34B9D341A5">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:27:20 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>45</dataTypeSize>
+<ownDataTypeParameters>45,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idMunicipio" id="20FCB82F-7780-1E60-C077-492249157502">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:53:08 UTC</createdTime>
+<generatorID>2AFB9C75-C707-42D1-D735-C1CBDCBBA0A3</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<referedAttribute>27F08AE3-190E-53FD-C8EA-58F00A1A63FD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idProv" id="D6A6C2B1-30FA-9240-A9EE-B1F08635195E">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:53:08 UTC</createdTime>
+<generatorID>2AFB9C75-C707-42D1-D735-C1CBDCBBA0A3</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<referedAttribute>FAF44DF5-19F1-5C49-2CFD-5DC8EBF642B7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3ED9244F-9C86-47BF-680C-F147FA988901" name="Calle PK">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-04 11:27:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>719DA701-4AF0-5E03-CEE3-D1AE929D50DE</attributeRef>
+<attributeRef>20FCB82F-7780-1E60-C077-492249157502</attributeRef>
+<attributeRef>D6A6C2B1-30FA-9240-A9EE-B1F08635195E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
