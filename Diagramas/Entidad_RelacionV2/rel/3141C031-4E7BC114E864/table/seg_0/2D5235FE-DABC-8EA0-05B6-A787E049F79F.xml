@@ -46,7 +46,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="97D2E3F8-98E9-6D87-C558-814F9084142A" referredColumn="B960E30A-86EF-A318-5D4F-28CC52E91276"/>
+<colAssociation fkAssociation="30A7C624-E7D0-54BF-C029-C8988E209FC2" referredColumn="B960E30A-86EF-A318-5D4F-28CC52E91276"/>
 </associations>
 </Column>
 <Column name="Tutor_dni" id="51392573-D61B-DCA2-1AA3-0BB61DBFE390">
@@ -62,7 +62,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="C45428DA-618D-1BDB-C787-802E2F0C6772" referredColumn="C6EA7421-64B7-32D7-12F1-3EF48FB7FA85"/>
+<colAssociation fkAssociation="564B6BFB-0423-CA05-EBA3-D9D437A695C3" referredColumn="C6EA7421-64B7-32D7-12F1-3EF48FB7FA85"/>
 </associations>
 </Column>
 </columns>
@@ -114,9 +114,9 @@
 <colUsage columnID="C8611162-D152-4B1A-4D58-E5C38FB7605B"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E3A0B9AD-4568-B63F-1427-F34BAAF509AF" name="Inscripcion_Tutor_FK">
+<ind_PK_UK id="F3ED790F-3B92-257D-0483-1AAA24EA8206" name="Inscripcion_Tutor_FK">
 <createdBy>jon</createdBy>
-<createdTime>2015-05-05 10:19:18 UTC</createdTime>
+<createdTime>2015-05-05 10:45:42 UTC</createdTime>
 <generatorID>C0C789DE-777B-6DAA-C209-449D8497777E</generatorID>
 <ownerDesignName>Entidad_RelacionV2</ownerDesignName>
 <indexState>Foreign Key</indexState>
@@ -125,9 +125,9 @@
 <colUsage columnID="51392573-D61B-DCA2-1AA3-0BB61DBFE390"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="01866B42-B81B-5275-4A6B-6A47104BCAB1" name="Inscripcion_Menor_FK">
+<ind_PK_UK id="B0CBA05F-C8CE-63EC-9996-F9797F9954FA" name="Inscripcion_Menor_FK">
 <createdBy>jon</createdBy>
-<createdTime>2015-05-05 10:19:18 UTC</createdTime>
+<createdTime>2015-05-05 10:45:42 UTC</createdTime>
 <generatorID>77BAB375-0349-7944-A41C-239DE260DDE4</generatorID>
 <ownerDesignName>Entidad_RelacionV2</ownerDesignName>
 <indexState>Foreign Key</indexState>

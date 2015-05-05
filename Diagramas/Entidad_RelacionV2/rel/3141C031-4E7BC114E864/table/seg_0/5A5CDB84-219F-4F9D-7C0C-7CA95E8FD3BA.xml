@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="cod_centro" id="A1733B11-F59A-1CF2-460D-BEB37019C9E3">
+<Column name="idCentro" id="A1733B11-F59A-1CF2-460D-BEB37019C9E3">
 <createdBy>jon</createdBy>
 <createdTime>2015-05-04 11:55:03 UTC</createdTime>
 <generatorID>D04DA1CF-8D54-EAB7-9AA7-C943E14E4F8B</generatorID>
@@ -43,6 +43,36 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Menor_codMenor1" id="6643F66F-453B-51D1-6D64-0FD09FC917B8">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 10:45:42 UTC</createdTime>
+<generatorID>E90BA335-8F3A-9283-7D74-EAF80EA3532A</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="91229EE5-EDC6-E49F-3878-56BE8AEC0729" referredColumn="B960E30A-86EF-A318-5D4F-28CC52E91276"/>
+</associations>
+</Column>
+<Column name="Provincia_idProv" id="88C0DFFC-9B1B-8266-9ADC-3B633D733D3B">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 10:45:42 UTC</createdTime>
+<generatorID>2C931333-AFE3-70A5-6D5A-9A0D806D5C22</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7BA60CC3-2670-2FAA-8CD1-A36B50E483E9" referredColumn="7762D901-2369-AF95-A746-3D4CA0D1B9B1"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="04AC3362-895D-9021-6652-FFAED3E8A1F8" name="Centro_PK">
@@ -55,6 +85,28 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="A1733B11-F59A-1CF2-460D-BEB37019C9E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="801CE1E5-476B-47D8-9C8F-2C3CB81E359F" name="Centro_Menor_FK">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 10:45:42 UTC</createdTime>
+<generatorID>90572C23-0967-449A-5EE7-C866E14FFB81</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6643F66F-453B-51D1-6D64-0FD09FC917B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1F07AC7F-DAB9-08C2-AB87-531291655BC4" name="Centro_Provincia_FK">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 10:45:42 UTC</createdTime>
+<generatorID>1450D43F-10A5-3B69-5256-220296840571</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88C0DFFC-9B1B-8266-9ADC-3B633D733D3B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

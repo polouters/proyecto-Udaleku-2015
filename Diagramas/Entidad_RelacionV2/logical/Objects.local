@@ -20,6 +20,7 @@
    <object objectType="Relation" objectID="77BAB375-0349-7944-A41C-239DE260DDE4" name="insMenor" seqName="seg_0"/>
    <object objectType="Relation" objectID="9521CA59-F421-C12B-9B5B-613E18055501" name="inscribe" seqName="seg_0"/>
    <object objectType="Relation" objectID="61A711B2-A1EA-3DCF-300F-E0906B049442" name="menorDireccion" seqName="seg_0"/>
+   <object objectType="Relation" objectID="1450D43F-10A5-3B69-5256-220296840571" name="provCentro" seqName="seg_0"/>
    <object objectType="Relation" objectID="76872F71-E45B-341C-10DB-A75A475FC46A" name="sorteoSolicitud" seqName="seg_0"/>
    <object objectType="Relation" objectID="D466D587-CDE4-FB7A-7373-D82DDA132431" name="viviendaDireccion" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="24F192DE-680E-E557-7D3D-1BDDC5FE8800" name="Hierarchy_1" seqName="seg_0"/>

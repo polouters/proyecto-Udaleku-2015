@@ -41,25 +41,14 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="pNumero" id="5D5D29C4-446F-A231-04F9-D50955428D01">
+<Column name="diaSorteo" id="2283D750-F3D6-3E8B-C46C-FD9DB4508808">
 <createdBy>jon</createdBy>
-<createdTime>2015-05-05 09:57:59 UTC</createdTime>
-<generatorID>A6AD5BB5-422A-76E1-DBA7-3ED5B190826E</generatorID>
+<createdTime>2015-05-05 10:45:42 UTC</createdTime>
+<generatorID>81CF2E1B-294C-3D72-27AA-23AA4EE48288</generatorID>
 <ownerDesignName>Entidad_RelacionV2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="cadencia" id="224E1958-E36D-67E8-DADA-9F0FD808AC18">
-<createdBy>jon</createdBy>
-<createdTime>2015-05-05 09:57:59 UTC</createdTime>
-<generatorID>349BDC63-ABF7-F796-8355-9FA7322D8C59</generatorID>
-<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>

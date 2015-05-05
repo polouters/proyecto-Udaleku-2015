@@ -55,9 +55,9 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pNumero" id="A6AD5BB5-422A-76E1-DBA7-3ED5B190826E">
+<Attribute name="diaSorteo" id="81CF2E1B-294C-3D72-27AA-23AA4EE48288">
 <createdBy>jon</createdBy>
-<createdTime>2015-05-05 09:55:02 UTC</createdTime>
+<createdTime>2015-05-05 10:44:45 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>Entidad_RelacionV2</ownerDesignName>
 <engineerTo>
@@ -65,20 +65,7 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="cadencia" id="349BDC63-ABF7-F796-8355-9FA7322D8C59">
-<createdBy>jon</createdBy>
-<createdTime>2015-05-05 09:56:26 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
-<engineerTo>
-<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

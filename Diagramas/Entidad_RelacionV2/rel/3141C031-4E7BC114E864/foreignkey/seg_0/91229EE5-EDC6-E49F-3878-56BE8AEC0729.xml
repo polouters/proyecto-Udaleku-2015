@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="97D2E3F8-98E9-6D87-C558-814F9084142A" containerWithKeyObject="2D5235FE-DABC-8EA0-05B6-A787E049F79F" localFKIndex="01866B42-B81B-5275-4A6B-6A47104BCAB1" name="Inscripcion_Menor_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="91229EE5-EDC6-E49F-3878-56BE8AEC0729" containerWithKeyObject="5A5CDB84-219F-4F9D-7C0C-7CA95E8FD3BA" localFKIndex="801CE1E5-476B-47D8-9C8F-2C3CB81E359F" name="Centro_Menor_FK">
 <createdBy>jon</createdBy>
-<createdTime>2015-05-05 10:19:18 UTC</createdTime>
-<generatorID>77BAB375-0349-7944-A41C-239DE260DDE4</generatorID>
+<createdTime>2015-05-05 10:45:42 UTC</createdTime>
+<generatorID>90572C23-0967-449A-5EE7-C866E14FFB81</generatorID>
 <ownerDesignName>Entidad_RelacionV2</ownerDesignName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>A6C1DBC7-C494-D189-410F-2F1285CD576F</referredTableID>

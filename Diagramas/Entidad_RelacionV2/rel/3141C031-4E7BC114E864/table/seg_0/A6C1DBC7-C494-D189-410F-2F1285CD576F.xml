@@ -151,21 +151,6 @@
 <colAssociation fkAssociation="32A4FC1B-2AC3-2D26-746B-4E8E0237AE22" referredColumn="1888480B-129B-14EE-66CF-A583D0CCC5EF"/>
 </associations>
 </Column>
-<Column name="Centro_cod_centro" id="8A4C415A-35CC-2E28-8C78-591AA70AFAE0">
-<createdBy>jon</createdBy>
-<createdTime>2015-05-05 10:01:25 UTC</createdTime>
-<generatorID>37C50B56-5F59-CEFC-8820-0D9B17682744</generatorID>
-<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="390A94F1-F977-30A8-2FEE-F922D0B58147" referredColumn="A1733B11-F59A-1CF2-460D-BEB37019C9E3"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="1412931C-0277-1A95-2D12-5A573D6D7FAB" name="Menor_PK">
@@ -247,17 +232,6 @@
 <indexColumnUsage>
 <colUsage columnID="9FB7C9BC-1364-9B24-2CB7-414C671FF398"/>
 <colUsage columnID="6FA97E0D-F4C6-3EE6-5ECD-E578B76327EC"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="5AF30EBE-EE2C-612B-CC1B-69369D6EF0BA" name="Menor_Centro_FKv1">
-<createdBy>jon</createdBy>
-<createdTime>2015-05-05 10:19:18 UTC</createdTime>
-<generatorID>90572C23-0967-449A-5EE7-C866E14FFB81</generatorID>
-<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="8A4C415A-35CC-2E28-8C78-591AA70AFAE0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

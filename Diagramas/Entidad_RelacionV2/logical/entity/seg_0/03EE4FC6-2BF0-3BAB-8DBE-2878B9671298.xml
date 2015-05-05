@@ -16,7 +16,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cod_centro" id="D04DA1CF-8D54-EAB7-9AA7-C943E14E4F8B">
+<Attribute name="idCentro" id="D04DA1CF-8D54-EAB7-9AA7-C943E14E4F8B">
 <createdBy>jon</createdBy>
 <createdTime>2015-05-04 10:38:36 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
@@ -42,6 +42,34 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>45</dataTypeSize>
 <ownDataTypeParameters>45,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codMenor" id="E90BA335-8F3A-9283-7D74-EAF80EA3532A">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 10:43:22 UTC</createdTime>
+<generatorID>90572C23-0967-449A-5EE7-C866E14FFB81</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<referedAttribute>EF3EE7EA-BF63-199D-AEA2-68E13714976D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idProv" id="2C931333-AFE3-70A5-6D5A-9A0D806D5C22">
+<createdBy>jon</createdBy>
+<createdTime>2015-05-05 10:43:57 UTC</createdTime>
+<generatorID>1450D43F-10A5-3B69-5256-220296840571</generatorID>
+<ownerDesignName>Entidad_RelacionV2</ownerDesignName>
+<engineerTo>
+<item key="3141C031-6641-7E16-6689-4E7BC114E864" value="true"/>
+</engineerTo>
+<referedAttribute>2F99B1C6-B4CA-8DB9-0D23-2678657C6E49</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
