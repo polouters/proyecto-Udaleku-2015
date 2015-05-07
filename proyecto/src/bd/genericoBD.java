@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author Ruben
  */
 public class genericoBD {
-    private static String nombreBaseDatos ="acontecimientos";
+    private static String nombreBaseDatos ="proyecto";
     private static String url="jdbc:mysql://localhost:3306/"+nombreBaseDatos;
     private static String usuario="root";
     private static String password="qwerty";
@@ -27,19 +27,19 @@ public class genericoBD {
     }
     public static void setCon() {
         try{
-         //obtenemos el driver de para mysql
+        /* //obtenemos el driver de para mysql
          Class.forName("com.mysql.jdbc.Driver");
          //obtenemos la conexión
          con = DriverManager.getConnection(url,usuario,password);
+         */
+          DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
+          con = DriverManager.getConnection("jdbc:oracle:thin:@server224:1521:orcl",usuario,password);
+                                               // driver@machineName:port:SID ,  userid,  password
  
          if (con!=null){
             System.out.println("Conección a base de datos "+nombreBaseDatos+" OK");
          }
-      }
-      catch(SQLException e){
-         System.out.println(e);
-      }catch(ClassNotFoundException e){
-         System.out.println(e);
+     
       }catch(Exception e){
          System.out.println(e);
       }
