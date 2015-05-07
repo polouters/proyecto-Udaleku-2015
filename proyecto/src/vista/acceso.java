@@ -16,6 +16,7 @@ public class acceso extends javax.swing.JFrame {
      */
     public acceso() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
