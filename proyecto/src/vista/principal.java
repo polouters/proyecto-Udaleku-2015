@@ -11,6 +11,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -45,11 +46,8 @@ public class principal extends javax.swing.JFrame {
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(411, 377));
         setMinimumSize(new java.awt.Dimension(411, 377));
-        setPreferredSize(new java.awt.Dimension(411, 377));
         setResizable(false);
-        setSize(new java.awt.Dimension(411, 377));
 
         bEntrar.setText("Entrar");
 
@@ -92,22 +90,22 @@ public class principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton2)
                             .addComponent(b1))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(201, 201, 201)
+                .addGap(76, 76, 76)
                 .addComponent(bEntrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(131, 131, 131)
                 .addComponent(jLabel2)
                 .addGap(33, 33, 33)
                 .addComponent(b1)
                 .addGap(44, 44, 44)
                 .addComponent(jButton2)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         pack();
@@ -117,11 +115,9 @@ public class principal extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             Desktop.getDesktop().browse(new URI("http://www.alava.net/cs/Satellite/Juventud/eu_ES/hasiera"));
-        } catch (IOException ex) {
-            Logger.getLogger(principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex);
+        } 
     }//GEN-LAST:event_b1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -131,7 +127,7 @@ public class principal extends javax.swing.JFrame {
             // TODO add your handling code here:
             Desktop.getDesktop().browse(new URI("http://www.alava.net/ifj/UdalekuakInternet2015.pdf"));
         } catch (Exception ex) {
-            Logger.getLogger(principal.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
