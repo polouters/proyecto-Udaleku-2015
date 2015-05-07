@@ -5,6 +5,9 @@
  */
 package vista;
 
+import exc.DatoVacio;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ruben
@@ -54,6 +57,11 @@ public class acceso extends javax.swing.JFrame {
         jLabel3.setText("Fecha nacimiento:");
 
         bAcceder.setText("Acceder");
+        bAcceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAccederActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,6 +120,15 @@ public class acceso extends javax.swing.JFrame {
     private void bInscribirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInscribirseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bInscribirseActionPerformed
+
+    private void bAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAccederActionPerformed
+        try{
+            if(tNacimiento.getText().isEmpty()||tSorteo.getText().isEmpty()){throw new DatoVacio();}
+            
+            
+        }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");}
+        catch(Exception Ex){JOptionPane.showMessageDialog(this,"Error:\n "+Ex.getMessage());}
+    }//GEN-LAST:event_bAccederActionPerformed
 
     /**
      * @param args the command line arguments
