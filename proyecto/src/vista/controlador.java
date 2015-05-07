@@ -11,9 +11,12 @@ package vista;
  */
 
 public class controlador {
+    
    public static principal vp = new principal();
    public static acceso va = new acceso();
+   
    public static void abrirPrincipal(){
+       
    vp.setVisible(true);
    
    }
