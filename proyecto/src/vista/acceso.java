@@ -118,7 +118,7 @@ public class acceso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInscribirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInscribirseActionPerformed
-        // TODO add your handling code here:
+        controlador.accesoInscripcion();
     }//GEN-LAST:event_bInscribirseActionPerformed
 
     private void bAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAccederActionPerformed
