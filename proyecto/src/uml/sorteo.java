@@ -1,5 +1,6 @@
 package uml;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class sorteo {
@@ -7,52 +8,49 @@ public class sorteo {
 	private Date diaInicio;
 	private Date diaFin;
 	private Date diaSorteo;
+        private ArrayList <solicitud> lSorteo = new ArrayList();
 
     public sorteo() {
     }
 
-    public sorteo(Date diaInicio, Date diaFin, Date diaSorteo) {
+    public sorteo(Date diaInicio, Date diaFin, Date diaSorteo,ArrayList <solicitud> lSorteo) {
         this.diaInicio = diaInicio;
         this.diaFin = diaFin;
         this.diaSorteo = diaSorteo;
+        this.lSorteo = lSorteo;
     }
 
-        
-	public Date getDiaInicio() {
-		return this.diaInicio;
-	}
 
-	/**
-	 * 
-	 * @param diaInicio
-	 */
-	public void setDiaInicio(Date diaInicio) {
-		this.diaInicio = diaInicio;
-	}
+    public Date getDiaInicio() {
+        return diaInicio;
+    }
 
-	public Date getDiaFin() {
-		return this.diaFin;
-	}
+    public void setDiaInicio(Date diaInicio) {
+        this.diaInicio = diaInicio;
+    }
 
-	/**
-	 * 
-	 * @param diaFin
-	 */
-	public void setDiaFin(Date diaFin) {
-		this.diaFin = diaFin;
-	}
+    public Date getDiaFin() {
+        return diaFin;
+    }
 
-	public Date getDiaSorteo() {
-		return this.diaSorteo;
-	}
+    public void setDiaFin(Date diaFin) {
+        this.diaFin = diaFin;
+    }
 
-	/**
-	 * 
-	 * @param diaSorteo
-	 */
-	public void setDiaSorteo(Date diaSorteo) {
-		this.diaSorteo = diaSorteo;
-	}
+    public Date getDiaSorteo() {
+        return diaSorteo;
+    }
 
-	
+    public void setDiaSorteo(Date diaSorteo) {
+        this.diaSorteo = diaSorteo;
+    }
+
+    public ArrayList<solicitud> getlSorteo() {
+        return lSorteo;
+    }
+
+    public void setlSorteo(ArrayList<solicitud> lSorteo) {
+        this.lSorteo = lSorteo;
+    }
+          
 }

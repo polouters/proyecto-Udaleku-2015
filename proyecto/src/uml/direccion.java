@@ -1,27 +1,55 @@
 package uml;
 
+import java.util.ArrayList;
+
 public class direccion {
 
 	private String cp;
+        private calle calle;
+        private vivienda vivienda;
+        private ArrayList <menor> lMenor = new ArrayList();
 
     public direccion() {
     }
 
-    public direccion(String cp) {
+    public direccion(String cp, calle calle, vivienda vivienda,ArrayList <menor> lMenor) {
+        this.cp = cp;
+        this.calle = calle;
+        this.vivienda = vivienda;
+        this.lMenor = lMenor;
+    }
+
+    public String getCp() {
+        return cp;
+    }
+
+    public void setCp(String cp) {
         this.cp = cp;
     }
 
-        
-	public String getCp() {
-		return this.cp;
-	}
+    public calle getCalle() {
+        return calle;
+    }
 
-	/**
-	 * 
-	 * @param cp
-	 */
-	public void setCp(String cp) {
-		this.cp = cp;
-	}
+    public void setCalle(calle calle) {
+        this.calle = calle;
+    }
+
+    public vivienda getVivienda() {
+        return vivienda;
+    }
+
+    public void setVivienda(vivienda vivienda) {
+        this.vivienda = vivienda;
+    }
+
+    public ArrayList<menor> getlMenor() {
+        return lMenor;
+    }
+
+    public void setlMenor(ArrayList<menor> lMenor) {
+        this.lMenor = lMenor;
+    }
+
 
 }

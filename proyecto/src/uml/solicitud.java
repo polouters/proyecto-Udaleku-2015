@@ -8,52 +8,58 @@ public class solicitud {
 	private int nSolicitud;
 	private Date fecha;
 	private Calendar hora;
+        private sorteo srt;
+        private inscripcion[] lInsc = new inscripcion[2];
 
     public solicitud() {
     }
 
-    public solicitud(int nSolicitud, Date fecha, Calendar hora) {
+    public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt,inscripcion[] lInsc) {
         this.nSolicitud = nSolicitud;
         this.fecha = fecha;
         this.hora = hora;
+        this.srt = srt;
+        this.lInsc = lInsc;
     }
-        
-        
 
-	public int getNSolicitud() {
-		return this.nSolicitud;
-	}
+    public int getnSolicitud() {
+        return nSolicitud;
+    }
 
-	/**
-	 * 
-	 * @param nSolicitud
-	 */
-	public void setNSolicitud(int nSolicitud) {
-		this.nSolicitud = nSolicitud;
-	}
+    public void setnSolicitud(int nSolicitud) {
+        this.nSolicitud = nSolicitud;
+    }
 
-	public Date getFecha() {
-		return this.fecha;
-	}
+    public Date getFecha() {
+        return fecha;
+    }
 
-	/**
-	 * 
-	 * @param fecha
-	 */
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
 
-	public Calendar getHora() {
-		return this.hora;
-	}
+    public Calendar getHora() {
+        return hora;
+    }
 
-	/**
-	 * 
-	 * @param hora
-	 */
-	public void setHora(Calendar hora) {
-		this.hora = hora;
-	}
+    public void setHora(Calendar hora) {
+        this.hora = hora;
+    }
 
+    public sorteo getS() {
+        return srt;
+    }
+
+    public void setS(sorteo srt) {
+        this.srt = srt;
+    }
+
+    public inscripcion[] getlInsc() {
+        return lInsc;
+    }
+
+    public void setlInsc(inscripcion[] lInsc) {
+        this.lInsc = lInsc;
+    }
+  
 }

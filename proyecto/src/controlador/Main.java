@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import uml.solicitud;
 import vista.*;
 
 /**
