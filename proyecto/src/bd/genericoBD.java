@@ -16,8 +16,8 @@ import java.sql.SQLException;
 public class genericoBD {
     private static String nombreBaseDatos ="proyecto";
     private static String url="jdbc:mysql://localhost:3306/"+nombreBaseDatos;
-    private static String usuario="root";
-    private static String password="qwerty";
+    private static String usuario="java";
+    private static String password="java";
     
     private static Connection con;
     
