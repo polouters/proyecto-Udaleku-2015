@@ -323,7 +323,7 @@ CREATE SEQUENCE idVivienda_Seq MAXVALUE 1000;
 -- -----------------------------------------------------
 DROP TABLE  Direcccion cascade CONSTRAINT ;
 
-CREATE TABLE  Direcccion (
+CREATE TABLE  Direccion (
   idCalle INT NOT NULL,
   idVivienda INT NOT NULL,
   cp VARCHAR(5) NOT NULL,
