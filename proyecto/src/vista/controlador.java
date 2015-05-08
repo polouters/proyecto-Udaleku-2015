@@ -13,8 +13,8 @@ package vista;
 public class controlador {
     
    private static principal vp = new principal();
-   private static acceso va = new acceso();
-   private static inscripcion vi = new inscripcion(); 
+   private static acceso va;
+   private static inscripcion vi; 
    
    public static void abrirPrincipal(){
        
@@ -23,11 +23,13 @@ public class controlador {
    }
    public static void principalAcceso(){
    vp.dispose();
+   va = new acceso();
    va.setVisible(true);
    
    }
    public static void accesoInscripcion(){
        va.dispose();
+       vi = new inscripcion();
        vi.setVisible(true);
    }
    public static void InscripcionPrincipal(){
