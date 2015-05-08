@@ -16,40 +16,34 @@ public class proteccionDatos extends javax.swing.JFrame {
      */
     public proteccionDatos() {
         initComponents();
+        setLocationRelativeTo(null);
         pDatos.setText(
-                "1. Los datos de carácter personal sólo se podrán recoger para su tratamiento" +
+               "1. Los datos de carácter personal sólo se podrán recoger para su tratamiento" +
                 "así como someterlos a dicho tratamiento, cuando sean adecuados, pertinentes y" +
                 "no excesivos en relación con el ámbito y las finalidades determinadas," +
-                "explícitas y legítimas para las que se hayan obtenido.\n" +
-                "2.</stronLos datos de carácter personal objeto de tratamiento\n" +
-"        no podrán usarse para finalidades incompatibles con aquellas para las que los\n" +
-"        datos hubieran sido recogidos. No se considerará incompatible el tratamiento posterior\n" +
-"        de éstos con fines históricos, estadísticos o científicos.\n" +
-"    </p>\n" +
-"    <p>\n" +
-"        <strong>3.</strong> Los datos de carácter personal serán exactos y puestos al día de forma que respondan\n" +
-"        con veracidad a la situación actual del afectado.\n" +
-
-"        <strong>4.</strong> Si los datos de carácter personal registrados resultaran ser inexactos,\n" +
-"        en todo o en parte, o incompletos, serán cancelados y sustituidos de oficio\n" +
-"        por los correspondientes datos rectificados o completados, sin perjuicio de las facultades\n" +
-"        que a los afectados reconoce el artículo 16.\n" +
-
-"        <strong>5.</strong> Los datos de carácter personal serán cancelados cuando hayan dejado\n" +
-"        de ser necesarios o pertinentes para la finalidad para la cual hubieran sido recabados o registrados.\n" +
-
-"        No serán conservados en forma que permita la identificación del interesado\n" +
-"        durante un período superior al necesario para los fines en base a\n" +
-"        los cuales hubieran sido recabados o registrados.\n" +
-
-"        Reglamentariamente se determinará el procedimiento por el que, por excepción, atendidos\n" +
-"        los valores históricos, estadísticos o científicos de acuerdo con la legislación específica,\n" +
-"        se decida el mantenimiento íntegro de determinados datos.\n" +
-
-"        <strong>6.</strong> Los datos de carácter personal serán almacenados de forma\n" +
-"        que permitan el ejercicio del derecho de acceso, salvo que sean legalmente cancelados.\n" +
-
-"7. Se prohíbe la recogida de datos por medios fraudulentos, desleales o ilícitos.");
+                "explícitas y legítimas para las que se hayan obtenido." +
+               "\n\n2. Los datos de carácter personal objeto de tratamiento" +
+                "no podrán usarse para finalidades incompatibles con aquellas para las que los" +
+                "datos hubieran sido recogidos. No se considerará incompatible el tratamiento posterior" +
+                "de éstos con fines históricos, estadísticos o científicos." +
+               "\n\n3. Los datos de carácter personal serán exactos y puestos al día de forma que respondan" +
+                "con veracidad a la situación actual del afectado." +
+               "\n\n4. Si los datos de carácter personal registrados resultaran ser inexactos," +
+                "en todo o en parte, o incompletos, serán cancelados y sustituidos de oficio" +
+                "por los correspondientes datos rectificados o completados, sin perjuicio de las facultades" +
+                "que a los afectados reconoce el artículo 16." +
+               "\n\n5. Los datos de carácter personal serán cancelados cuando hayan dejado" +
+                "de ser necesarios o pertinentes para la finalidad para la cual hubieran sido recabados o registrados." +
+                "No serán conservados en forma que permita la identificación del interesado" +
+                "durante un período superior al necesario para los fines en base a" +
+                "los cuales hubieran sido recabados o registrados." +
+                "Reglamentariamente se determinará el procedimiento por el que, por excepción, atendidos" +
+                "los valores históricos, estadísticos o científicos de acuerdo con la legislación específica," +
+                "se decida el mantenimiento íntegro de determinados datos." +
+               "\n\n6. Los datos de carácter personal serán almacenados de forma" +
+                "que permitan el ejercicio del derecho de acceso, salvo que sean legalmente cancelados." +
+               "\n\n7. Se prohíbe la recogida de datos por medios fraudulentos, desleales o ilícitos."
+        );
     }
 
     /**
@@ -72,6 +66,7 @@ public class proteccionDatos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        pDatos.setEditable(false);
         jScrollPane2.setViewportView(pDatos);
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 3, 18)); // NOI18N
@@ -89,11 +84,15 @@ public class proteccionDatos extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bSalir)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bSalir)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
