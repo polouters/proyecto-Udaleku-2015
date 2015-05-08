@@ -8,7 +8,7 @@ CREATE TABLE  Provincia (
   nombre VARCHAR(45) NOT NULL,
   PRIMARY KEY (idProv));
 
-CREATE SEQUENCE idProv_Seq MAXVAULE 3;
+CREATE SEQUENCE idProv_Seq MAXVALUE 3;
 
 INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Alava/Araba');
 INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Vizcaya/Bizkaia');
@@ -323,7 +323,7 @@ CREATE SEQUENCE idVivienda_Seq MAXVALUE 1000;
 -- -----------------------------------------------------
 DROP TABLE  Direcccion cascade CONSTRAINT ;
 
-CREATE TABLE  Direcccion (
+CREATE TABLE  Direccion (
   idCalle INT NOT NULL,
   idVivienda INT NOT NULL,
   cp VARCHAR(5) NOT NULL,

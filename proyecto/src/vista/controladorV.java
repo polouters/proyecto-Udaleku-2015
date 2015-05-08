@@ -66,6 +66,7 @@ public class controladorV {
    public static boolean usuarioExiste(){
    return Main.usuarioExiste();
    }
+
    public static void inscripcionProtecionDatos(){
        vi.setVisible(false);
        vpd = new proteccionDatos();
@@ -73,6 +74,10 @@ public class controladorV {
    }
    public static void ProtecionDatosinscripcion(){
        vpd.dispose();
+   }
+   public static void borrarInscripcion(){
+       vi.dispose();
+       vi = new inscripcion();
        vi.setVisible(true);
    }
 }

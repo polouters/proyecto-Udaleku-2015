@@ -478,6 +478,8 @@ public class inscripcion extends javax.swing.JFrame {
         bgCentro.add(rFuera);
         rFuera.setText("Fuera de Álava");
 
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione un centro" }));
+
         jLabel23.setText("*Modelo");
 
         bgModelo.add(rA);
@@ -540,6 +542,11 @@ public class inscripcion extends javax.swing.JFrame {
         );
 
         bBorrar.setText("Borrar");
+        bBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBorrarActionPerformed(evt);
+            }
+        });
 
         bGuardar.setText("Guardar");
         bGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -707,6 +714,13 @@ public class inscripcion extends javax.swing.JFrame {
        controladorV.inscripcionProtecionDatos();
       
     }//GEN-LAST:event_bDatosActionPerformed
+
+    private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
+        // TODO add your handling code ere:
+        controladorV.borrarInscripcion();
+                
+                
+    }//GEN-LAST:event_bBorrarActionPerformed
 
 
 
