@@ -65,4 +65,9 @@ public class controladorV {
    public static boolean usuarioExiste(){
    return Main.usuarioExiste();
    }
+   public static void borrarInscripcion(){
+       vi.dispose();
+       vi = new inscripcion();
+       vi.setVisible(true);
+   }
 }
