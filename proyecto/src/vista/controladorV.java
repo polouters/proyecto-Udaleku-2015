@@ -74,6 +74,7 @@ public class controladorV {
    }
    public static void ProtecionDatosinscripcion(){
        vpd.dispose();
+       vi.setVisible(true);
    }
    public static void borrarInscripcion(){
        vi.dispose();
