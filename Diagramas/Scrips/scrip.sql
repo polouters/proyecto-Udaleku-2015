@@ -8,7 +8,7 @@ CREATE TABLE  Provincia (
   nombre VARCHAR(45) NOT NULL,
   PRIMARY KEY (idProv));
 
-CREATE SEQUENCE idProv_Seq MAXVAULE 3;
+CREATE SEQUENCE idProv_Seq MAXVALUE 3;
 
 INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Alava/Araba');
 INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Vizcaya/Bizkaia');
