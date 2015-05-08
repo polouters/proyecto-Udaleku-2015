@@ -130,7 +130,7 @@ public class acceso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInscribirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInscribirseActionPerformed
-        controlador.accesoInscripcion();
+        controladorV.accesoInscripcion();
     }//GEN-LAST:event_bInscribirseActionPerformed
 
     private void bAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAccederActionPerformed
@@ -138,10 +138,10 @@ public class acceso extends javax.swing.JFrame {
             if(tNacimiento.getText().isEmpty()||tSorteo.getText().isEmpty()){throw new DatoVacio();}
             
             if(tSorteo.getText().compareToIgnoreCase("admin")==0 && tNacimiento.getText().compareToIgnoreCase("admin")==0){
-                controlador.accesoAdmin();
+                controladorV.accesoAdmin();
             }else{
-              boolean existe=  controlador.usuarioExiste();
-                controlador.accesoUsuario();
+              boolean existe=  controladorV.usuarioExiste();
+                controladorV.accesoUsuario();
             }
             
         }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");}

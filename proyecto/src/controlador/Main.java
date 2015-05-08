@@ -5,6 +5,9 @@
  */
 package controlador;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import vista.*;
 
 /**
@@ -21,10 +24,23 @@ public class Main {
         // TODO code application logic here
         
         //Apertura de ventana
-        controlador.abrirPrincipal();
+        controladorV.abrirPrincipal();
     }
     public static boolean usuarioExiste(){
     
         return true;
     }
+    public static void AbrirAchivoHTML(String Archivo){
+          try {
+
+            File objetofile = new File (Archivo);
+            Desktop.getDesktop().open(objetofile);
+
+     }catch (IOException ex) {
+
+            System.out.println(ex);
+     }
+          
+    }       
 }
+    

@@ -6,6 +6,7 @@
 package vista;
 
 import javax.swing.JOptionPane;
+import controlador.Main;
 
 /**
  *
@@ -497,6 +498,11 @@ public class inscripcion extends javax.swing.JFrame {
         bGuardar.setText("Guardar");
 
         bDatos.setText("Proteccion datos Personales");
+        bDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDatosActionPerformed(evt);
+            }
+        });
 
         bCancelar.setText("Cancelar");
         bCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -573,8 +579,13 @@ public class inscripcion extends javax.swing.JFrame {
 
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
        if(JOptionPane.showConfirmDialog(this,"Estas seguro que quies salir.")==0){
-        controlador.inscripcionPrincipal();}
+        controladorV.inscripcionPrincipal();}
     }//GEN-LAST:event_bCancelarActionPerformed
+
+    private void bDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDatosActionPerformed
+       Main.AbrirAchivoHTML("../../proyecto-Udaleku-2015/ProtecionDeDatos/Datos.html");
+      
+    }//GEN-LAST:event_bDatosActionPerformed
 
     /**
      * @param args the command line arguments
