@@ -734,11 +734,17 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rAlava">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bgCentro"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="&#xc1;lava"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rFuera">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bgCentro"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Fuera de &#xc1;lava"/>
                   </Properties>
                 </Component>
@@ -756,16 +762,25 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rA">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bgModelo"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="A"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rB">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bgModelo"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="B"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rD">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bgModelo"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="D"/>
                   </Properties>
                 </Component>

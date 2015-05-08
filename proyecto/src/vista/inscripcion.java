@@ -433,16 +433,21 @@ public class inscripcion extends javax.swing.JFrame {
 
         jLabel22.setText("*Centro de Enseñanza");
 
+        bgCentro.add(rAlava);
         rAlava.setText("Álava");
 
+        bgCentro.add(rFuera);
         rFuera.setText("Fuera de Álava");
 
         jLabel23.setText("*Modelo");
 
+        bgModelo.add(rA);
         rA.setText("A");
 
+        bgModelo.add(rB);
         rB.setText("B");
 
+        bgModelo.add(rD);
         rD.setText("D");
 
         jLabel24.setText("Discapacidad");
