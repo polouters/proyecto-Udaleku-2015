@@ -8,7 +8,9 @@ CREATE TABLE  Provincia (
   nombre VARCHAR(45) NOT NULL,
   PRIMARY KEY (idProv));
 
+CREATE SEQUENCE idProv_Seq MAXVAULE 3;
 
+INSERT INTO PROVINCIA VALUES (idProv_Seq-netxval,);
 -- -----------------------------------------------------
 -- Table Municipio
 -- -----------------------------------------------------
