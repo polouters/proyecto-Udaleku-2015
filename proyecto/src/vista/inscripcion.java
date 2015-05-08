@@ -9,6 +9,7 @@ import com.aeat.valida.Validador;
 import exc.DatoVacio;
 import exc.ValNif;
 import javax.swing.JOptionPane;
+import controlador.Main;
 
 /**
  *
@@ -510,6 +511,11 @@ public class inscripcion extends javax.swing.JFrame {
         });
 
         bDatos.setText("Proteccion datos Personales");
+        bDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDatosActionPerformed(evt);
+            }
+        });
 
         bCancelar.setText("Cancelar");
         bCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -586,9 +592,10 @@ public class inscripcion extends javax.swing.JFrame {
 
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
        if(JOptionPane.showConfirmDialog(this,"Estas seguro que quies salir.")==0){
-        controlador.inscripcionPrincipal();}
+        controladorV.inscripcionPrincipal();}
     }//GEN-LAST:event_bCancelarActionPerformed
 
+<<<<<<< HEAD
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
         // TODO add your handling code here:
         try{
@@ -619,6 +626,12 @@ public class inscripcion extends javax.swing.JFrame {
         catch(DatoVacio es){JOptionPane.showMessageDialog(this,"Rellene todos los datos obligatorios");}
         catch(Exception e){JOptionPane.showMessageDialog(this, "error: " + e);}
     }//GEN-LAST:event_bGuardarActionPerformed
+=======
+    private void bDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDatosActionPerformed
+       Main.AbrirAchivoHTML("../../proyecto-Udaleku-2015/ProtecionDeDatos/Datos.html");
+      
+    }//GEN-LAST:event_bDatosActionPerformed
+>>>>>>> Mikel
 
     /**
      * @param args the command line arguments
