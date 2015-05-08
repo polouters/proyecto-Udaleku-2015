@@ -39,6 +39,12 @@ public class controlador {
        vp.setVisible(true);
    }
    public static void usuarioPrincipal(){
-   
+       vu.dispose();
+       vp.setVisible(true);
+   }
+   public static void accesoUsuario(){
+       va.dispose();
+       vu = new usuario();
+       vu.setVisible(true);
    }
 }
