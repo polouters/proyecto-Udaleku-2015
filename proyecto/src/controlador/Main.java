@@ -30,17 +30,5 @@ public class Main {
     
         return true;
     }
-    public static void AbrirAchivoHTML(String Archivo){
-          try {
-
-            File objetofile = new File (Archivo);
-            Desktop.getDesktop().open(objetofile);
-
-     }catch (IOException ex) {
-
-            System.out.println(ex);
-     }
-          
-    }       
 }
     

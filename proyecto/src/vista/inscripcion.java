@@ -9,7 +9,6 @@ import com.aeat.valida.Validador;
 import exc.DatoVacio;
 import exc.ValNif;
 import javax.swing.JOptionPane;
-import controlador.Main;
 
 /**
  *
@@ -705,7 +704,7 @@ public class inscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_cProvinciaActionPerformed
 
     private void bDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDatosActionPerformed
-       Main.AbrirAchivoHTML("../../proyecto-Udaleku-2015/ProtecionDeDatos/Datos.html");
+       controladorV.inscripcionProtecionDatos();
       
     }//GEN-LAST:event_bDatosActionPerformed
 
