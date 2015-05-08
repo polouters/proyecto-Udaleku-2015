@@ -5,6 +5,8 @@
  */
 package vista;
 
+import controlador.Main;
+
 /**
  *
  * @author Ruben
@@ -60,5 +62,7 @@ public class controlador {
        vp = new principal();
        vp.setVisible(true);
    }
-   
+   public static boolean usuarioExiste(){
+   return Main.usuarioExiste();
+   }
 }
