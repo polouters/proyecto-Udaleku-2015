@@ -126,6 +126,8 @@ public class acceso extends javax.swing.JFrame {
             if(tNacimiento.getText().isEmpty()||tSorteo.getText().isEmpty()){throw new DatoVacio();}
             
             
+            
+            controlador.accesoUsuario();
         }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");}
         catch(Exception Ex){JOptionPane.showMessageDialog(this,"Error:\n "+Ex.getMessage());}
     }//GEN-LAST:event_bAccederActionPerformed

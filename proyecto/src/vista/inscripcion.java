@@ -579,7 +579,7 @@ public class inscripcion extends javax.swing.JFrame {
 
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
        if(JOptionPane.showConfirmDialog(this,"Estas seguro que quies salir.")==0){
-        controlador.InscripcionPrincipal();}
+        controlador.inscripcionPrincipal();}
     }//GEN-LAST:event_bCancelarActionPerformed
 
     /**

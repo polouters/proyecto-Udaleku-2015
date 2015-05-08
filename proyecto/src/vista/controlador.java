@@ -15,6 +15,8 @@ public class controlador {
    private static principal vp = new principal();
    private static acceso va;
    private static inscripcion vi; 
+   private static usuario vu;
+   
    
    public static void abrirPrincipal(){
        
@@ -32,9 +34,17 @@ public class controlador {
        vi = new inscripcion();
        vi.setVisible(true);
    }
-   public static void InscripcionPrincipal(){
+   public static void inscripcionPrincipal(){
        vi.dispose();
        vp.setVisible(true);
    }
-   
+   public static void usuarioPrincipal(){
+       vu.dispose();
+       vp.setVisible(true);
+   }
+   public static void accesoUsuario(){
+       va.dispose();
+       vu = new usuario();
+       vu.setVisible(true);
+   }
 }
