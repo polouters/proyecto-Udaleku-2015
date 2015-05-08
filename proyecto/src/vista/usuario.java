@@ -17,6 +17,15 @@ public class usuario extends javax.swing.JFrame {
     public usuario() {
         initComponents();
         setLocationRelativeTo(null);
+        tHora.setEnabled(false);
+        tNumero.setEnabled(false);
+        tParticipante.setEnabled(false);
+        dCita.setEnabled(false);
+        dNacimiento.setEnabled(false);
+        jOrden.setEnabled(false);
+        jSituacion.setEnabled(false);
+        jParticipante2.setEnabled(false);
+        jParticipante3.setEnabled(false);
               
     }
 
