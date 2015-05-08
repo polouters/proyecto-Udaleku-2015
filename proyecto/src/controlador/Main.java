@@ -23,5 +23,8 @@ public class Main {
         //Apertura de ventana
         controlador.abrirPrincipal();
     }
+    public static boolean usuarioExiste(){
     
+        return true;
+    }
 }
