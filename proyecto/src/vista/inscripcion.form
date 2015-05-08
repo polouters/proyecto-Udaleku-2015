@@ -11,7 +11,6 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -72,7 +71,6 @@
                           <Component id="pDatosM" alignment="0" max="32767" attributes="0"/>
                           <Component id="pOtros" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="293" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="bDatos" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
