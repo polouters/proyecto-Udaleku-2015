@@ -19,6 +19,7 @@ public class controladorV {
    private static inscripcion vi; 
    private static usuario vu;
    private static administrador vad;
+   private static proteccionDatos vpd;
    
    
    public static void abrirPrincipal(){
@@ -64,6 +65,16 @@ public class controladorV {
    }
    public static boolean usuarioExiste(){
    return Main.usuarioExiste();
+   }
+
+   public static void inscripcionProtecionDatos(){
+       vi.setVisible(false);
+       vpd = new proteccionDatos();
+       vpd.setVisible(true);
+   }
+   public static void ProtecionDatosinscripcion(){
+       vpd.dispose();
+       vi.setVisible(true);
    }
    public static void borrarInscripcion(){
        vi.dispose();

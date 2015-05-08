@@ -9,7 +9,6 @@ import com.aeat.valida.Validador;
 import exc.DatoVacio;
 import exc.ValNif;
 import javax.swing.JOptionPane;
-import controlador.Main;
 
 /**
  *
@@ -637,7 +636,7 @@ public class inscripcion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
-       if(JOptionPane.showConfirmDialog(this,"Estas seguro que quies salir.")==0){
+       if(JOptionPane.showConfirmDialog(this,"Estas seguro que desea salir.")==0){
         controladorV.inscripcionPrincipal();}
     }//GEN-LAST:event_bCancelarActionPerformed
 
@@ -712,13 +711,14 @@ public class inscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_cProvinciaActionPerformed
 
     private void bDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDatosActionPerformed
-       Main.AbrirAchivoHTML("../../proyecto-Udaleku-2015/ProtecionDeDatos/Datos.html");
+       controladorV.inscripcionProtecionDatos();
       
     }//GEN-LAST:event_bDatosActionPerformed
 
     private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
         // TODO add your handling code ere:
-        controladorV.borrarInscripcion();
+        if(JOptionPane.showConfirmDialog(this,"Esta seguro de borrar los datos.")==0){
+        controladorV.borrarInscripcion();}
                 
                 
     }//GEN-LAST:event_bBorrarActionPerformed
