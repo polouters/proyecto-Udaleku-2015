@@ -12,14 +12,15 @@ package vista;
 
 public class controlador {
     
-   private static principal vp = new principal();
+   private static principal vp;
    private static acceso va;
    private static inscripcion vi; 
    private static usuario vu;
+   private static administrador vad;
    
    
    public static void abrirPrincipal(){
-       
+   vp = new principal();    
    vp.setVisible(true);
    
    }
@@ -36,10 +37,12 @@ public class controlador {
    }
    public static void inscripcionPrincipal(){
        vi.dispose();
+       vp = new principal();
        vp.setVisible(true);
    }
    public static void usuarioPrincipal(){
        vu.dispose();
+       vp = new principal();
        vp.setVisible(true);
    }
    public static void accesoUsuario(){
@@ -47,4 +50,15 @@ public class controlador {
        vu = new usuario();
        vu.setVisible(true);
    }
+   public static void accesoAdmin(){
+       va.dispose();
+       vad = new administrador();
+       vad.setVisible(true);       
+   }
+   public static void adminPrincipal(){
+       vad.dispose();
+       vp = new principal();
+       vp.setVisible(true);
+   }
+   
 }
