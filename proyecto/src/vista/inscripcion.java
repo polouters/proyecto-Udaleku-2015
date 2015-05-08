@@ -65,7 +65,7 @@ public class inscripcion extends javax.swing.JFrame {
         dNacimiento = new com.toedter.calendar.JDateChooser();
         pDireccion = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        cMunicipio = new javax.swing.JComboBox();
+        cProvincia = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
         cLocalidad = new javax.swing.JComboBox();
         jLabel14 = new javax.swing.JLabel();
@@ -281,9 +281,20 @@ public class inscripcion extends javax.swing.JFrame {
 
         jLabel12.setText("*Municipio");
 
-        jLabel13.setText("*Localidad");
+        cProvincia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una provincia" }));
+        cProvincia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cProvinciaActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("*Provincia");
+
+        cLocalidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selececione una municipio" }));
 
         jLabel14.setText("*Calle");
+
+        cCalle.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una calle" }));
 
         jLabel15.setText("Número");
 
@@ -302,24 +313,52 @@ public class inscripcion extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        tTelef1.setEnabled(false);
 
         try {
             tTelef3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        tTelef3.setEnabled(false);
 
         try {
             tTelef4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        tTelef4.setEnabled(false);
 
         try {
             tTelef2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        tTelef2.setEnabled(false);
+
+        cTelef1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                cTelef1StateChanged(evt);
+            }
+        });
+
+        cTelef2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                cTelef2StateChanged(evt);
+            }
+        });
+
+        cTelef3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                cTelef3StateChanged(evt);
+            }
+        });
+
+        cTelef4.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                cTelef4StateChanged(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel21.setText("Indique el teléfono de localización durante la estancia en la colonia, marcando la casilla al lado del teléfono");
@@ -329,9 +368,9 @@ public class inscripcion extends javax.swing.JFrame {
         pDireccionLayout.setHorizontalGroup(
             pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pDireccionLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
                 .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pDireccionLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
                         .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel20)
                             .addComponent(jLabel15)
@@ -359,7 +398,7 @@ public class inscripcion extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tMano, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cMunicipio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cProvincia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cLocalidad, 0, 218, Short.MAX_VALUE))
                             .addComponent(cCalle, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pDireccionLayout.createSequentialGroup()
@@ -379,7 +418,7 @@ public class inscripcion extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cTelef4))))
                     .addGroup(pDireccionLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
+                        .addGap(54, 54, 54)
                         .addComponent(jLabel21)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -388,12 +427,12 @@ public class inscripcion extends javax.swing.JFrame {
             .addGroup(pDireccionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(cMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
                 .addGap(18, 18, 18)
                 .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(cLocalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cLocalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
                 .addGap(18, 18, 18)
                 .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
@@ -620,6 +659,42 @@ public class inscripcion extends javax.swing.JFrame {
         catch(Exception e){JOptionPane.showMessageDialog(this, "error: " + e);}
     }//GEN-LAST:event_bGuardarActionPerformed
 
+    private void cTelef1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_cTelef1StateChanged
+        // TODO add your handling code here:
+        if(cTelef1.isSelected())
+            tTelef1.setEnabled(true);
+        else
+           tTelef1.setEnabled(false); 
+    }//GEN-LAST:event_cTelef1StateChanged
+
+    private void cTelef2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_cTelef2StateChanged
+        // TODO add your handling code here:
+        if(cTelef2.isSelected())
+            tTelef2.setEnabled(true);
+        else
+           tTelef2.setEnabled(false);
+    }//GEN-LAST:event_cTelef2StateChanged
+
+    private void cTelef3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_cTelef3StateChanged
+        // TODO add your handling code here:
+        if(cTelef3.isSelected())
+            tTelef3.setEnabled(true);
+        else
+           tTelef3.setEnabled(false);
+    }//GEN-LAST:event_cTelef3StateChanged
+
+    private void cTelef4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_cTelef4StateChanged
+        // TODO add your handling code here:
+        if(cTelef4.isSelected())
+            tTelef4.setEnabled(true);
+        else
+           tTelef4.setEnabled(false);
+    }//GEN-LAST:event_cTelef4StateChanged
+
+    private void cProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cProvinciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cProvinciaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -666,7 +741,7 @@ public class inscripcion extends javax.swing.JFrame {
     private javax.swing.JComboBox cCalle;
     private javax.swing.JCheckBox cDisca;
     private javax.swing.JComboBox cLocalidad;
-    private javax.swing.JComboBox cMunicipio;
+    private javax.swing.JComboBox cProvincia;
     private javax.swing.JCheckBox cTelef1;
     private javax.swing.JCheckBox cTelef2;
     private javax.swing.JCheckBox cTelef3;
