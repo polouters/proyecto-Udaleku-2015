@@ -251,7 +251,7 @@ public class usuario extends javax.swing.JFrame {
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         // TODO add your handling code here:
-        controlador.usuarioPrincipal();
+        controladorV.usuarioPrincipal();
         
     }//GEN-LAST:event_volverActionPerformed
 

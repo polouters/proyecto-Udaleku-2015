@@ -184,12 +184,12 @@ public class administrador extends javax.swing.JFrame {
 
     private void cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionActionPerformed
         // TODO add your handling code here:
-        controlador.adminPrincipal();
+        controladorV.adminPrincipal();
     }//GEN-LAST:event_cerrarSesionActionPerformed
 
     private void cerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarSesionMouseClicked
         // TODO add your handling code here:
-        controlador.adminPrincipal();
+        controladorV.adminPrincipal();
     }//GEN-LAST:event_cerrarSesionMouseClicked
 
     /**

@@ -136,7 +136,7 @@ public class principal extends javax.swing.JFrame {
 
     private void bEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEntrarActionPerformed
         // TODO add your handling code here:
-        controlador.principalAcceso();
+        controladorV.principalAcceso();
     }//GEN-LAST:event_bEntrarActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed

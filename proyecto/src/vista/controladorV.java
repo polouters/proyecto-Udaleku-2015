@@ -12,7 +12,7 @@ import controlador.Main;
  * @author Ruben
  */
 
-public class controlador {
+public class controladorV {
     
    private static principal vp;
    private static acceso va;
