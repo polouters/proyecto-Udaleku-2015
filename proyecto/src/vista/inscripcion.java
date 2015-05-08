@@ -5,6 +5,9 @@
  */
 package vista;
 
+import com.aeat.valida.Validador;
+import exc.DatoVacio;
+import exc.ValNif;
 import javax.swing.JOptionPane;
 
 /**
@@ -495,6 +498,11 @@ public class inscripcion extends javax.swing.JFrame {
         bBorrar.setText("Borrar");
 
         bGuardar.setText("Guardar");
+        bGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bGuardarActionPerformed(evt);
+            }
+        });
 
         bDatos.setText("Proteccion datos Personales");
 
@@ -575,6 +583,37 @@ public class inscripcion extends javax.swing.JFrame {
        if(JOptionPane.showConfirmDialog(this,"Estas seguro que quies salir.")==0){
         controlador.inscripcionPrincipal();}
     }//GEN-LAST:event_bCancelarActionPerformed
+
+    private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
+        // TODO add your handling code here:
+        try{
+        if(tDNIT.getText().isEmpty() || tApe1T.getText().isEmpty() || tApe2T.getText().isEmpty() || tNombreT.getText().isEmpty() || tApe1M.getText().isEmpty() 
+                || tApe2M.getText().isEmpty() || tEscalera.getText().isEmpty() || tLetra.getText().isEmpty() || tMano.getText().isEmpty() || tNombreM.getText().isEmpty()
+                || tNumero.getText().isEmpty() || tPiso.getText().isEmpty() || tTelef1.getText().isEmpty())
+            throw  new DatoVacio();
+        
+        
+        Validador validador = new Validador();
+        int e = validador.checkNif(tDNIT.getText());
+        
+        if(e < 0)
+            throw new ValNif();
+        
+        if(tDNIM.getText().isEmpty()== false){
+        Validador validadot = new Validador();
+        int w = validadot.checkNif(tDNIM.getText());
+        
+        if(w < 0)
+            throw new ValNif();
+        }
+            
+        
+        JOptionPane.showMessageDialog(this,"La inscripcion se ha realizado correctamente");
+        }
+        catch(ValNif edx){JOptionPane.showMessageDialog(this,"El dni introducido no es correcto");}
+        catch(DatoVacio es){JOptionPane.showMessageDialog(this,"Rellene todos los datos obligatorios");}
+        catch(Exception e){JOptionPane.showMessageDialog(this, "error: " + e);}
+    }//GEN-LAST:event_bGuardarActionPerformed
 
     /**
      * @param args the command line arguments
