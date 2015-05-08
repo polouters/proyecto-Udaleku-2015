@@ -636,7 +636,7 @@ public class inscripcion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
-       if(JOptionPane.showConfirmDialog(this,"Estas seguro que quies salir.")==0){
+       if(JOptionPane.showConfirmDialog(this,"Estas seguro que desea salir.")==0){
         controladorV.inscripcionPrincipal();}
     }//GEN-LAST:event_bCancelarActionPerformed
 
@@ -717,7 +717,8 @@ public class inscripcion extends javax.swing.JFrame {
 
     private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
         // TODO add your handling code ere:
-        controladorV.borrarInscripcion();
+        if(JOptionPane.showConfirmDialog(this,"Esta seguro de borrar los datos.")==0){
+        controladorV.borrarInscripcion();}
                 
                 
     }//GEN-LAST:event_bBorrarActionPerformed
