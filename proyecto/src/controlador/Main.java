@@ -25,8 +25,9 @@ public class Main {
         //Apertura de ventana
         controladorV.abrirPrincipal();
     }
-    public static boolean usuarioExiste(String nSorteo, String fNacimiento){
-      solicitud s1 =  solicitudBD.consultaAcceso(nSorteo,fNacimiento);
+    public static boolean usuarioExiste(String jDni, String fNacimiento){
+      solicitud s1 =  solicitudBD.consultaAcceso(jDni,fNacimiento);
+      
         return true;
     }
 }

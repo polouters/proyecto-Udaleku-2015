@@ -502,6 +502,11 @@ DROP TABLE  Sorteo cascade CONSTRAINTS ;
 
 CREATE SEQUENCE idSorteo_Seq MAXVALUE 10;
 
+insert into sorteo values (idSorteo_Seq.nextval,
+TO_DATE('02/05/2015','DD/MM/YYYY'),
+TO_DATE('20/05/2015','DD/MM/YYYY'), 
+TO_DATE('24/05/2015','DD/MM/YYYY'));
+
 -- -----------------------------------------------------
 -- Table Solicitud
 -- -----------------------------------------------------
@@ -519,6 +524,20 @@ CREATE TABLE  Solicitud (
     REFERENCES Sorteo (idSorteo));
 
 CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
+
+insert into solicitud values(nSolicitud_Seq.nextval,
+  TO_DATE('29/05/2015','DD/MM/YYYY'),
+TO_DATE('12:00:00','HH:MI:SS'),
+'adjudicada',
+1);
+/** pruebas 
+insert into solicitud values(nSolicitud_Seq.nextval,
+sysdate,
+TO_DATE('12:00:00','HH24:MI:SS'),
+'adjudicada',
+1);
+*/
+
 
 -- -----------------------------------------------------
 -- Table Inscripcion
