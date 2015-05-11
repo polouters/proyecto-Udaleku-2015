@@ -63,8 +63,8 @@ public class controladorV {
        vp = new principal();
        vp.setVisible(true);
    }
-   public static boolean usuarioExiste(){
-   return Main.usuarioExiste();
+   public static boolean usuarioExiste(String nSorteo, String fNacimiento){
+   return Main.usuarioExiste(nSorteo,fNacimiento);
    }
 
    public static void inscripcionProtecionDatos(){

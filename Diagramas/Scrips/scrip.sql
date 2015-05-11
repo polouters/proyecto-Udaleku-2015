@@ -511,6 +511,7 @@ CREATE TABLE  Solicitud (
   nSolicitud NUMBER(4) NOT NULL,
   fecha DATE NULL,
   hora DATE NULL,
+  situacion VARCHAR(35),
   idSorteo NUMBER(4) NOT NULL,
   PRIMARY KEY (nSolicitud),
   CONSTRAINT fk_Solicitud_Sorteo1
