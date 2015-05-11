@@ -333,6 +333,47 @@ CREATE TABLE  Calle (
 
 CREATE SEQUENCE idCalle_Seq MAXVALUE 1000;
 
+
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Barratxi',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Portal de Zurbano',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Olmos',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Chiquita',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Dato',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Plaza de la Constitución',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Fueros',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Mayor',5);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sagamin',5;
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Alaiza',6);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Santsaerreka',7);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Ermitaurre',7);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Pio XII',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Ruperto Urquijo',32);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Virgen del Carmen',32);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Lamuza',32);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Zumalacárregui',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Cerrajería',33);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Maskuribai',33);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Lucas Rey',34);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Concepción',36);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'María Díaz de Haro',4);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Julio Urquijo',4);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'María Díaz de Haro',4);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Mayor',4);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Basagoiti',4);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Konporte',4);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Adolfo Urioste',4);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Juan Calzada',4);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Mayor',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'San Juan',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'San Marcial',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'El Boulevard',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Elkano',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Libertad',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Aldaba Txiki',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Santa Clara',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Amarotz',3);
+
+
 -- -----------------------------------------------------
 -- Table Vivienda
 -- -----------------------------------------------------
@@ -383,6 +424,26 @@ DROP TABLE  Centro cascade CONSTRAINTS ;
     REFERENCES Provincia (idProv));
 
 CREATE SEQUENCE idCentro_Seq MAXVALUE 100;
+
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Abedaño Ikastola','A',1);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aranbizkarra Ikastola','D',1);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Carmelitas-Sagrado Corazón','A',1);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aguraingo Haurreskola','D',1);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Laudio Ikastola','D',1);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aresketa Ikastola','A',1);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'San Bizente Ikastola','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Abusu Ikastola','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Adagio Eskola','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Barrutialde','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Barrutia','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Allende Salazar-pasealeku','D',3);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'San Fidel Ikastola','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Gernika Ikastola','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Corazón de María','A',3);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aldako','D',3);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Bidebieta','D',3);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Catalina Erauso','A',3);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Tolosako Haurreskola','D',3);
 
 -- -----------------------------------------------------
 -- Table Menor
