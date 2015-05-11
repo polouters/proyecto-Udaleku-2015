@@ -16,8 +16,8 @@ import java.sql.SQLException;
 public class genericoBD {
     private static String nombreBaseDatos ="proyecto";
     private static String url="jdbc:mysql://localhost:3306/"+nombreBaseDatos;
-    private static String usuario="java";
-    private static String password="java";
+    private static String usuario="SCOTT";
+    private static String password="polo";
     
     private static Connection con;
     
@@ -33,7 +33,7 @@ public class genericoBD {
          con = DriverManager.getConnection(url,usuario,password);
          */
           DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
-          con = DriverManager.getConnection("jdbc:oracle:thin:@server224:1521:orcl",usuario,password);
+          con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.56.2:5560:polo",usuario,password);
                                                // driver@machineName:port:SID ,  userid,  password
  
          if (con!=null){
