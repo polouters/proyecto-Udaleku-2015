@@ -30,7 +30,9 @@ DROP SEQUENCE nSolicitud_Seq;
 /* idIns_Seq */
 DROP SEQUENCE idIns_Seq;
 
-
+-- -----------------------------------------------------
+-- Table Provincia
+-- -----------------------------------------------------
 DROP TABLE  Provincia  CASCADE CONSTRAINTS;
 
 CREATE TABLE  Provincia (
