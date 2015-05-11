@@ -5,6 +5,8 @@
  */
 package controlador;
 
+import bd.*;
+import uml.*;
 import vista.*;
 
 /**
@@ -23,8 +25,8 @@ public class Main {
         //Apertura de ventana
         controladorV.abrirPrincipal();
     }
-    public static boolean usuarioExiste(){
-    
+    public static boolean usuarioExiste(String nSorteo, String fNacimiento){
+      solicitud s1 =  solicitudBD.consultaAcceso(nSorteo,fNacimiento);
         return true;
     }
 }

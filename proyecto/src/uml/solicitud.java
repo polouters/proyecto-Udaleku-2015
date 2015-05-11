@@ -9,9 +9,18 @@ public class solicitud {
 	private Date fecha;
 	private Calendar hora;
         private sorteo srt;
+        private String situacion;
         private inscripcion[] lInsc = new inscripcion[2];
 
     public solicitud() {
+    }
+
+    public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt, String situacion) {
+        this.nSolicitud = nSolicitud;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.srt = srt;
+        this.situacion = situacion;
     }
 
     public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt,inscripcion[] lInsc) {

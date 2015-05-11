@@ -149,7 +149,7 @@ public class acceso extends javax.swing.JFrame {
             if(tSorteo.getText().compareToIgnoreCase("admin")==0 && tNacimiento.getText().compareToIgnoreCase("admin")==0){
                 controladorV.accesoAdmin();
             }else{
-              boolean existe=  controladorV.usuarioExiste();
+              boolean existe=  controladorV.usuarioExiste(tSorteo.getText().toString(), tNacimiento.getText().toString());
                 controladorV.accesoUsuario();
             }
             

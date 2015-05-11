@@ -344,7 +344,7 @@ INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Dato',47);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Plaza de la Constitución',47);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Fueros',47);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Mayor',5);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sagamin',5;
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sagamin',5);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Alaiza',6);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Santsaerreka',7);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Ermitaurre',7);
@@ -430,13 +430,13 @@ CREATE SEQUENCE idCentro_Seq MAXVALUE 100;
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Abedaño Ikastola','A',1);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aranbizkarra Ikastola','D',1);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Carmelitas-Sagrado Corazón','A',1);
-INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aguraingo Haurreskola','D',1);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aguraingo Haurreskola','B',1);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Laudio Ikastola','D',1);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aresketa Ikastola','A',1);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'San Bizente Ikastola','D',2);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Abusu Ikastola','D',2);
-INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Adagio Eskola','D',2);
-INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Barrutialde','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Adagio Eskola','B',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Barrutialde','B',2);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Barrutia','D',2);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Allende Salazar-pasealeku','D',3);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'San Fidel Ikastola','D',2);
@@ -513,6 +513,7 @@ CREATE TABLE  Solicitud (
   nSolicitud NUMBER(4) NOT NULL,
   fecha DATE NULL,
   hora DATE NULL,
+  situacion VARCHAR(35),
   idSorteo NUMBER(4) NOT NULL,
   PRIMARY KEY (nSolicitud),
   CONSTRAINT fk_Solicitud_Sorteo1
