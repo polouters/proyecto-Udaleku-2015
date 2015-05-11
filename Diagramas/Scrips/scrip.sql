@@ -8,7 +8,7 @@ CREATE TABLE  Provincia (
   nombre VARCHAR(45) NOT NULL,
   PRIMARY KEY (idProv));
 
-CREATE SEQUENCE idProv_Seq MAXVALUE 3;
+CREATE OR REPLACE SEQUENCE idProv_Seq MAXVALUE 3;
 
 INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Alava/Araba');
 INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Vizcaya/Bizkaia');
@@ -28,7 +28,7 @@ CREATE TABLE  Municipio (
     FOREIGN KEY (idProv)
     REFERENCES Provincia (idProv));
 
-CREATE SEQUENCE idMunicipio_Seq MAXVALUE 300;
+CREATE OR REPLACE SEQUENCE idMunicipio_Seq MAXVALUE 300;
 
 /* Municipios de Araba*/
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Alegría-Dulantzi', 1);
@@ -301,7 +301,7 @@ CREATE TABLE  Calle (
     FOREIGN KEY (idMunicipio)
     REFERENCES Municipio (idMunicipio));
 
-CREATE SEQUENCE idCalle_Seq MAXVALUE 1000;
+CREATE OR REPLACE SEQUENCE idCalle_Seq MAXVALUE 1000;
 
 -- -----------------------------------------------------
 -- Table Vivienda
@@ -316,7 +316,7 @@ CREATE TABLE  Vivienda (
   mano VARCHAR(10) NULL,
   PRIMARY KEY (idVivienda));
 
-CREATE SEQUENCE idVivienda_Seq MAXVALUE 1000;
+CREATE OR REPLACE SEQUENCE idVivienda_Seq MAXVALUE 1000;
 
 -- -----------------------------------------------------
 -- Table Direcccion
@@ -335,7 +335,7 @@ CREATE TABLE  Direccion (
     FOREIGN KEY (idVivienda)
     REFERENCES Vivienda (idVivienda));
 
-CREATE SEQUENCE idDireccion_Seq MAXVALUE 1000;
+CREATE OR REPLACE SEQUENCE idDireccion_Seq MAXVALUE 1000;
 
 -- -----------------------------------------------------
 -- Table Centro
@@ -352,7 +352,7 @@ DROP TABLE  Centro cascade CONSTRAINT ;
     FOREIGN KEY (idProv)
     REFERENCES Provincia (idProv));
 
-CREATE SEQUENCE idCentro_Seq MAXVALUE 100;
+CREATE OR REPLACE SEQUENCE idCentro_Seq MAXVALUE 100;
 
 -- -----------------------------------------------------
 -- Table Menor
@@ -379,7 +379,7 @@ CREATE TABLE  Menor (
     FOREIGN KEY (idCentro)
     REFERENCES Centro (idCentro));
 
-CREATE SEQUENCE codMenor_Seq MAXVALUE 500;
+CREATE OR REPLACE SEQUENCE codMenor_Seq MAXVALUE 500;
 
 -- -----------------------------------------------------
 -- Table Tutor
@@ -409,7 +409,7 @@ DROP TABLE  Sorteo cascade CONSTRAINT ;
   diaSorteo DATE NOT NULL,
   PRIMARY KEY (idSorteo));
 
-CREATE SEQUENCE idSorteo_Seq MAXVALUE 10;
+CREATE OR REPLACE SEQUENCE idSorteo_Seq MAXVALUE 10;
 
 -- -----------------------------------------------------
 -- Table Solicitud
@@ -426,7 +426,7 @@ CREATE TABLE  Solicitud (
     FOREIGN KEY (idSorteo)
     REFERENCES Sorteo (idSorteo));
 
-CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
+CREATE OR REPLACE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
 
 -- -----------------------------------------------------
 -- Table Inscripcion
@@ -449,6 +449,6 @@ CREATE TABLE  Inscripcion (
     FOREIGN KEY (codMenor)
     REFERENCES Menor (codMenor));
 
-CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
+CREATE OR REPLACE SEQUENCE idIns_Seq MAXVALUE 1000;
 
 
