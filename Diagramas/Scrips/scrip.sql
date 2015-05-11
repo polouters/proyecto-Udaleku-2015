@@ -342,7 +342,7 @@ INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Dato',47);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Plaza de la Constitución',47);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Fueros',47);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Mayor',5);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sagamin',5;
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sagamin',5);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Alaiza',6);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Santsaerreka',7);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Ermitaurre',7);
