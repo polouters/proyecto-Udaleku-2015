@@ -1,7 +1,37 @@
+/* Eliminar Secuencias */
+
+/* idProv_Seq */
+DROP SEQUENCE idProv_Seq;
+
+/* idMunicipio_Seq */
+DROP SEQUENCE idMunicipio_Seq;
+
+/* idCalle_Seq */ 
+DROP SEQUENCE idCalle_Seq;
+
+/* idVivienda_Seq */
+DROP SEQUENCE idVivienda_Seq;
+
+/* idDireccion_Seq */
+DROP SEQUENCE idDireccion_Seq;
+
+/* idCentro_Seq */
+DROP SEQUENCE idCentro_Seq;
+
+/* codMenor_Seq */
+DROP SEQUENCE codMenor_Seq;
+
+/* idSorteo_Seq */
+DROP SEQUENCE idSorteo_Seq;
+
+/* nSolicitud_Seq */
+DROP SEQUENCE nSolicitud_Seq;
+
+/* idIns_Seq */
+DROP SEQUENCE idIns_Seq;
 
 
-
-DROP TABLE  Provincia  CASCADE CONSTRAINT;
+DROP TABLE  Provincia  CASCADE CONSTRAINTS;
 
 CREATE TABLE  Provincia (
   idProv NUMBER(4) not null,
@@ -17,7 +47,7 @@ INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Guipuzcoa/Gipuzkua');
 -- -----------------------------------------------------
 -- Table Municipio
 -- -----------------------------------------------------
-DROP TABLE  Municipio  cascade CONSTRAINT;
+DROP TABLE  Municipio  cascade CONSTRAINTS;
 
 CREATE TABLE  Municipio (
   idMunicipio NUMBER(4) NOT NULL,
@@ -290,7 +320,7 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Zumarraga', 3);
 -- -----------------------------------------------------
 -- Table Calle
 -- -----------------------------------------------------
-DROP TABLE  Calle cascade CONSTRAINT ;
+DROP TABLE  Calle cascade CONSTRAINTS ;
 
 CREATE TABLE  Calle (
   idCalle NUMBER(4) NOT NULL,
@@ -306,7 +336,7 @@ CREATE SEQUENCE idCalle_Seq MAXVALUE 1000;
 -- -----------------------------------------------------
 -- Table Vivienda
 -- -----------------------------------------------------
-DROP TABLE  Vivienda  cascade CONSTRAINT ;
+DROP TABLE  Vivienda  cascade CONSTRAINTS ;
 
 CREATE TABLE  Vivienda (
   idVivienda NUMBER(4) NOT NULL,
@@ -321,7 +351,7 @@ CREATE SEQUENCE idVivienda_Seq MAXVALUE 1000;
 -- -----------------------------------------------------
 -- Table Direcccion
 -- -----------------------------------------------------
-DROP TABLE  Direcccion cascade CONSTRAINT ;
+DROP TABLE  Direccion cascade CONSTRAINTS ;
 
 CREATE TABLE  Direccion (
   idCalle NUMBER(4) NOT NULL,
@@ -340,7 +370,7 @@ CREATE SEQUENCE idDireccion_Seq MAXVALUE 1000;
 -- -----------------------------------------------------
 -- Table Centro
 -- -----------------------------------------------------
-DROP TABLE  Centro cascade CONSTRAINT ;
+DROP TABLE  Centro cascade CONSTRAINTS ;
 
  CREATE TABLE  Centro (
   idCentro NUMBER(4) NOT NULL,
@@ -357,7 +387,7 @@ CREATE SEQUENCE idCentro_Seq MAXVALUE 100;
 -- -----------------------------------------------------
 -- Table Menor
 -- -----------------------------------------------------
-DROP TABLE  Menor cascade CONSTRAINT ;
+DROP TABLE  Menor cascade CONSTRAINTS ;
 
 CREATE TABLE  Menor (
   codMenor NUMBER(4) NOT NULL,
@@ -372,9 +402,9 @@ CREATE TABLE  Menor (
   idVivienda NUMBER(4) NOT NULL,
   idCentro NUMBER(4) NOT NULL,
   PRIMARY KEY (codMenor),
-  CONSTRAINT fk_Menor_Direcccion1
+  CONSTRAINT fk_Menor_Direccion1
     FOREIGN KEY (idCalle , idVivienda)
-    REFERENCES Direcccion (idCalle , idVivienda),
+    REFERENCES Direccion (idCalle , idVivienda),
   CONSTRAINT fk_Menor_Centro1
     FOREIGN KEY (idCentro)
     REFERENCES Centro (idCentro));
@@ -384,7 +414,7 @@ CREATE SEQUENCE codMenor_Seq MAXVALUE 500;
 -- -----------------------------------------------------
 -- Table Tutor
 -- -----------------------------------------------------
-DROP TABLE  Tutor cascade CONSTRAINT ;
+DROP TABLE  Tutor cascade CONSTRAINTS ;
 
 CREATE TABLE  Tutor (
   dni VARCHAR(9) NOT NULL,
@@ -400,7 +430,7 @@ CREATE TABLE  Tutor (
 -- -----------------------------------------------------
 -- Table Sorteo
 -- -----------------------------------------------------
-DROP TABLE  Sorteo cascade CONSTRAINT ;
+DROP TABLE  Sorteo cascade CONSTRAINTS ;
 
  CREATE TABLE  Sorteo (
   idSorteo NUMBER(4) NOT NULL,
@@ -414,7 +444,7 @@ CREATE SEQUENCE idSorteo_Seq MAXVALUE 10;
 -- -----------------------------------------------------
 -- Table Solicitud
 -- -----------------------------------------------------
-DROP TABLE  Solicitud  cascade CONSTRAINT;
+DROP TABLE  Solicitud  cascade CONSTRAINTS;
 
 CREATE TABLE  Solicitud (
   nSolicitud NUMBER(4) NOT NULL,
@@ -431,7 +461,7 @@ CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
 -- -----------------------------------------------------
 -- Table Inscripcion
 -- -----------------------------------------------------
-DROP TABLE  Inscripcion cascade CONSTRAINT ;
+DROP TABLE  Inscripcion cascade CONSTRAINTS ;
 
 CREATE TABLE  Inscripcion (
   idIns NUMBER(4) NOT NULL,
