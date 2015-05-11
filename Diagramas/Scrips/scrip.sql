@@ -4,7 +4,7 @@
 DROP TABLE  Provincia  CASCADE CONSTRAINT;
 
 CREATE TABLE  Provincia (
-  idProv INT not null,
+  idProv NUMBER(4) not null,
   nombre VARCHAR(45) NOT NULL,
   PRIMARY KEY (idProv));
 
@@ -20,9 +20,9 @@ INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Guipuzcoa/Gipuzkua');
 DROP TABLE  Municipio  cascade CONSTRAINT;
 
 CREATE TABLE  Municipio (
-  idMunicipio INT NOT NULL,
+  idMunicipio NUMBER(4) NOT NULL,
   nombre VARCHAR(45) NOT NULL,
-  idProv INT NOT NULL,
+  idProv NUMBER(4) NOT NULL,
   PRIMARY KEY (idMunicipio),
   CONSTRAINT fk_Municipio_Provincia
     FOREIGN KEY (idProv)
@@ -293,9 +293,9 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Zumarraga', 3);
 DROP TABLE  Calle cascade CONSTRAINT ;
 
 CREATE TABLE  Calle (
-  idCalle INT NOT NULL,
+  idCalle NUMBER(4) NOT NULL,
   nombre VARCHAR(45) NOT NULL,
-  idMunicipio INT NOT NULL,
+  idMunicipio NUMBER(4) NOT NULL,
   PRIMARY KEY (idCalle),
   CONSTRAINT fk_Calle_Municipio1
     FOREIGN KEY (idMunicipio)
@@ -309,7 +309,7 @@ CREATE SEQUENCE idCalle_Seq MAXVALUE 1000;
 DROP TABLE  Vivienda  cascade CONSTRAINT ;
 
 CREATE TABLE  Vivienda (
-  idVivienda INT NOT NULL,
+  idVivienda NUMBER(4) NOT NULL,
   numero VARCHAR(4) NOT NULL,
   piso VARCHAR(3) NULL,
   letra VARCHAR(1) NULL,
@@ -324,8 +324,8 @@ CREATE SEQUENCE idVivienda_Seq MAXVALUE 1000;
 DROP TABLE  Direcccion cascade CONSTRAINT ;
 
 CREATE TABLE  Direccion (
-  idCalle INT NOT NULL,
-  idVivienda INT NOT NULL,
+  idCalle NUMBER(4) NOT NULL,
+  idVivienda NUMBER(4) NOT NULL,
   cp VARCHAR(5) NOT NULL,
   PRIMARY KEY (idCalle, idVivienda),
   CONSTRAINT fk_DIR_CALLE
@@ -343,10 +343,10 @@ CREATE SEQUENCE idDireccion_Seq MAXVALUE 1000;
 DROP TABLE  Centro cascade CONSTRAINT ;
 
  CREATE TABLE  Centro (
-  idCentro INT NOT NULL,
+  idCentro NUMBER(4) NOT NULL,
   nombre VARCHAR(45) NOT NULL,
   modelo VARCHAR(1) NOT NULL,
-  idProv INT NOT NULL,
+  idProv NUMBER(4) NOT NULL,
   PRIMARY KEY (idCentro),
   CONSTRAINT fk_Centro_Provincia1
     FOREIGN KEY (idProv)
@@ -360,7 +360,7 @@ CREATE SEQUENCE idCentro_Seq MAXVALUE 100;
 DROP TABLE  Menor cascade CONSTRAINT ;
 
 CREATE TABLE  Menor (
-  codMenor INT NOT NULL,
+  codMenor NUMBER(4) NOT NULL,
   nombre VARCHAR(45) NOT NULL,
   ape1 VARCHAR(45) NOT NULL,
   ape2 VARCHAR(45) NOT NULL,
@@ -368,9 +368,9 @@ CREATE TABLE  Menor (
   dni VARCHAR(9) NULL,
   fechaNac DATE NOT NULL,
   discapacidad VARCHAR(45) NOT NULL,
-  idCalle INT NOT NULL,
-  idVivienda INT NOT NULL,
-  idCentro INT NOT NULL,
+  idCalle NUMBER(4) NOT NULL,
+  idVivienda NUMBER(4) NOT NULL,
+  idCentro NUMBER(4) NOT NULL,
   PRIMARY KEY (codMenor),
   CONSTRAINT fk_Menor_Direcccion1
     FOREIGN KEY (idCalle , idVivienda)
@@ -403,7 +403,7 @@ CREATE TABLE  Tutor (
 DROP TABLE  Sorteo cascade CONSTRAINT ;
 
  CREATE TABLE  Sorteo (
-  idSorteo INT NOT NULL,
+  idSorteo NUMBER(4) NOT NULL,
   diaIninio DATE NOT NULL,
   diaFin DATE NOT NULL,
   diaSorteo DATE NOT NULL,
@@ -417,10 +417,10 @@ CREATE SEQUENCE idSorteo_Seq MAXVALUE 10;
 DROP TABLE  Solicitud  cascade CONSTRAINT;
 
 CREATE TABLE  Solicitud (
-  nSolicitud INT NOT NULL,
+  nSolicitud NUMBER(4) NOT NULL,
   fecha DATE NULL,
   hora DATE NULL,
-  idSorteo INT NOT NULL,
+  idSorteo NUMBER(4) NOT NULL,
   PRIMARY KEY (nSolicitud),
   CONSTRAINT fk_Solicitud_Sorteo1
     FOREIGN KEY (idSorteo)
@@ -434,10 +434,10 @@ CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
 DROP TABLE  Inscripcion cascade CONSTRAINT ;
 
 CREATE TABLE  Inscripcion (
-  idIns INT NOT NULL,
-  nSolicitud INT NOT NULL,
+  idIns NUMBER(4) NOT NULL,
+  nSolicitud NUMBER(4) NOT NULL,
   dni VARCHAR(9) NOT NULL,
-  codMenor INT NOT NULL,
+  codMenor NUMBER(4) NOT NULL,
   PRIMARY KEY (idIns),
   CONSTRAINT fk_Inscripcion_Solicitud1
     FOREIGN KEY (nSolicitud)
