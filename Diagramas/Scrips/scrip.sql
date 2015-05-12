@@ -30,7 +30,9 @@ DROP SEQUENCE nSolicitud_Seq;
 /* idIns_Seq */
 DROP SEQUENCE idIns_Seq;
 
-
+-- -----------------------------------------------------
+-- Table Provincia
+-- -----------------------------------------------------
 DROP TABLE  Provincia  CASCADE CONSTRAINTS;
 
 CREATE TABLE  Provincia (
@@ -502,6 +504,11 @@ DROP TABLE  Sorteo cascade CONSTRAINTS ;
 
 CREATE SEQUENCE idSorteo_Seq MAXVALUE 10;
 
+insert into sorteo values (idSorteo_Seq.nextval,
+TO_DATE('02/05/2015','DD/MM/YYYY'),
+TO_DATE('20/05/2015','DD/MM/YYYY'), 
+TO_DATE('24/05/2015','DD/MM/YYYY'));
+
 -- -----------------------------------------------------
 -- Table Solicitud
 -- -----------------------------------------------------
@@ -511,6 +518,8 @@ CREATE TABLE  Solicitud (
   nSolicitud NUMBER(4) NOT NULL,
   fecha DATE NULL,
   hora DATE NULL,
+  situacion VARCHAR(35),
+  nOrden NUMBER(4),
   idSorteo NUMBER(4) NOT NULL,
   PRIMARY KEY (nSolicitud),
   CONSTRAINT fk_Solicitud_Sorteo1
@@ -518,6 +527,20 @@ CREATE TABLE  Solicitud (
     REFERENCES Sorteo (idSorteo));
 
 CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
+
+insert into solicitud values(nSolicitud_Seq.nextval,
+  TO_DATE('29/05/2015','DD/MM/YYYY'),
+TO_DATE('12:00:00','HH:MI:SS'),
+'adjudicada',
+1);
+/** pruebas 
+insert into solicitud values(nSolicitud_Seq.nextval,
+sysdate,
+TO_DATE('12:00:00','HH24:MI:SS'),
+'adjudicada',
+1);
+*/
+
 
 -- -----------------------------------------------------
 -- Table Inscripcion

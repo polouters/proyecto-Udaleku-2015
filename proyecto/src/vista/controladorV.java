@@ -6,6 +6,8 @@
 package vista;
 
 import controlador.Main;
+import java.util.ArrayList;
+import uml.solicitud;
 
 /**
  *
@@ -48,9 +50,9 @@ public class controladorV {
        vp = new principal();
        vp.setVisible(true);
    }
-   public static void accesoUsuario(){
+   public static void accesoUsuario(ArrayList<solicitud> s1){
        va.dispose();
-       vu = new usuario();
+       vu = new usuario(s1);
        vu.setVisible(true);
    }
    public static void accesoAdmin(){
@@ -63,8 +65,8 @@ public class controladorV {
        vp = new principal();
        vp.setVisible(true);
    }
-   public static boolean usuarioExiste(){
-   return Main.usuarioExiste();
+   public static boolean usuarioExiste(String jDni, String fNacimiento){
+   return Main.usuarioExiste(jDni,fNacimiento);
    }
 
    public static void inscripcionProtecionDatos(){
@@ -80,5 +82,8 @@ public class controladorV {
        vi.dispose();
        vi = new InscripcionV();
        vi.setVisible(true);
+   }
+   public static void infoSolcitud(ArrayList<solicitud> s1){
+   accesoUsuario(s1);
    }
 }

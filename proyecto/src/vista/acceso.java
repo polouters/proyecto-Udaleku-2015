@@ -34,12 +34,12 @@ public class acceso extends javax.swing.JFrame {
         bInscribirse = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        tSorteo = new javax.swing.JFormattedTextField();
         tNacimiento = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         bAcceder = new javax.swing.JButton();
         bSalir = new javax.swing.JButton();
+        jDni = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,7 +55,7 @@ public class acceso extends javax.swing.JFrame {
 
         tNacimiento.setToolTipText("DD/MM/YYYY");
 
-        jLabel2.setText("Numero sorteo:");
+        jLabel2.setText("DNI Tutor:");
 
         jLabel3.setText("Fecha nacimiento:");
 
@@ -73,6 +73,13 @@ public class acceso extends javax.swing.JFrame {
             }
         });
 
+        try {
+            jDni.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########U")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jDni.setToolTipText("12345678U");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,8 +91,8 @@ public class acceso extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tSorteo)
-                    .addComponent(tNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE))
+                    .addComponent(tNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addComponent(jDni))
                 .addGap(53, 53, 53))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -116,12 +123,11 @@ public class acceso extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(tSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(tNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)))
-                .addGap(18, 18, 18)
                 .addComponent(bAcceder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,13 +150,13 @@ public class acceso extends javax.swing.JFrame {
 
     private void bAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAccederActionPerformed
         try{
-            if(tNacimiento.getText().isEmpty()||tSorteo.getText().isEmpty()){throw new DatoVacio();}
+            if(tNacimiento.getText().isEmpty()||jDni.getText().isEmpty()){throw new DatoVacio();}
             
-            if(tSorteo.getText().compareToIgnoreCase("admin")==0 && tNacimiento.getText().compareToIgnoreCase("admin")==0){
+            if(jDni.getText().compareToIgnoreCase("admin")==0 && tNacimiento.getText().compareToIgnoreCase("admin")==0){
                 controladorV.accesoAdmin();
             }else{
-              boolean existe=  controladorV.usuarioExiste();
-                controladorV.accesoUsuario();
+              boolean existe=  controladorV.usuarioExiste(jDni.getText().toString(), tNacimiento.getText().toString());
+                
             }
             
         }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");}
@@ -201,11 +207,11 @@ public class acceso extends javax.swing.JFrame {
     private javax.swing.JButton bAcceder;
     private javax.swing.JButton bInscribirse;
     private javax.swing.JButton bSalir;
+    private javax.swing.JFormattedTextField jDni;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JFormattedTextField tNacimiento;
-    private javax.swing.JFormattedTextField tSorteo;
     // End of variables declaration//GEN-END:variables
 }

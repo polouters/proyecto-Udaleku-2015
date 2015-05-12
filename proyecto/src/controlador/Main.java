@@ -5,7 +5,13 @@
  */
 package controlador;
 
+<<<<<<< HEAD
 import java.text.SimpleDateFormat;
+=======
+import bd.*;
+import java.util.ArrayList;
+import uml.*;
+>>>>>>> 1cfde457e9805a75a42df78627bef8ae6b59b805
 import vista.*;
 
 /**
@@ -24,13 +30,20 @@ public class Main {
         //Apertura de ventana
         controladorV.abrirPrincipal();
     }
-    public static boolean usuarioExiste(){
-    
+    public static boolean usuarioExiste(String jDni, String fNacimiento){
+      ArrayList<solicitud> s1 =  solicitudBD.consultaAcceso(jDni,fNacimiento);
+    if(  s1.get(0).getSituacion().toString().isEmpty())
+        return false;
+    else{
+        controladorV.infoSolcitud(s1);
         return true;
     }
+<<<<<<< HEAD
     public static void crearObjetos(){
         //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         //sdf.
+=======
+>>>>>>> 1cfde457e9805a75a42df78627bef8ae6b59b805
     }
 }
     

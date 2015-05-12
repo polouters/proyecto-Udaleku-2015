@@ -5,6 +5,10 @@
  */
 package vista;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import uml.*;
+
 /**
  *
  * @author jon
@@ -13,8 +17,17 @@ public class usuario extends javax.swing.JFrame {
 
     /**
      * Creates new form usuario
-     */
-    public usuario() {
+     */public usuario(){
+      initComponents();
+      setLocationRelativeTo(null);
+     }
+    public usuario(ArrayList<solicitud> s1) {
+       String texto = "Tenemos varias opciones de solicitudes: \n";
+        for(int x= 0;x<s1.size();x++){
+        int n = 0;
+            texto = texto + "  " + n + "  "+ s1.get(x).getlInsc().get(0).getMenor().getNombre()+"\n";
+        }
+        int pregunta = Integer.parseInt(JOptionPane.showInputDialog(null,texto ));
         initComponents();
         setLocationRelativeTo(null);
         tHora.setEnabled(false);
@@ -26,7 +39,18 @@ public class usuario extends javax.swing.JFrame {
         jSituacion.setEnabled(false);
         jParticipante2.setEnabled(false);
         jParticipante3.setEnabled(false);
-              
+        
+        tParticipante.setText(s1.get(pregunta).getlInsc().get(0).getMenor().getNombre().toString());
+        int numero = s1.get(pregunta).getnSolicitud();
+        String x = numero + "";
+        tNumero.setText(x);
+        dNacimiento.setDate(s1.get(pregunta).getlInsc().get(0).getMenor().getFechaNac());
+        jSituacion.setText(s1.get(pregunta).getSituacion());
+        jParticipante2.setText(s1.get(pregunta).getlInsc().get(1).getMenor().getNombre() + "  "+s1.get(pregunta).getlInsc().get(1).getMenor().getApe1());
+        jParticipante3.setText(s1.get(pregunta).getlInsc().get(2).getMenor().getNombre() + "  "+s1.get(pregunta).getlInsc().get(2).getMenor().getApe1());
+        jOrden.setText(s1.get(pregunta).getOrden()+"");
+        dCita.setDate(s1.get(pregunta).getFecha());
+        tHora.setText(s1.get(pregunta).getHora().toString());
     }
 
     /**
