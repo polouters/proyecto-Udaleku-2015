@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import oracle.jdbc.OracleTypes;
 import uml.*;
 
@@ -19,43 +20,23 @@ import uml.*;
  */
 public class solicitudBD {
     public static Connection conn;
-    public static solicitud consultaAcceso(String jDni, String fNacimiento){
+    public static ResultSet rset;
+    public static ArrayList<solicitud> consultaAcceso(String jDni, String fNacimiento){
        try
        {
           genericoBD.setCon();
           conn= genericoBD.getCon();
           
           System.out.println("Base de datos abierta");
-            
-          // Ejecución de una sentencia SQL sin parámetros
-           Statement stmt = conn.createStatement();
-           ResultSet rset = stmt.executeQuery("select * from SYS.V_$VERSION");
-           while (rset.next()){
-                 System.out.println (rset.getString(1)); 
-            }
-            stmt.close();
-            
-            // Ejecución de un procedimiento que contiene una sentencia insert
-            String sql ="{call gest_depart.insert_depart(?,?)}";
+        
+            String sql ="{call paquete.consultaSolicitud(?,?)}";
             CallableStatement cs = conn.prepareCall(sql);
-               
-            // Cargamos los parametros de entrada IN
-            cs.setString(1,"dNieves2");
-            cs.setString(2,"dNieves2");
-            
+            cs.setString(1,jDni);
+            cs.setString(2,fNacimiento);
             // Ejecutamos
             cs.execute();
-            System.out.println("Procedimiento insert ejecutado");
-            
-            // visualizar los datos de la tabla departamentos a través de un procedimiento (select)
-           sql ="{call gest_depart.visualizar_lista_depart(?)}";
-           cs = conn.prepareCall(sql);
-           // la select devuelve datos (parámetro de salida)
-           cs.registerOutParameter(1,OracleTypes.CURSOR);
- 
-           cs.execute();
- 
-            // Con getObject Obtenemos un valor generico al que posteriormente se le hará cast para convertirlo en el tipo adecuado en este caso ResultSet
+
+
             rset = (ResultSet)cs.getObject(1);
             
             while(rset.next()){
