@@ -452,7 +452,7 @@ public class InscripcionV extends javax.swing.JFrame {
                     .addGroup(pDireccionLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(jLabel21)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         pDireccionLayout.setVerticalGroup(
             pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -666,7 +666,7 @@ public class InscripcionV extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
