@@ -500,7 +500,7 @@ CREATE TABLE  Tutor (
   tlf4 VARCHAR(45) NULL,
   PRIMARY KEY (dni));
 
-  INSERT INTO Tutor VALUES('12345678A','Ana','Perez','Martin','123456789','987654321',NULL,NULL);
+  INSERT INTO Tutor VALUES('12345678Z','Ana','Perez','Martin','123456789','987654321',NULL,NULL);
   
 -- -----------------------------------------------------
 -- Table Sorteo
@@ -562,6 +562,6 @@ CREATE TABLE  Inscripcion (
 
 CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
 
-  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678A',1); 
-  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678A',2); 
-  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678A',3); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678Z',1); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678Z',2); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678Z',3); 
