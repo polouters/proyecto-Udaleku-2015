@@ -1,5 +1,6 @@
 package uml;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -10,12 +11,12 @@ public class solicitud {
 	private Calendar hora;
         private sorteo srt;
         private String situacion;
-        private inscripcion[] lInsc = new inscripcion[2];
+        private int orden;
+        private ArrayList<inscripcion> lInsc = new ArrayList();
 
     public solicitud() {
     }
-
-    public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt, String situacion) {
+ public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt, String situacion) {
         this.nSolicitud = nSolicitud;
         this.fecha = fecha;
         this.hora = hora;
@@ -23,13 +24,38 @@ public class solicitud {
         this.situacion = situacion;
     }
 
-    public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt,inscripcion[] lInsc) {
+    public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt) {
         this.nSolicitud = nSolicitud;
         this.fecha = fecha;
         this.hora = hora;
         this.srt = srt;
-        this.lInsc = lInsc;
+        
     }
+    public sorteo getSrt() {
+        return srt;
+    }
+
+    public void setSrt(sorteo srt) {
+        this.srt = srt;
+    }
+
+    public String getSituacion() {
+        return situacion;
+    }
+
+    public void setSituacion(String situacion) {
+        this.situacion = situacion;
+    }
+
+    public int getOrden() {
+        return orden;
+    }
+
+    public void setOrden(int orden) {
+        this.orden = orden;
+    }
+
+   
 
     public int getnSolicitud() {
         return nSolicitud;
@@ -63,12 +89,14 @@ public class solicitud {
         this.srt = srt;
     }
 
-    public inscripcion[] getlInsc() {
+    public ArrayList<inscripcion> getlInsc() {
         return lInsc;
     }
 
-    public void setlInsc(inscripcion[] lInsc) {
+    public void setlInsc(ArrayList<inscripcion> lInsc) {
         this.lInsc = lInsc;
     }
+
+   
   
 }

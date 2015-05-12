@@ -156,7 +156,7 @@ public class acceso extends javax.swing.JFrame {
                 controladorV.accesoAdmin();
             }else{
               boolean existe=  controladorV.usuarioExiste(jDni.getText().toString(), tNacimiento.getText().toString());
-                controladorV.accesoUsuario();
+                
             }
             
         }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");}

@@ -6,6 +6,7 @@
 package controlador;
 
 import bd.*;
+import java.util.ArrayList;
 import uml.*;
 import vista.*;
 
@@ -26,9 +27,13 @@ public class Main {
         controladorV.abrirPrincipal();
     }
     public static boolean usuarioExiste(String jDni, String fNacimiento){
-      solicitud s1 =  solicitudBD.consultaAcceso(jDni,fNacimiento);
-      
+      ArrayList<solicitud> s1 =  solicitudBD.consultaAcceso(jDni,fNacimiento);
+    if(  s1.get(0).getSituacion().toString().isEmpty())
+        return false;
+    else{
+        controladorV.infoSolcitud(s1);
         return true;
+    }
     }
 }
     
