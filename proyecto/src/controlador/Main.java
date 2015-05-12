@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import java.text.SimpleDateFormat;
 import vista.*;
 
 /**
@@ -26,6 +27,10 @@ public class Main {
     public static boolean usuarioExiste(){
     
         return true;
+    }
+    public static void crearObjetos(){
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        //sdf.
     }
 }
     

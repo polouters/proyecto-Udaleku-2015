@@ -6,20 +6,30 @@
 package vista;
 
 import com.aeat.valida.Validador;
-import exc.DatoVacio;
-import exc.ValNif;
+import controlador.Main;
+import exc.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
+import uml.calle;
+import uml.centro;
+import uml.direccion;
+import uml.inscripcion;
+import uml.menor;
+import uml.municipio;
+import uml.provincia;
+import uml.tutor;
+import uml.vivienda;
 
 /**
  *
  * @author jon
  */
-public class inscripcion extends javax.swing.JFrame {
+public class InscripcionV extends javax.swing.JFrame {
 
-    /**
-     * Creates new form inscripcion
-     */
-    public inscripcion() {
+    private int numInsc = 1;
+    
+    public InscripcionV() {
         initComponents();
         setLocationRelativeTo(null);
         
@@ -62,12 +72,12 @@ public class inscripcion extends javax.swing.JFrame {
         rHombre = new javax.swing.JRadioButton();
         rMujer = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
-        dNacimiento = new com.toedter.calendar.JDateChooser();
+        dNacimiento = new javax.swing.JFormattedTextField();
         pDireccion = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         cProvincia = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
-        cLocalidad = new javax.swing.JComboBox();
+        cMunicipio = new javax.swing.JComboBox();
         jLabel14 = new javax.swing.JLabel();
         cCalle = new javax.swing.JComboBox();
         jLabel15 = new javax.swing.JLabel();
@@ -90,11 +100,13 @@ public class inscripcion extends javax.swing.JFrame {
         cTelef3 = new javax.swing.JCheckBox();
         cTelef4 = new javax.swing.JCheckBox();
         jLabel21 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        fCP = new javax.swing.JFormattedTextField();
         pOtros = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         rAlava = new javax.swing.JRadioButton();
         rFuera = new javax.swing.JRadioButton();
-        jComboBox4 = new javax.swing.JComboBox();
+        cCentro = new javax.swing.JComboBox();
         jLabel23 = new javax.swing.JLabel();
         rA = new javax.swing.JRadioButton();
         rB = new javax.swing.JRadioButton();
@@ -105,6 +117,7 @@ public class inscripcion extends javax.swing.JFrame {
         bGuardar = new javax.swing.JButton();
         bDatos = new javax.swing.JButton();
         bCancelar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -203,6 +216,12 @@ public class inscripcion extends javax.swing.JFrame {
 
         jLabel11.setText("*Fecha Nacimiento");
 
+        try {
+            dNacimiento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout pDatosMLayout = new javax.swing.GroupLayout(pDatosM);
         pDatosM.setLayout(pDatosMLayout);
         pDatosMLayout.setHorizontalGroup(
@@ -243,8 +262,8 @@ public class inscripcion extends javax.swing.JFrame {
                     .addGroup(pDatosMLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(dNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(dNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pDatosMLayout.setVerticalGroup(
@@ -271,9 +290,9 @@ public class inscripcion extends javax.swing.JFrame {
                     .addComponent(rHombre)
                     .addComponent(rMujer))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pDatosMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(dNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pDatosMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22))
         );
 
@@ -290,13 +309,13 @@ public class inscripcion extends javax.swing.JFrame {
 
         jLabel13.setText("*Provincia");
 
-        cLocalidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selececione una municipio" }));
+        cMunicipio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selececione una municipio" }));
 
         jLabel14.setText("*Calle");
 
         cCalle.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una calle" }));
 
-        jLabel15.setText("Número");
+        jLabel15.setText("*Número");
 
         jLabel16.setText("Letra");
 
@@ -363,6 +382,14 @@ public class inscripcion extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel21.setText("Indique el teléfono de localización durante la estancia en la colonia, marcando la casilla al lado del teléfono");
 
+        jLabel25.setText("Codigo Postal");
+
+        try {
+            fCP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout pDireccionLayout = new javax.swing.GroupLayout(pDireccion);
         pDireccion.setLayout(pDireccionLayout);
         pDireccionLayout.setHorizontalGroup(
@@ -388,8 +415,8 @@ public class inscripcion extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel17)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -397,10 +424,15 @@ public class inscripcion extends javax.swing.JFrame {
                                 .addComponent(jLabel19)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tMano, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cProvincia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cLocalidad, 0, 218, Short.MAX_VALUE))
                             .addComponent(cCalle, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pDireccionLayout.createSequentialGroup()
+                                .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cProvincia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cMunicipio, 0, 218, Short.MAX_VALUE))
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(fCP, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pDireccionLayout.createSequentialGroup()
                                 .addComponent(tTelef1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -420,7 +452,7 @@ public class inscripcion extends javax.swing.JFrame {
                     .addGroup(pDireccionLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(jLabel21)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         pDireccionLayout.setVerticalGroup(
             pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -428,12 +460,14 @@ public class inscripcion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel25)
+                    .addComponent(fCP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cLocalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
                 .addGroup(pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(cCalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -478,7 +512,7 @@ public class inscripcion extends javax.swing.JFrame {
         bgCentro.add(rFuera);
         rFuera.setText("Fuera de Álava");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione un centro" }));
+        cCentro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione un centro" }));
 
         jLabel23.setText("*Modelo");
 
@@ -509,7 +543,7 @@ public class inscripcion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rFuera)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pOtrosLayout.createSequentialGroup()
                         .addComponent(rA)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -530,7 +564,7 @@ public class inscripcion extends javax.swing.JFrame {
                     .addComponent(jLabel22)
                     .addComponent(rAlava)
                     .addComponent(rFuera)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
@@ -569,6 +603,8 @@ public class inscripcion extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Añadir nuevo participante");
+
         javax.swing.GroupLayout pPrincipalLayout = new javax.swing.GroupLayout(pPrincipal);
         pPrincipal.setLayout(pPrincipalLayout);
         pPrincipalLayout.setHorizontalGroup(
@@ -586,13 +622,16 @@ public class inscripcion extends javax.swing.JFrame {
                     .addComponent(pOtros, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pPrincipalLayout.createSequentialGroup()
                         .addGroup(pPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bDatos)
                             .addGroup(pPrincipalLayout.createSequentialGroup()
                                 .addComponent(bBorrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(bCancelar)
                                 .addGap(18, 18, 18)
-                                .addComponent(bGuardar)))
+                                .addComponent(bGuardar))
+                            .addGroup(pPrincipalLayout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(bDatos)))
                         .addGap(34, 34, 34)))
                 .addGap(28, 28, 28))
         );
@@ -615,7 +654,9 @@ public class inscripcion extends javax.swing.JFrame {
                     .addComponent(bCancelar)
                     .addComponent(bBorrar))
                 .addGap(18, 18, 18)
-                .addComponent(bDatos)
+                .addGroup(pPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bDatos)
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
 
@@ -643,34 +684,71 @@ public class inscripcion extends javax.swing.JFrame {
 
 
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
-        // TODO add your handling code here:
+
         try{
-        if(tDNIT.getText().isEmpty() || tApe1T.getText().isEmpty() || tApe2T.getText().isEmpty() || tNombreT.getText().isEmpty() || tApe1M.getText().isEmpty() 
-                || tApe2M.getText().isEmpty() || tEscalera.getText().isEmpty() || tLetra.getText().isEmpty() || tMano.getText().isEmpty() || tNombreM.getText().isEmpty()
-                || tNumero.getText().isEmpty() || tPiso.getText().isEmpty() || tTelef1.getText().isEmpty())
-            throw  new DatoVacio();
-        
-        
-        Validador validador = new Validador();
-        int e = validador.checkNif(tDNIT.getText());
-        
-        if(e < 0)
-            throw new ValNif();
-        
-        if(tDNIM.getText().isEmpty()== false){
-        Validador validadot = new Validador();
-        int w = validadot.checkNif(tDNIM.getText());
-        
-        if(w < 0)
-            throw new ValNif();
-        }
+           if(numInsc > 3){
+               if(datosCorrectos()){
+                JOptionPane.showMessageDialog(this,"Vamos a realizar la inscripcion");
+                
+                //Datos_centro
+               centro c = new centro();
+               c.setNombre(String.valueOf(cCentro.getSelectedItem()));
+               c.setModelo(modelo());
+                //Datos_Tutor
+                tutor t = new tutor();
+                t.setDni(tDNIT.getText());
+                t.setNombre(tNombreT.getText());
+                t.setApe1(tApe1T.getText());
+                t.setApe2(tApe2T.getText());
+                telefonos(t);
+                //Datos_Menor
+                menor m = new menor();
+                m.setDni(dniMenor());
+                m.setNombre(tNombreM.getText());
+                m.setApe1(tApe1M.getText());
+                m.setApe2(tApe2M.getText());
+                m.setSexo(sexo());
+                m.setFechaNac(fechaNac());
+                m.setDiscapacidad(discapacidad());
+                m.setCntr(c);
+                //Datos_Vivienda
+               vivienda v = new vivienda();
+               v.setNumero(tNumero.getText());
+               v.setLetra(letra());
+               v.setMano(mano());
+               v.setPiso(piso());
+                //Datos_provincia
+               provincia p = new provincia();
+               p.setNombre(String.valueOf(cProvincia.getSelectedItem()));
+               p.setCentro(c);
+               //Datos_Municipio
+               municipio muni = new municipio();
+               muni.setNombre(String.valueOf(cMunicipio.getSelectedItem()));
+               muni.setProv(p);
+               //Datos_Calle
+               calle calle = new calle();
+               calle.setMunicipio(muni);
+               calle.setNombre(String.valueOf(cCalle.getSelectedItem()));
+               //Datos_Direccion
+               direccion d = new direccion();
+               d.setCalle(calle);
+               d.setVivienda(v);
+               d.setCp(fCP.getText());
+               d.setMenor(m);
+               //Datos_Inscripcion
+              inscripcion ins = new inscripcion();
+              ins.setIdIns(numInsc);
+              ins.setTutor(t);
+              ins.setMenor(m);
+              
+                    }
+           } 
             
-        
-        JOptionPane.showMessageDialog(this,"La inscripcion se ha realizado correctamente");
         }
-        catch(ValNif edx){JOptionPane.showMessageDialog(this,"El dni introducido no es correcto");}
-        catch(DatoVacio es){JOptionPane.showMessageDialog(this,"Rellene todos los datos obligatorios");}
-        catch(Exception e){JOptionPane.showMessageDialog(this, "error: " + e);}
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "error: " + e);
+        }
+        
     }//GEN-LAST:event_bGuardarActionPerformed
 
 
@@ -723,8 +801,176 @@ public class inscripcion extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_bBorrarActionPerformed
 
-
-
+    public boolean datosCorrectos(){
+        if(datosVacios() && validarDNI() && comprobarSexo())
+            {
+                return true;
+            }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public boolean datosVacios() {
+        
+    try{
+        if(tDNIT.getText().isEmpty() || tApe1T.getText().isEmpty() || tApe2T.getText().isEmpty() || tNombreT.getText().isEmpty() || tApe1M.getText().isEmpty() 
+                || tApe2M.getText().isEmpty() || tNombreM.getText().isEmpty() || tNumero.getText().isEmpty() || tTelef1.getText().isEmpty() || dNacimiento.getText().isEmpty()){
+            throw  new DatoVacio();
+        }
+        else
+            return true;
+    }
+    catch(DatoVacio es){
+        JOptionPane.showMessageDialog(this,"Rellene todos los datos obligatorios");
+        return false;
+        }     
+    }
+    public boolean validarDNI() {
+    try{
+        //Validar DNI del tutor
+        Validador validadorT = new Validador();
+        int T = validadorT.checkNif(tDNIT.getText());
+        
+        if(T < 0){
+            throw new ValNif();
+            }
+        
+        // Validar DNI del menor, si lo escriben.
+        if(tDNIM.getText().isEmpty()){
+            Validador validadorM = new Validador();
+            int M = validadorM.checkNif(tDNIT.getText());
+        
+            if(M < 0){
+            throw new ValNif();
+            }
+            
+        }
+        //Si no ha habido ningún error devolvemos el valor true;
+        return true;
+    }
+    
+    catch (ValNif e){
+        JOptionPane.showMessageDialog(null,"El DNI introducido no es correcto.");
+        return false;
+    }
+   
+    }
+    public boolean comprobarSexo(){
+       try{
+           if(rHombre.isSelected() == false && rMujer.isSelected() == false){
+               throw new Sexo();
+           }
+           else{
+               return true;
+           }
+       } 
+       catch(Sexo e){
+           JOptionPane.showMessageDialog(this,"El campo sexo es obligatorio");
+           return false;
+       }
+        
+    }
+    public String sexo(){
+        
+        if(rHombre.isSelected()){
+            return "Hombre";
+        }
+        else
+            return "Mujer";
+    }
+    public String dniMenor(){
+        if(tDNIM.getText().isEmpty()){
+            return null;
+        }
+        else
+            return tDNIM.getText();
+    }
+    public Date fechaNac(){
+        try{
+        SimpleDateFormat sdf = new SimpleDateFormat("DD/MM/YYYY");
+        Date fecha = sdf.parse(dNacimiento.getText());
+        
+        return fecha;
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Error con la fecha");
+            return null;
+        }
+        
+        
+    }
+    public boolean discapacidad(){
+        if(cDisca.isSelected()){
+            return true;
+        }
+        else
+            return false;
+    }
+    public String modelo(){
+        if(rA.isSelected()){
+            return "A";
+        }
+        else
+        {
+            if(rB.isSelected()){
+                return "B";
+            }
+            else{
+                return "D";
+            }
+        }
+    }
+    public void telefonos(tutor t){
+        //Telefono 1
+        if(cTelef1.isSelected()){
+            t.setTlf1(tTelef1.getText());
+        }
+        else{
+            t.setTlf1(null);
+        }
+        //Telefono 2
+        if(cTelef2.isSelected()){
+            t.setTlf2(tTelef2.getText());
+        }
+        else{
+            t.setTlf2(null);
+        }
+        //Telefono 3
+        if(cTelef3.isSelected()){
+            t.setTlf3(tTelef3.getText());
+        }
+        else{
+            t.setTlf3(null);
+        }
+        //Telefono 4
+        if(cTelef4.isSelected()){
+            t.setTlf4(tTelef4.getText());
+        }
+        else{
+            t.setTlf4(null);
+        }
+    }
+    public String piso(){
+        if(tPiso.getText().isEmpty()){
+            return null;
+        }
+        return tPiso.getText();
+    }
+    public String mano(){
+        if(tMano.getText().isEmpty()){
+            return null;
+        }
+        return tMano.getText();
+    }
+    public String letra(){
+        if(tMano.getText().isEmpty()){
+            return null;
+        }
+        return tMano.getText();
+    }
     /**
      * @param args the command line arguments
      */
@@ -742,20 +988,21 @@ public class inscripcion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(inscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InscripcionV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(inscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InscripcionV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(inscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InscripcionV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(inscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InscripcionV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new inscripcion().setVisible(true);
+                new InscripcionV().setVisible(true);
             }
         });
     }
@@ -769,15 +1016,17 @@ public class inscripcion extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bgModelo;
     private javax.swing.ButtonGroup bgSexo;
     private javax.swing.JComboBox cCalle;
+    private javax.swing.JComboBox cCentro;
     private javax.swing.JCheckBox cDisca;
-    private javax.swing.JComboBox cLocalidad;
+    private javax.swing.JComboBox cMunicipio;
     private javax.swing.JComboBox cProvincia;
     private javax.swing.JCheckBox cTelef1;
     private javax.swing.JCheckBox cTelef2;
     private javax.swing.JCheckBox cTelef3;
     private javax.swing.JCheckBox cTelef4;
-    private com.toedter.calendar.JDateChooser dNacimiento;
-    private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JFormattedTextField dNacimiento;
+    private javax.swing.JFormattedTextField fCP;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -795,6 +1044,7 @@ public class inscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

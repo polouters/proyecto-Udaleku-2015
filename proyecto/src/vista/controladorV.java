@@ -16,7 +16,7 @@ public class controladorV {
     
    private static principal vp;
    private static acceso va;
-   private static inscripcion vi; 
+   private static InscripcionV vi; 
    private static usuario vu;
    private static administrador vad;
    private static proteccionDatos vpd;
@@ -35,7 +35,7 @@ public class controladorV {
    }
    public static void accesoInscripcion(){
        va.dispose();
-       vi = new inscripcion();
+       vi = new InscripcionV();
        vi.setVisible(true);
    }
    public static void inscripcionPrincipal(){
@@ -78,7 +78,7 @@ public class controladorV {
    }
    public static void borrarInscripcion(){
        vi.dispose();
-       vi = new inscripcion();
+       vi = new InscripcionV();
        vi.setVisible(true);
    }
 }

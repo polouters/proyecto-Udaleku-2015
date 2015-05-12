@@ -50,6 +50,9 @@ public class direccion {
     public void setlMenor(ArrayList<menor> lMenor) {
         this.lMenor = lMenor;
     }
+    public void setMenor (menor m){
+        lMenor.add(m);
+    }
 
 
 }
