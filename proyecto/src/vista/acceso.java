@@ -5,7 +5,9 @@
  */
 package vista;
 
+import com.aeat.valida.Validador;
 import exc.DatoVacio;
+import exc.ValNif;
 import javax.swing.JOptionPane;
 
 /**
@@ -152,6 +154,11 @@ public class acceso extends javax.swing.JFrame {
         try{
             if(tNacimiento.getText().isEmpty()||jDni.getText().isEmpty()){throw new DatoVacio();}
             
+            Validador validadorT = new Validador();
+            
+            int T = validadorT.checkNif(jDni.getText());
+        
+            if(T < 0){throw new ValNif(); }
             if(jDni.getText().compareToIgnoreCase("admin")==0 && tNacimiento.getText().compareToIgnoreCase("admin")==0){
                 controladorV.accesoAdmin();
             }else{
@@ -159,7 +166,9 @@ public class acceso extends javax.swing.JFrame {
                 
             }
             
+            
         }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");}
+        catch(ValNif ex){JOptionPane.showMessageDialog(this,"El dni no es valido");}
         catch(Exception Ex){JOptionPane.showMessageDialog(this,"Error:\n "+Ex.getMessage());}
     }//GEN-LAST:event_bAccederActionPerformed
 
