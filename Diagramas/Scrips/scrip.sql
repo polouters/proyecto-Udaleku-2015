@@ -335,7 +335,6 @@ CREATE TABLE  Calle (
 
 CREATE SEQUENCE idCalle_Seq MAXVALUE 1000;
 
-
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Barratxi',47);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Portal de Zurbano',47);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Olmos',47);
@@ -375,7 +374,6 @@ INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Aldaba Txiki',3);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Santa Clara',3);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Amarotz',3);
 
-
 -- -----------------------------------------------------
 -- Table Vivienda
 -- -----------------------------------------------------
@@ -390,6 +388,10 @@ CREATE TABLE  Vivienda (
   PRIMARY KEY (idVivienda));
 
 CREATE SEQUENCE idVivienda_Seq MAXVALUE 1000;
+
+INSERT INTO Vivienda VALUES (idVivienda_Seq.nextval,5,4,NULL,'I');
+INSERT INTO Vivienda VALUES (idVivienda_Seq.nextval,6,1,NULL,'D');
+INSERT INTO Vivienda VALUES (idVivienda_Seq.nextval,8,3,NULL,'I');
 
 -- -----------------------------------------------------
 -- Table Direcccion
@@ -409,6 +411,10 @@ CREATE TABLE  Direccion (
     REFERENCES Vivienda (idVivienda));
 
 CREATE SEQUENCE idDireccion_Seq MAXVALUE 1000;
+
+INSERT INTO Direccion VALUES (1,1,'01235');
+INSERT INTO Direccion VALUES (1,2,'01235');
+INSERT INTO Direccion VALUES (1,3,'01235');
 
 -- -----------------------------------------------------
 -- Table Centro
@@ -474,6 +480,10 @@ CREATE TABLE  Menor (
 
 CREATE SEQUENCE codMenor_Seq MAXVALUE 500;
 
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2003','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/03/2002','DD/MM/YYYY'),'NO',1,2,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','De Santa','Olano','Hombre',NULL, TO_DATE('03/12/2003','DD/MM/YYYY'),'NO',1,3,1);
+
 -- -----------------------------------------------------
 -- Table Tutor
 -- -----------------------------------------------------
@@ -490,6 +500,8 @@ CREATE TABLE  Tutor (
   tlf4 VARCHAR(45) NULL,
   PRIMARY KEY (dni));
 
+  INSERT INTO Tutor VALUES('12345678A','Ana','Perez','Martin','123456789','987654321',NULL,NULL);
+  
 -- -----------------------------------------------------
 -- Table Sorteo
 -- -----------------------------------------------------
@@ -497,17 +509,14 @@ DROP TABLE  Sorteo cascade CONSTRAINTS ;
 
  CREATE TABLE  Sorteo (
   idSorteo NUMBER(4) NOT NULL,
-  diaIninio DATE NOT NULL,
+  diaInicio DATE NOT NULL,
   diaFin DATE NOT NULL,
   diaSorteo DATE NOT NULL,
   PRIMARY KEY (idSorteo));
 
 CREATE SEQUENCE idSorteo_Seq MAXVALUE 10;
 
-insert into sorteo values (idSorteo_Seq.nextval,
-TO_DATE('02/05/2015','DD/MM/YYYY'),
-TO_DATE('20/05/2015','DD/MM/YYYY'), 
-TO_DATE('24/05/2015','DD/MM/YYYY'));
+INSERT INTO sorteo VALUES(idSorteo_Seq.nextval, to_date ('10/05/2015' ,'dd/mm/yyyy'), to_date ('20/05/2015' ,'dd/mm/yyyy'),to_date ('21/05/2015' ,'dd/mm/yyyy'));
 
 -- -----------------------------------------------------
 -- Table Solicitud
@@ -517,7 +526,7 @@ DROP TABLE  Solicitud  cascade CONSTRAINTS;
 CREATE TABLE  Solicitud (
   nSolicitud NUMBER(4) NOT NULL,
   fecha DATE NULL,
-  hora DATE NULL,
+  hora TIMESTAMP NULL,
   situacion VARCHAR(35),
   nOrden NUMBER(4),
   idSorteo NUMBER(4) NOT NULL,
@@ -528,19 +537,7 @@ CREATE TABLE  Solicitud (
 
 CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
 
-insert into solicitud values(nSolicitud_Seq.nextval,
-  TO_DATE('29/05/2015','DD/MM/YYYY'),
-TO_DATE('12:00:00','HH:MI:SS'),
-'adjudicada',
-1);
-/** pruebas 
-insert into solicitud values(nSolicitud_Seq.nextval,
-sysdate,
-TO_DATE('12:00:00','HH24:MI:SS'),
-'adjudicada',
-1);
-*/
-
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
 
 -- -----------------------------------------------------
 -- Table Inscripcion
@@ -565,4 +562,6 @@ CREATE TABLE  Inscripcion (
 
 CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
 
-
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678A',1); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678A',2); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678A',3); 
