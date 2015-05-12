@@ -686,7 +686,7 @@ public class InscripcionV extends javax.swing.JFrame {
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
 
         try{
-           if(numInsc > 3){
+           if(numInsc < 3){
                if(datosCorrectos()){
                 JOptionPane.showMessageDialog(this,"Vamos a realizar la inscripcion");
                 
