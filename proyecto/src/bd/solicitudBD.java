@@ -40,20 +40,10 @@ public class solicitudBD {
             rset = (ResultSet)cs.getObject(1);
             
             while(rset.next()){
-                System.out.println(rset.getString(1) + rset.getString(2));
+                
             }
             
-            // procedimento con un update       
-            sql ="{call gest_depart.cambiar_localidad(?,?)}";
-            cs = conn.prepareCall(sql);
-               
-            cs.setInt(1,50);
-            cs.setString(2,"Vitria");
- 
-            cs.execute();
-            cs.close();
-            conn.close();
-     
+           
             System.out.println("Procedimiento update");
     }
     catch(Exception e){
