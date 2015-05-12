@@ -5,13 +5,12 @@
  */
 package controlador;
 
-<<<<<<< HEAD
+
 import java.text.SimpleDateFormat;
-=======
+
 import bd.*;
 import java.util.ArrayList;
 import uml.*;
->>>>>>> 1cfde457e9805a75a42df78627bef8ae6b59b805
 import vista.*;
 
 /**
@@ -38,12 +37,7 @@ public class Main {
         controladorV.infoSolcitud(s1);
         return true;
     }
-<<<<<<< HEAD
-    public static void crearObjetos(){
-        //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        //sdf.
-=======
->>>>>>> 1cfde457e9805a75a42df78627bef8ae6b59b805
+
     }
 }
     

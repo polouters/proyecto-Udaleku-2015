@@ -5,10 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class solicitud {
-<<<<<<< HEAD
-    
-        private inscripcion[] lInsc = new inscripcion[2];
-=======
+
 
 	private int nSolicitud;
 	private Date fecha;
@@ -17,7 +14,6 @@ public class solicitud {
         private String situacion;
         private int orden;
         private ArrayList<inscripcion> lInsc = new ArrayList();
->>>>>>> 1cfde457e9805a75a42df78627bef8ae6b59b805
 
     public solicitud() {
     }
@@ -28,10 +24,6 @@ public class solicitud {
         this.srt = srt;
         this.situacion = situacion;
     }
-
-<<<<<<< HEAD
-    public inscripcion[] getlInsc() {
-=======
     public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt) {
         this.nSolicitud = nSolicitud;
         this.fecha = fecha;
@@ -98,7 +90,6 @@ public class solicitud {
     }
 
     public ArrayList<inscripcion> getlInsc() {
->>>>>>> 1cfde457e9805a75a42df78627bef8ae6b59b805
         return lInsc;
     }
 

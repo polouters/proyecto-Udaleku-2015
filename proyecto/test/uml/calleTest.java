@@ -5,7 +5,6 @@
  */
 package uml;
 
-import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Mikel
+ * @author jon
  */
 public class calleTest {
     
@@ -66,55 +65,28 @@ public class calleTest {
     }
 
     /**
-     * Test of getlMunicipio method, of class calle.
+     * Test of getMunicipio method, of class calle.
      */
     @Test
-    public void testGetlMunicipio() {
-        System.out.println("getlMunicipio");
+    public void testGetMunicipio() {
+        System.out.println("getMunicipio");
         calle instance = new calle();
-        ArrayList<municipio> expResult = null;
-        ArrayList<municipio> result = instance.getlMunicipio();
+        municipio expResult = null;
+        municipio result = instance.getMunicipio();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setlMunicipio method, of class calle.
+     * Test of setMunicipio method, of class calle.
      */
     @Test
-    public void testSetlMunicipio() {
-        System.out.println("setlMunicipio");
-        ArrayList<municipio> lMunicipio = null;
+    public void testSetMunicipio() {
+        System.out.println("setMunicipio");
+        municipio municipio = null;
         calle instance = new calle();
-        instance.setlMunicipio(lMunicipio);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getlDireccion method, of class calle.
-     */
-    @Test
-    public void testGetlDireccion() {
-        System.out.println("getlDireccion");
-        calle instance = new calle();
-        ArrayList<direccion> expResult = null;
-        ArrayList<direccion> result = instance.getlDireccion();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setlDireccion method, of class calle.
-     */
-    @Test
-    public void testSetlDireccion() {
-        System.out.println("setlDireccion");
-        ArrayList<direccion> lDireccion = null;
-        calle instance = new calle();
-        instance.setlDireccion(lDireccion);
+        instance.setMunicipio(municipio);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
