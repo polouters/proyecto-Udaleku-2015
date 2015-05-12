@@ -10,21 +10,18 @@ public class menor extends persona {
 	private String dni;
 	private Date fechaNac;
 	private boolean discapacidad;
-        private inscripcion insc;
         private centro cntr;
         private direccion drc;
 
     public menor() {
     }
 
-    public menor(String sexo, String dni, Date fechaNac, boolean discapacidad, inscripcion insc, 
-                 centro cntr, direccion drc, String nombre, String ape1, String ape2) {
+    public menor(String sexo, String dni, Date fechaNac, boolean discapacidad, centro cntr, direccion drc, String nombre, String ape1, String ape2) {
         super(nombre, ape1, ape2);
         this.sexo = sexo;
         this.dni = dni;
         this.fechaNac = fechaNac;
         this.discapacidad = discapacidad;
-        this.insc = insc;
         this.cntr = cntr;
         this.drc = drc;
     }
@@ -59,14 +56,6 @@ public class menor extends persona {
 
     public void setDiscapacidad(boolean discapacidad) {
         this.discapacidad = discapacidad;
-    }
-
-    public inscripcion getInsc() {
-        return insc;
-    }
-
-    public void setInsc(inscripcion insc) {
-        this.insc = insc;
     }
 
     public centro getCntr() {

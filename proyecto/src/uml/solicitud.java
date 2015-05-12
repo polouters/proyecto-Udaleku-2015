@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class solicitud {
 
+
 	private int nSolicitud;
 	private Date fecha;
 	private Calendar hora;
@@ -23,7 +24,6 @@ public class solicitud {
         this.srt = srt;
         this.situacion = situacion;
     }
-
     public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt) {
         this.nSolicitud = nSolicitud;
         this.fecha = fecha;

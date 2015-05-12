@@ -1,20 +1,17 @@
 package uml;
 
-import java.util.ArrayList;
 
 public class calle {
 
 	private String nombre;
-        private ArrayList<municipio> lMunicipio = new ArrayList();
-        private ArrayList<direccion> lDireccion = new ArrayList();
+        private municipio municipio;
 
     public calle() {
     }
 
-    public calle(String nombre, ArrayList<municipio> lMunicipio, ArrayList<direccion> lDireccion) {
+    public calle(String nombre, municipio municipio) {
         this.nombre = nombre;
-        this.lMunicipio = lMunicipio;
-        this.lDireccion = lDireccion;
+        this.municipio = municipio;
     }
 
     public String getNombre() {
@@ -25,21 +22,15 @@ public class calle {
         this.nombre = nombre;
     }
 
-    public ArrayList<municipio> getlMunicipio() {
-        return lMunicipio;
+    public municipio getMunicipio() {
+        return municipio;
     }
 
-    public void setlMunicipio(ArrayList<municipio> lMunicipio) {
-        this.lMunicipio = lMunicipio;
+    public void setMunicipio(municipio municipio) {
+        this.municipio = municipio;
     }
 
-    public ArrayList<direccion> getlDireccion() {
-        return lDireccion;
-    }
-
-    public void setlDireccion(ArrayList<direccion> lDireccion) {
-        this.lDireccion = lDireccion;
-    }
+  
        
     
     

@@ -3,7 +3,6 @@ package uml;
 public class inscripcion {
 
 	private int idIns;
-        private solicitud slc;
         private menor menor;
         private tutor tutor;
 
@@ -12,7 +11,6 @@ public class inscripcion {
 
     public inscripcion(int idIns, solicitud slc, menor menor, tutor tutor) {
         this.idIns = idIns;
-        this.slc = slc;
         this.menor = menor;
         this.tutor = tutor;
     }
@@ -25,13 +23,6 @@ public class inscripcion {
         this.idIns = idIns;
     }
 
-    public solicitud getSlc() {
-        return slc;
-    }
-
-    public void setSlc(solicitud slc) {
-        this.slc = slc;
-    }
 
     public menor getMenor() {
         return menor;

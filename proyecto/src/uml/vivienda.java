@@ -6,7 +6,6 @@ public class vivienda {
 	private String piso;
 	private String letra;
 	private String mano;
-        private direccion drc;
 
     public vivienda() {
     }
@@ -16,7 +15,6 @@ public class vivienda {
         this.piso = piso;
         this.letra = letra;
         this.mano = mano;
-        this.drc = drc;
     }
 
     public String getNumero() {
@@ -50,15 +48,6 @@ public class vivienda {
     public void setMano(String mano) {
         this.mano = mano;
     }
-
-    public direccion getDrc() {
-        return drc;
-    }
-
-    public void setDrc(direccion drc) {
-        this.drc = drc;
-    }
-        
         
  
 

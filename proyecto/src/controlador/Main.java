@@ -5,6 +5,9 @@
  */
 package controlador;
 
+
+import java.text.SimpleDateFormat;
+
 import bd.*;
 import java.util.ArrayList;
 import uml.*;
@@ -34,6 +37,7 @@ public class Main {
         controladorV.infoSolcitud(s1);
         return true;
     }
+
     }
 }
     
