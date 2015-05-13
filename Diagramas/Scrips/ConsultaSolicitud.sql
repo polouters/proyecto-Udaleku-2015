@@ -35,7 +35,6 @@ IS
 
 	-- Declaracion la tabla pl/sql partiendo del registro solicitudes_reg
 	TYPE solictudes IS TABLE OF solicitud_reg INDEX BY BINARY_INTEGER;
-	solictudList solictudes;
 
 	-- Declaracion del cursor nSolicitud_cursor
 	CURSOR nSolicitud_cursor IS
