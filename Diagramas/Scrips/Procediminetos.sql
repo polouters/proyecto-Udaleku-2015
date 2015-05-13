@@ -9,7 +9,8 @@
 -- Creacion procedimiento "consultaSolicitud" que recibe dos parametros
 CREATE OR REPLACE PROCEDURE consultaSolicitud
 	(v_dniTutor Tutor.dni%TYPE,
-	 V_fechaNac Menor.fechaNac.%TYPE) 
+	 V_fechaNac Menor.fechaNac.%TYPE,
+	 solictudList OUT solictudes) 
 IS
 	-- Declararcion el registro "participantes_reg" que recoge los datos de los participantes
 	TYPE participantes_reg IS RECORD (
