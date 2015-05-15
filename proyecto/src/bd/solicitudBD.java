@@ -40,7 +40,8 @@ public class solicitudBD {
             rset = (ResultSet)cs.getObject(1);
             
             while(rset.next()){
-                
+                System.out.println(rset.getInt(1) + rset.getString(2)+ rset.getInt(3)+rset.getInt(4)+ rset.getString(5)+rset.getString(6) 
+                 +rset.getString(7)+rset.getDate(8).toString());
             }
             
            
