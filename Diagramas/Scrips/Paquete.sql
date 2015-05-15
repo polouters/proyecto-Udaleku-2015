@@ -6,15 +6,15 @@ CREATE OR REPLACE PACKAGE paquete IS
 
 	PROCEDURE consultaSolicitud(
 		v_dniTutor IN Tutor.dni%TYPE,
-	 	v_fechaNac IN Menor.fechaNac.%TYPE,
+	 	v_fechaNac IN Menor.fechaNac%TYPE,
 	 	PaticipanteC OUT Paticipante_cusor,
-	 	SorteoC OUT Sorteo_cursor,
+	 	SorteoC OUT Sorteo_cursor
 	 	/*
 	 	v_nOrden OUT Sorteo.nOrden%TYPE,
 	 	v_fecha OUT Sorteo.fecha%TYPE,
 	 	v_hora OUT Sorte.hora%TYPE
 	 	*/
-	 	)
+	 	);
 
 END paquete;
 
@@ -22,11 +22,11 @@ END paquete;
 
 CREATE OR REPLACE PACKAGE BODY paquete IS
 
-	CREATE OR REPLACE PROCEDURE consultaSolicitud
+	PROCEDURE consultaSolicitud
 	(v_dniTutor IN Tutor.dni%TYPE,
-	 v_fechaNac IN Menor.fechaNac.%TYPE,
+	 v_fechaNac IN Menor.fechaNac%TYPE,
 	 PaticipanteC OUT Paticipante_cusor,
-	 SorteoC OUT Sorteo_cursor,
+	 SorteoC OUT Sorteo_cursor
 	 /*
 	 v_nOrden OUT Sorteo.nOrden%TYPE,
 	 v_fecha OUT Sorteo.fecha%TYPE,
