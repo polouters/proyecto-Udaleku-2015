@@ -30,22 +30,24 @@ public class administrador extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bMod = new javax.swing.JButton();
+        bBaja = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        bBusqeda = new javax.swing.JButton();
+        bGenerarPDF = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        miCSorteo = new javax.swing.JMenuItem();
+        miRSorteo = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        miMod = new javax.swing.JMenuItem();
+        miBaja = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        miBusqueda = new javax.swing.JMenuItem();
+        miGenerarPDF = new javax.swing.JMenuItem();
         cerrarSesion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,9 +57,9 @@ public class administrador extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)), "Solicitudes"));
 
-        jButton1.setText("Modificacion");
+        bMod.setText("Modificacion");
 
-        jButton2.setText("Baja");
+        bBaja.setText("Baja");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -65,9 +67,9 @@ public class administrador extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(jButton1)
+                .addComponent(bMod)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(bBaja)
                 .addGap(41, 41, 41))
         );
         jPanel1Layout.setVerticalGroup(
@@ -75,16 +77,16 @@ public class administrador extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(bMod)
+                    .addComponent(bBaja))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)), "Listado"));
 
-        jButton3.setText("Busqueda");
+        bBusqeda.setText("Busqueda");
 
-        jButton4.setText("Generar PDF");
+        bGenerarPDF.setText("Generar PDF");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -92,9 +94,9 @@ public class administrador extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(jButton3)
+                .addComponent(bBusqeda)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(bGenerarPDF)
                 .addGap(41, 41, 41))
         );
         jPanel2Layout.setVerticalGroup(
@@ -102,35 +104,42 @@ public class administrador extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(bBusqeda)
+                    .addComponent(bGenerarPDF))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Menu");
 
-        jMenuItem1.setText("Realizar Sorteo");
-        jMenu1.add(jMenuItem1);
+        jMenu2.setText("Sorteo");
+
+        miCSorteo.setText("Crear Sorteo");
+        jMenu2.add(miCSorteo);
+
+        miRSorteo.setText("Realizar Sorteo");
+        jMenu2.add(miRSorteo);
+
+        jMenu1.add(jMenu2);
         jMenu1.add(jSeparator1);
 
         jMenu3.setText("Solicitudes");
 
-        jMenuItem2.setText("Modificacion");
-        jMenu3.add(jMenuItem2);
+        miMod.setText("Modificacion");
+        jMenu3.add(miMod);
 
-        jMenuItem3.setText("Baja");
-        jMenu3.add(jMenuItem3);
+        miBaja.setText("Baja");
+        jMenu3.add(miBaja);
 
         jMenu1.add(jMenu3);
         jMenu1.add(jSeparator2);
 
         jMenu4.setText("Listado");
 
-        jMenuItem4.setText("Busqueda");
-        jMenu4.add(jMenuItem4);
+        miBusqueda.setText("Busqueda");
+        jMenu4.add(miBusqueda);
 
-        jMenuItem5.setText("Generar PDF");
-        jMenu4.add(jMenuItem5);
+        miGenerarPDF.setText("Generar PDF");
+        jMenu4.add(miGenerarPDF);
 
         jMenu1.add(jMenu4);
 
@@ -228,24 +237,26 @@ public class administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bBaja;
+    private javax.swing.JButton bBusqeda;
+    private javax.swing.JButton bGenerarPDF;
+    private javax.swing.JButton bMod;
     private javax.swing.JMenu cerrarSesion;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JMenuItem miBaja;
+    private javax.swing.JMenuItem miBusqueda;
+    private javax.swing.JMenuItem miCSorteo;
+    private javax.swing.JMenuItem miGenerarPDF;
+    private javax.swing.JMenuItem miMod;
+    private javax.swing.JMenuItem miRSorteo;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,11 +9,23 @@
             <Property name="text" type="java.lang.String" value="Menu"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <Menu class="javax.swing.JMenu" name="jMenu2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Realizar Sorteo"/>
+                <Property name="text" type="java.lang.String" value="Sorteo"/>
               </Properties>
-            </MenuItem>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="miCSorteo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Crear Sorteo"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="miRSorteo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Realizar Sorteo"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenu3">
@@ -21,12 +33,12 @@
                 <Property name="text" type="java.lang.String" value="Solicitudes"/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+                <MenuItem class="javax.swing.JMenuItem" name="miMod">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Modificacion"/>
                   </Properties>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+                <MenuItem class="javax.swing.JMenuItem" name="miBaja">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Baja"/>
                   </Properties>
@@ -40,12 +52,12 @@
                 <Property name="text" type="java.lang.String" value="Listado"/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+                <MenuItem class="javax.swing.JMenuItem" name="miBusqueda">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Busqueda"/>
                   </Properties>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+                <MenuItem class="javax.swing.JMenuItem" name="miGenerarPDF">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Generar PDF"/>
                   </Properties>
@@ -150,9 +162,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="bMod" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="88" max="32767" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="bBaja" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -162,8 +174,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bMod" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bBaja" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
@@ -171,12 +183,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="bMod">
           <Properties>
             <Property name="text" type="java.lang.String" value="Modificacion"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="bBaja">
           <Properties>
             <Property name="text" type="java.lang.String" value="Baja"/>
           </Properties>
@@ -203,9 +215,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bBusqeda" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  <Component id="bGenerarPDF" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -215,8 +227,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bBusqeda" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bGenerarPDF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
@@ -224,12 +236,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="bBusqeda">
           <Properties>
             <Property name="text" type="java.lang.String" value="Busqueda"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="bGenerarPDF">
           <Properties>
             <Property name="text" type="java.lang.String" value="Generar PDF"/>
           </Properties>
