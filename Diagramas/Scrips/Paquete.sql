@@ -32,10 +32,6 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 
 		FOR nSol_reg IN nSolicitud_cursor LOOP
 
-			SELECT Sr.diaFin INTO v_diaFin
-			FROM Sorteo Sr, Solicitud Sl
-			WHERE Sl.nSolicitud = nSol_reg.nSolicitud;
-
 			OPEN PaticipanteC FOR
 				SELECT S.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha, S.hora
 				FROM Solicitud S, Inscripcion I, Menor M
