@@ -526,7 +526,7 @@ DROP TABLE  Solicitud  cascade CONSTRAINTS;
 CREATE TABLE  Solicitud (
   nSolicitud NUMBER(4) NOT NULL,
   fecha DATE NULL,
-  hora TIMESTAMP NULL,
+  hora TIMESTAMP DEFAULT '0000-00-00 00:00:00',
   situacion VARCHAR(35),
   nOrden NUMBER(4),
   idSorteo NUMBER(4) NOT NULL,
