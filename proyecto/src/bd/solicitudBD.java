@@ -10,11 +10,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import oracle.jdbc.OracleTypes;
+import oracle.sql.TIMESTAMP;
 import uml.*;
 
 /**
@@ -35,7 +37,7 @@ public class solicitudBD {
           
           System.out.println("Base de datos abierta");
         
-            String sql ="{call paquete.consultaSolicitud(?,?,?,?)}";
+            String sql ="{call paquete.consultaSolicitud(?,?,?)}";
             CallableStatement cs = conn.prepareCall(sql);
             cs.setString(1,jDni);
             SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
@@ -45,40 +47,50 @@ public class solicitudBD {
             cs.setDate(2,sqlDate);
             // Ejecutamos
             cs.registerOutParameter(3,OracleTypes.CURSOR);
-            cs.registerOutParameter(4,OracleTypes.CURSOR);
+         
             cs.execute();
 
             
             rset = (ResultSet)cs.getObject(3);
-            rset2 = (ResultSet)cs.getObject(4);
+          
             solicitud s= new solicitud();
             int codigo;
             inscripcion i = new inscripcion();
             menor m = new menor();
             while(rset.next()){
-            
-            s.setnSolicitud(rset.getInt(1));
-            s.setSituacion(rset.getString(2));
-            m.setNombre(rset.getString(3));
-            m.setApe1(rset.getString(4));
-            m.setApe2(rset.getString(5));
-            
-            java.util.Date uDate = rset.getDate(6);
-            
-            m.setFechaNac(uDate);
+                //nSolicitud
+                s.setnSolicitud(rset.getInt(1));
+                //Situacion
+                s.setSituacion(rset.getString(2));
+                //Nombre    
+                m.setNombre(rset.getString(3));
+                //Ape1
+                m.setApe1(rset.getString(4));
+                //Ape2
+                m.setApe2(rset.getString(5));
+                //FechaNac
+                java.util.Date uDate = rset.getDate(6);                
+                m.setFechaNac(uDate);
+                
                 i.setMenor(m);
                 lins.add(i);
+                //Orden
+                s.setOrden(rset.getInt(7));
+                //Fecha
+                s.setFecha(rset.getDate(8));
+                //Hora
+                long hora = rset.getTimestamp(9).getTime();
+                Calendar c = Calendar.getInstance();
+                c.setTimeInMillis(hora);
+                s.setHora(c);
+     
+           
               
+            solicitudes.add(s); 
             }
             
-            while(rset2.next()){
-            s.setOrden(rset2.getInt(1));
-            s.setFecha(rset2.getDate(2));
-            Calendar c= Calendar.getInstance();
-            c.setTime(rset2.getDate(3));
-            s.setHora(c);
-            }
-           solicitudes.add(s); 
+            
+           
            
     }
     catch(Exception e){
