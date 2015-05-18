@@ -5,15 +5,19 @@ import java.util.ArrayList;
 public class provincia {
 
 	private String nombre;
-        private centro centro;
+        private ArrayList<centro> ListaCentros;
+        private ArrayList<municipio> ListaMuni;
 
     public provincia() {
+       ListaMuni = new ArrayList();
     }
 
-    public provincia(String nombre,centro centro) {
+    public provincia(String nombre, ArrayList<centro> ListaCentros, ArrayList<municipio> ListaMuni) {
         this.nombre = nombre;
-        this.centro = centro;
+        this.ListaCentros = ListaCentros;
+        this.ListaMuni = ListaMuni;
     }
+
 
     public String getNombre() {
         return nombre;
@@ -23,11 +27,23 @@ public class provincia {
         this.nombre = nombre;
     }
 
-    public centro getCentro() {
-        return centro;
+    public ArrayList<municipio> getListaMuni() {
+        return ListaMuni;
     }
 
-    public void setCentro(centro centro) {
-        this.centro = centro;
+    public void setListaMuni(ArrayList<municipio> ListaMuni) {
+        this.ListaMuni = ListaMuni;
     }
+
+    public ArrayList<centro> getListaCentros() {
+        return ListaCentros;
+    }
+
+    public void setListaCentros(ArrayList<centro> ListaCentros) {
+        this.ListaCentros = ListaCentros;
+    }
+    
+    
+    
+    
 }
