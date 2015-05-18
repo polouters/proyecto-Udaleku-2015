@@ -5,10 +5,12 @@
  */
 package vista;
 
+import bd.provinciaBD;
 import com.aeat.valida.Validador;
 import controlador.Main;
 import exc.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import uml.calle;
@@ -27,14 +29,20 @@ import uml.vivienda;
  */
 public class InscripcionV extends javax.swing.JFrame {
 
-    private int numInsc = 1;
+    private int numInsc = 0;
+    private ArrayList<provincia> ListaProv;
+    private provincia p;
     
     public InscripcionV() {
         initComponents();
         setLocationRelativeTo(null);
+        numInsc = 1;
+        
+        ListaProv = new ArrayList();
+        ListaProv = provinciaBD.ListaProv();
+        LlenarCombo();
         
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -117,7 +125,7 @@ public class InscripcionV extends javax.swing.JFrame {
         bGuardar = new javax.swing.JButton();
         bDatos = new javax.swing.JButton();
         bCancelar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        bAñadir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -309,11 +317,16 @@ public class InscripcionV extends javax.swing.JFrame {
 
         jLabel13.setText("*Provincia");
 
-        cMunicipio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selececione una municipio" }));
+        cMunicipio.setEnabled(false);
+        cMunicipio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cMunicipioActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("*Calle");
 
-        cCalle.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una calle" }));
+        cCalle.setEnabled(false);
 
         jLabel15.setText("*Número");
 
@@ -508,9 +521,19 @@ public class InscripcionV extends javax.swing.JFrame {
 
         bgCentro.add(rAlava);
         rAlava.setText("Álava");
+        rAlava.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rAlavaActionPerformed(evt);
+            }
+        });
 
         bgCentro.add(rFuera);
         rFuera.setText("Fuera de Álava");
+        rFuera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rFueraActionPerformed(evt);
+            }
+        });
 
         cCentro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione un centro" }));
 
@@ -603,7 +626,12 @@ public class InscripcionV extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Añadir nuevo participante");
+        bAñadir.setText("Añadir nuevo participante");
+        bAñadir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAñadirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pPrincipalLayout = new javax.swing.GroupLayout(pPrincipal);
         pPrincipal.setLayout(pPrincipalLayout);
@@ -629,7 +657,7 @@ public class InscripcionV extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(bGuardar))
                             .addGroup(pPrincipalLayout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(bAñadir)
                                 .addGap(18, 18, 18)
                                 .addComponent(bDatos)))
                         .addGap(34, 34, 34)))
@@ -656,7 +684,7 @@ public class InscripcionV extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bDatos)
-                    .addComponent(jButton1))
+                    .addComponent(bAñadir))
                 .addContainerGap())
         );
 
@@ -718,16 +746,12 @@ public class InscripcionV extends javax.swing.JFrame {
                v.setMano(mano());
                v.setPiso(piso());
                 //Datos_provincia
-               provincia p = new provincia();
-               p.setNombre(String.valueOf(cProvincia.getSelectedItem()));
-               p.setCentro(c);
+              
                //Datos_Municipio
                municipio muni = new municipio();
                muni.setNombre(String.valueOf(cMunicipio.getSelectedItem()));
-               muni.setProv(p);
                //Datos_Calle
                calle calle = new calle();
-               calle.setMunicipio(muni);
                calle.setNombre(String.valueOf(cCalle.getSelectedItem()));
                //Datos_Direccion
                direccion d = new direccion();
@@ -785,7 +809,31 @@ public class InscripcionV extends javax.swing.JFrame {
     }//GEN-LAST:event_cTelef4StateChanged
 
     private void cProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cProvinciaActionPerformed
-        // TODO add your handling code here:
+        cProvincia.setEnabled(false);
+        cMunicipio.setEnabled(true);
+        if(cProvincia.getSelectedIndex()!=0){
+            
+        p = new provincia();
+        p.setNombre(cProvincia.getSelectedItem().toString());
+                
+        p.setListaMuni(Main.CBMunicipio(p));
+         
+        
+        cMunicipio.removeAllItems();
+        int x;
+          for (x = 0; x < p.getListaMuni().size();x++){
+            
+            cMunicipio.addItem(p.getListaMuni().get(x).getNombre());
+            
+          }
+          }else{
+              cMunicipio.removeAllItems();
+              cMunicipio.addItem("Selececione una municipio");
+              cMunicipio.setEnabled(false);
+                }
+        
+         
+        
     }//GEN-LAST:event_cProvinciaActionPerformed
 
     private void bDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDatosActionPerformed
@@ -800,6 +848,65 @@ public class InscripcionV extends javax.swing.JFrame {
                 
                 
     }//GEN-LAST:event_bBorrarActionPerformed
+
+    private void bAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAñadirActionPerformed
+        numInsc ++;
+        VaciarDatos();
+        
+    }//GEN-LAST:event_bAñadirActionPerformed
+
+    private void cMunicipioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cMunicipioActionPerformed
+        
+        cCalle.setEnabled(true);
+        
+       
+            
+        int posicion = cMunicipio.getSelectedIndex();
+        
+        p.getListaMuni().get(posicion).setListaCalles(Main.CBMCalle(p.getListaMuni().get(posicion)));
+        
+       cCalle.removeAllItems();
+          for (int x = 0; x < p.getListaMuni().get(posicion).getListaCalles().size();x++){
+            
+            cCalle.addItem(p.getListaMuni().get(posicion).getListaCalles().get(x).getNombre());
+          }
+         
+    }//GEN-LAST:event_cMunicipioActionPerformed
+
+    private void rAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rAlavaActionPerformed
+        
+        cCentro.removeAllItems();
+        
+       ArrayList<centro> ListaCentros = new ArrayList();
+       
+       ListaCentros = Main.CBMCentros("Alava/Araba");
+       
+        int x;
+        
+        for(x=0;x<ListaCentros.size();x++){
+            
+            cCentro.addItem(ListaCentros.get(x).getNombre());
+            
+        }
+        
+        
+    }//GEN-LAST:event_rAlavaActionPerformed
+
+    private void rFueraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rFueraActionPerformed
+       cCentro.removeAllItems();
+        
+       ArrayList<centro> ListaCentros = new ArrayList();
+       
+       ListaCentros = Main.CBMCentros("fuera");
+       
+        int x;
+        
+        for(x=0;x<ListaCentros.size();x++){
+            
+            cCentro.addItem(ListaCentros.get(x).getNombre());
+            
+        }
+    }//GEN-LAST:event_rFueraActionPerformed
 
     public boolean datosCorrectos(){
         if(datosVacios() && validarDNI() && comprobarSexo())
@@ -971,6 +1078,59 @@ public class InscripcionV extends javax.swing.JFrame {
         }
         return tMano.getText();
     }
+    public void LlenarCombo(){
+        
+        for (int x = 0; x < ListaProv.size();x++){
+            
+            cProvincia.addItem(ListaProv.get(x).getNombre());
+        }
+        
+    }
+    public void VaciarDatos(){
+        //Datos_Tutor
+        tDNIT.setText(null);
+        tNombreT.setText(null);
+        tApe1T.setText(null);
+        tApe2T.setText(null);
+        cTelef1.setSelected(false);
+        tTelef1.setText(null);
+        cTelef2.setSelected(false);
+        tTelef2.setText(null);
+        cTelef3.setSelected(false);
+        tTelef3.setText(null);
+        cTelef4.setSelected(false);
+        tTelef4.setText(null);
+        //Datos_Menor
+        tDNIM.setText(null);
+        tNombreM.setText(null);
+        tApe1M.setText(null);
+        tApe2M.setText(null);
+        bgSexo.clearSelection();
+        //rHombre.setSelected(false);
+        //rMujer.setSelected(false);
+        dNacimiento.setText(null);
+        //Datos_Direccion
+        cProvincia.setSelectedIndex(0);
+        cMunicipio.setSelectedIndex(0);
+        cCalle.setSelectedIndex(0);
+        fCP.setText(null);
+        tNumero.setText(null);
+        tPiso.setText(null);
+        tLetra.setText(null);
+        tEscalera.setText(null);
+        tMano.setText(null);
+        //Otros_Datos
+        bgCentro.clearSelection();
+        //rAlava.setSelected(false);
+        //rFuera.setSelected(false);
+        cCentro.setSelectedIndex(0);
+        bgModelo.clearSelection();
+        //rA.setSelected(false);
+        //rB.setSelected(false);
+        //rD.setSelected(false);
+        cDisca.setSelected(false);
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -1008,6 +1168,7 @@ public class InscripcionV extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bAñadir;
     private javax.swing.JButton bBorrar;
     private javax.swing.JButton bCancelar;
     private javax.swing.JButton bDatos;
@@ -1026,7 +1187,6 @@ public class InscripcionV extends javax.swing.JFrame {
     private javax.swing.JCheckBox cTelef4;
     private javax.swing.JFormattedTextField dNacimiento;
     private javax.swing.JFormattedTextField fCP;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

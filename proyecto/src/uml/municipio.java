@@ -5,15 +5,15 @@ import java.util.ArrayList;
 public class municipio {
 
 	private String nombre;
-        private provincia prov;
+        private ArrayList<calle> ListaCalles = new ArrayList();
+
+    
+        
 
     public municipio() {
     }
 
-    public municipio(String nombre, provincia prov,ArrayList <calle> lCalle) {
-        this.nombre = nombre;
-        this.prov = prov;
-    }
+    
 
     public String getNombre() {
         return nombre;
@@ -23,12 +23,12 @@ public class municipio {
         this.nombre = nombre;
     }
 
-    public provincia getProv() {
-        return prov;
+    public ArrayList<calle> getListaCalles() {
+        return ListaCalles;
     }
 
-    public void setProv(provincia prov) {
-        this.prov = prov;
+    public void setListaCalles(ArrayList<calle> ListaCalles) {
+        this.ListaCalles = ListaCalles;
     }
 
       

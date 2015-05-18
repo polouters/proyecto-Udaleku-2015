@@ -1,6 +1,5 @@
 package uml;
 
-import java.util.ArrayList;
 
 public class centro {
 
@@ -14,6 +13,7 @@ public class centro {
         this.nombre = nombre;
         this.modelo = modelo;
     }
+
 
     public String getNombre() {
         return nombre;

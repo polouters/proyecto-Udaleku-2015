@@ -39,6 +39,30 @@ public class Main {
         return true;
     }
 
+    }   
+    
+    
+    
+    public static ArrayList<municipio> CBMunicipio(provincia p){
+        
+        ArrayList<municipio> ListaMunicipio = municipioBD.ListMunc(p);
+    
+        return ListaMunicipio;
     }
+    
+    public static ArrayList<calle> CBMCalle(municipio muni){
+        
+        ArrayList<calle> ListaCalle = CalleBD.ListCalle(muni);
+    
+        return ListaCalle;
+    }
+    public static ArrayList<centro> CBMCentros(String centro){
+        
+        
+        return centroBD.ListaCentro(centro);
+    }
+    
+    
+    
 }
     
