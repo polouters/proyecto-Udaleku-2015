@@ -55,6 +55,11 @@ public class acceso extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Nanum Brush Script", 3, 36)); // NOI18N
         jLabel1.setText("Acceso:");
 
+        try {
+            tNacimiento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         tNacimiento.setToolTipText("DD/MM/YYYY");
 
         jLabel2.setText("DNI Tutor:");
@@ -68,7 +73,7 @@ public class acceso extends javax.swing.JFrame {
             }
         });
 
-        bSalir.setText("Salir");
+        bSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Boton-Salir.png"))); // NOI18N
         bSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bSalirActionPerformed(evt);
@@ -93,15 +98,15 @@ public class acceso extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addComponent(tNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
                     .addComponent(jDni))
-                .addGap(53, 53, 53))
+                .addGap(139, 139, 139))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(bInscribirse, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bInscribirse, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bSalir)
-                .addGap(47, 47, 47))
+                .addComponent(bSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -113,14 +118,14 @@ public class acceso extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
+            .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -131,16 +136,13 @@ public class acceso extends javax.swing.JFrame {
                         .addComponent(tNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)))
                 .addComponent(bAcceder)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(bSalir))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bInscribirse, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(71, 71, 71))
+                    .addComponent(bInscribirse, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(116, 116, 116))
         );
 
         pack();
@@ -154,22 +156,22 @@ public class acceso extends javax.swing.JFrame {
         try{
             if(tNacimiento.getText().isEmpty()||jDni.getText().isEmpty()){throw new DatoVacio();}
             
-            Validador validadorT = new Validador();
-            
-            int T = validadorT.checkNif(jDni.getText());
-        
-            if(T < 0){throw new ValNif(); }
-            if(jDni.getText().compareToIgnoreCase("admin")==0 && tNacimiento.getText().compareToIgnoreCase("admin")==0){
+            if(jDni.getText().charAt(8)=='Ñ'){
+                if(jDni.getText().compareToIgnoreCase("65687773Ñ")==0 && tNacimiento.getText().compareToIgnoreCase("83/85/6879")==0){
                 controladorV.accesoAdmin();
-            }else{
-              boolean existe=  controladorV.usuarioExiste(jDni.getText().toString(), tNacimiento.getText().toString());
+                System.out.println("Inciando como Administrador");
+                }else{throw new ValNif();}
                 
-            }
-            
-            
-        }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");}
-        catch(ValNif ex){JOptionPane.showMessageDialog(this,"El dni no es valido");}
-        catch(Exception Ex){JOptionPane.showMessageDialog(this,"Error:\n "+Ex.getMessage());}
+                }else{
+                Validador validadorT = new Validador();           
+                int T = validadorT.checkNif(jDni.getText());
+        
+                 if(T < 0){throw new ValNif();}else{
+                    boolean existe=  controladorV.usuarioExiste(jDni.getText().toString(), tNacimiento.getText().toString());}
+                }   
+        }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");
+        }catch(ValNif ex){JOptionPane.showMessageDialog(this,"El dni no es valido");
+        }catch(Exception Ex){JOptionPane.showMessageDialog(this,"Error:\n "+Ex.getMessage());}
     }//GEN-LAST:event_bAccederActionPerformed
 
     private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
