@@ -33,7 +33,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		FOR nSol_reg IN nSolicitud_cursor LOOP
 
 			OPEN PaticipanteC FOR
-				SELECT S.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha, S.hora
+				SELECT S.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha
 				FROM Solicitud S, Inscripcion I, Menor M
 				WHERE I.nSolicitud = nSol_reg.nSolicitud AND I.codMenor = M.codMenor;
 

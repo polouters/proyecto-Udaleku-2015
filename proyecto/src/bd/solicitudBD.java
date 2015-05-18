@@ -54,7 +54,7 @@ public class solicitudBD {
             rset = (ResultSet)cs.getObject(3);
           
             solicitud s= new solicitud();
-            int codigo;
+            int codigo=123;
             inscripcion i = new inscripcion();
             menor m = new menor();
             while(rset.next()){
@@ -74,21 +74,22 @@ public class solicitudBD {
                 
                 i.setMenor(m);
                 lins.add(i);
+                s.setlInsc(lins);
                 //Orden
                 s.setOrden(rset.getInt(7));
                 //Fecha
                 s.setFecha(rset.getDate(8));
                 //Hora
-                long hora = rset.getTimestamp(9).getTime();
+              /*  long hora = rset.getTimestamp(9).getTime();
                 Calendar c = Calendar.getInstance();
                 c.setTimeInMillis(hora);
                 s.setHora(c);
-     
+     */
            
               
-            solicitudes.add(s); 
+          
             }
-            
+            solicitudes.add(s);
             
            
            
