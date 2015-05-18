@@ -173,9 +173,9 @@ public class acceso extends javax.swing.JFrame {
                  if(T < 0){throw new ValNif();}else{
                     boolean existe=  controladorV.usuarioExiste(jDni.getText().toString(), tNacimiento.getText().toString());}
                 }   
-        }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");}
-        catch(ValNif ex){JOptionPane.showMessageDialog(this,"El dni no es valido");}
-        catch(Exception Ex){JOptionPane.showMessageDialog(this,"Error:\n "+Ex.getMessage());}
+        }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");
+        }catch(ValNif ex){JOptionPane.showMessageDialog(this,"El dni no es valido");
+        }catch(Exception Ex){JOptionPane.showMessageDialog(this,"Error:\n "+Ex.getMessage());}
     }//GEN-LAST:event_bAccederActionPerformed
 
     private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
