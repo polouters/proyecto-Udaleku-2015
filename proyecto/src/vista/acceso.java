@@ -55,6 +55,11 @@ public class acceso extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Nanum Brush Script", 3, 36)); // NOI18N
         jLabel1.setText("Acceso:");
 
+        try {
+            tNacimiento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         tNacimiento.setToolTipText("DD/MM/YYYY");
 
         jLabel2.setText("DNI Tutor:");
@@ -93,9 +98,9 @@ public class acceso extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addComponent(tNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
                     .addComponent(jDni))
-                .addGap(53, 53, 53))
+                .addGap(139, 139, 139))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bInscribirse, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,8 +135,9 @@ public class acceso extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(tNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bAcceder)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -154,22 +160,22 @@ public class acceso extends javax.swing.JFrame {
         try{
             if(tNacimiento.getText().isEmpty()||jDni.getText().isEmpty()){throw new DatoVacio();}
             
-            Validador validadorT = new Validador();
-            
-            int T = validadorT.checkNif(jDni.getText());
-        
-            if(T < 0){throw new ValNif(); }
-            if(jDni.getText().compareToIgnoreCase("admin")==0 && tNacimiento.getText().compareToIgnoreCase("admin")==0){
+            if(jDni.getText().charAt(8)=='Ñ'){
+                if(jDni.getText().compareToIgnoreCase("65687773Ñ")==0 && tNacimiento.getText().compareToIgnoreCase("83/85/6879")==0){
                 controladorV.accesoAdmin();
-            }else{
-              boolean existe=  controladorV.usuarioExiste(jDni.getText().toString(), tNacimiento.getText().toString());
+                System.out.println("Inciando como Administrador");
+                }else{throw new ValNif();}
                 
-            }
-            
-            
-        }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");}
-        catch(ValNif ex){JOptionPane.showMessageDialog(this,"El dni no es valido");}
-        catch(Exception Ex){JOptionPane.showMessageDialog(this,"Error:\n "+Ex.getMessage());}
+                }else{
+                Validador validadorT = new Validador();           
+                int T = validadorT.checkNif(jDni.getText());
+        
+                 if(T < 0){throw new ValNif();}else{
+                    boolean existe=  controladorV.usuarioExiste(jDni.getText().toString(), tNacimiento.getText().toString());}
+                }   
+        }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");
+        }catch(ValNif ex){JOptionPane.showMessageDialog(this,"El dni no es valido");
+        }catch(Exception Ex){JOptionPane.showMessageDialog(this,"Error:\n "+Ex.getMessage());}
     }//GEN-LAST:event_bAccederActionPerformed
 
     private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
