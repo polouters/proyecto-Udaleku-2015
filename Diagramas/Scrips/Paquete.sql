@@ -2,13 +2,11 @@
 CREATE OR REPLACE PACKAGE paquete IS
 	
 	TYPE Paticipante_cusor IS REF CURSOR;
-	TYPE Sorteo_cursor IS REF CURSOR;
 
 	PROCEDURE consultaSolicitud(
 		v_dniTutor IN Tutor.dni%TYPE,
 	 	v_fechaNac IN Menor.fechaNac%TYPE,
-	 	PaticipanteC OUT Paticipante_cusor,
-	 	SorteoC OUT Sorteo_cursor
+	 	PaticipanteC OUT Paticipante_cusor
 	 	);
 
 END paquete;
@@ -20,8 +18,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 	PROCEDURE consultaSolicitud
 	(v_dniTutor IN Tutor.dni%TYPE,
 	 v_fechaNac IN Menor.fechaNac%TYPE,
-	 PaticipanteC OUT Paticipante_cusor,
-	 SorteoC OUT Sorteo_cursor
+	 PaticipanteC OUT Paticipante_cusor
 	)IS
 
 		CURSOR nSolicitud_cursor IS
@@ -31,8 +28,6 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 												       FROM Menor
 												       WHERE fechaNac = V_fechaNac);
 
-		v_diaFin Sorteo.diaFin%TYPE;
-
 	BEGIN 
 
 		FOR nSol_reg IN nSolicitud_cursor LOOP
@@ -41,16 +36,8 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 			FROM Sorteo Sr, Solicitud Sl
 			WHERE Sl.nSolicitud = nSol_reg.nSolicitud;
 
-			IF SYSDATE > v_diaFin THEN
-				OPEN SorteoC FOR
-					SELECT nOrden, fecha, hora
-					FROM Solicitud
-					WHERE nSolicitud = nSol_reg.nSolicitud;
-
-			END IF;
-
 			OPEN PaticipanteC FOR
-				SELECT S.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac
+				SELECT S.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha, S.hora
 				FROM Solicitud S, Inscripcion I, Menor M
 				WHERE I.nSolicitud = nSol_reg.nSolicitud AND I.codMenor = M.codMenor;
 
