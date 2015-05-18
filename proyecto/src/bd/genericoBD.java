@@ -33,7 +33,7 @@ public class genericoBD {
          con = DriverManager.getConnection(url,usuario,password);
          */
           DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
-          con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.56.2:5560:polo",usuario,password);
+          con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.56.2:1521:polo",usuario,password);
                                                // driver@machineName:port:SID ,  userid,  password
  
          if (con!=null){
