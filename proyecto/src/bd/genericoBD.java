@@ -38,8 +38,8 @@ public class genericoBD {
             
           //riverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
           //con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.56.2:5560:polo",usuario,password);
-         DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
-         con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.56.2:1521:polo",usuario,password);
+         //DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
+         //con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.56.2:1521:polo",usuario,password);
                                                // driver@machineName:port:SID ,  userid,  password
           
          DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());

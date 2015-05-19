@@ -6,16 +6,20 @@ public class vivienda {
 	private String piso;
 	private String letra;
 	private String mano;
+        private String escalera;
 
     public vivienda() {
     }
 
-    public vivienda(String numero, String piso, String letra, String mano, direccion drc) {
+    public vivienda(String numero, String piso, String letra, String mano, String escalera) {
         this.numero = numero;
         this.piso = piso;
         this.letra = letra;
         this.mano = mano;
+        this.escalera = escalera;
     }
+
+
 
     public String getNumero() {
         return numero;
@@ -47,6 +51,14 @@ public class vivienda {
 
     public void setMano(String mano) {
         this.mano = mano;
+    }
+
+    public String getEscalera() {
+        return escalera;
+    }
+
+    public void setEscalera(String escalera) {
+        this.escalera = escalera;
     }
         
  

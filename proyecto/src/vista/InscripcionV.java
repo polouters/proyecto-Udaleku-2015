@@ -20,6 +20,7 @@ import uml.inscripcion;
 import uml.menor;
 import uml.municipio;
 import uml.provincia;
+import uml.solicitud;
 import uml.tutor;
 import uml.vivienda;
 
@@ -29,18 +30,23 @@ import uml.vivienda;
  */
 public class InscripcionV extends javax.swing.JFrame {
 
-    private int numInsc = 0;
+    private int NumInsc = 0; // Variable para saber cuantas inscripciones llevamos.
+    private ArrayList<inscripcion> ListaInscripcion;
     private ArrayList<provincia> ListaProv;
-    private provincia p;
+    //Posiciones en las combo box, para saber cuales ha elegido.
+    private int posicionProv;
+    private int posicionMuni;
+    private int posicionCalle;
     
     public InscripcionV() {
         initComponents();
         setLocationRelativeTo(null);
-        numInsc = 1;
+        ListaInscripcion = new ArrayList();
+        
         
         ListaProv = new ArrayList();
         ListaProv = provinciaBD.ListaProv();
-        LlenarCombo();
+        LlenarComboProv();
         
     }
     /**
@@ -55,7 +61,7 @@ public class InscripcionV extends javax.swing.JFrame {
         bgSexo = new javax.swing.ButtonGroup();
         bgCentro = new javax.swing.ButtonGroup();
         bgModelo = new javax.swing.ButtonGroup();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        sPanel = new javax.swing.JScrollPane();
         pPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         pDatosT = new javax.swing.JPanel();
@@ -129,7 +135,7 @@ public class InscripcionV extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        sPanel.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         pPrincipal.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -203,7 +209,7 @@ public class InscripcionV extends javax.swing.JFrame {
         jLabel6.setText("DNI");
 
         try {
-            tDNIM.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+            tDNIM.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########U")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -465,7 +471,7 @@ public class InscripcionV extends javax.swing.JFrame {
                     .addGroup(pDireccionLayout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(jLabel21)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         pDireccionLayout.setVerticalGroup(
             pDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -536,6 +542,7 @@ public class InscripcionV extends javax.swing.JFrame {
         });
 
         cCentro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione un centro" }));
+        cCentro.setEnabled(false);
 
         jLabel23.setText("*Modelo");
 
@@ -688,17 +695,17 @@ public class InscripcionV extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jScrollPane1.setViewportView(pPrincipal);
+        sPanel.setViewportView(pPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
+            .addComponent(sPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(sPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -713,65 +720,17 @@ public class InscripcionV extends javax.swing.JFrame {
 
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
 
-        try{
-           if(numInsc < 3){
-               if(datosCorrectos()){
-                JOptionPane.showMessageDialog(this,"Vamos a realizar la inscripcion");
-                
-                //Datos_centro
-               centro c = new centro();
-               c.setNombre(String.valueOf(cCentro.getSelectedItem()));
-               c.setModelo(modelo());
-                //Datos_Tutor
-                tutor t = new tutor();
-                t.setDni(tDNIT.getText());
-                t.setNombre(tNombreT.getText());
-                t.setApe1(tApe1T.getText());
-                t.setApe2(tApe2T.getText());
-                telefonos(t);
-                //Datos_Menor
-                menor m = new menor();
-                m.setDni(dniMenor());
-                m.setNombre(tNombreM.getText());
-                m.setApe1(tApe1M.getText());
-                m.setApe2(tApe2M.getText());
-                m.setSexo(sexo());
-                m.setFechaNac(fechaNac());
-                m.setDiscapacidad(discapacidad());
-                m.setCntr(c);
-                //Datos_Vivienda
-               vivienda v = new vivienda();
-               v.setNumero(tNumero.getText());
-               v.setLetra(letra());
-               v.setMano(mano());
-               v.setPiso(piso());
-                //Datos_provincia
-              
-               //Datos_Municipio
-               municipio muni = new municipio();
-               muni.setNombre(String.valueOf(cMunicipio.getSelectedItem()));
-               //Datos_Calle
-               calle calle = new calle();
-               calle.setNombre(String.valueOf(cCalle.getSelectedItem()));
-               //Datos_Direccion
-               direccion d = new direccion();
-               d.setCalle(calle);
-               d.setVivienda(v);
-               d.setCp(fCP.getText());
-               d.setMenor(m);
-               //Datos_Inscripcion
-              inscripcion ins = new inscripcion();
-              ins.setIdIns(numInsc);
-              ins.setTutor(t);
-              ins.setMenor(m);
-              
-                    }
-           } 
+    try{
+        if(GuardarDatos()){
             
+            GuardarSolicitud();
+            
+            JOptionPane.showMessageDialog(this,"Solicitud guardada correctamente");
         }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, "error: " + e);
-        }
+    }
+    catch (Exception e){
+        JOptionPane.showMessageDialog(this,"Problemas" + e.getMessage());
+    }
         
     }//GEN-LAST:event_bGuardarActionPerformed
 
@@ -809,21 +768,25 @@ public class InscripcionV extends javax.swing.JFrame {
     }//GEN-LAST:event_cTelef4StateChanged
 
     private void cProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cProvinciaActionPerformed
+    try{
         cProvincia.setEnabled(false);
         cMunicipio.setEnabled(true);
+        
         if(cProvincia.getSelectedIndex()!=0){
             
-        p = new provincia();
-        p.setNombre(cProvincia.getSelectedItem().toString());
+        posicionProv = cProvincia.getSelectedIndex() - 1;
+        
+        ListaProv.get(posicionProv).setNombre(cProvincia.getSelectedItem().toString());
                 
-        p.setListaMuni(Main.CBMunicipio(p));
+        ListaProv.get(posicionProv).setListaMuni(Main.CBMunicipio(ListaProv.get(posicionProv)));
          
         
         cMunicipio.removeAllItems();
+        cCalle.removeAllItems();
         int x;
-          for (x = 0; x < p.getListaMuni().size();x++){
+          for (x = 0; x < ListaProv.get(posicionProv).getListaMuni().size();x++){
             
-            cMunicipio.addItem(p.getListaMuni().get(x).getNombre());
+            cMunicipio.addItem(ListaProv.get(posicionProv).getListaMuni().get(x).getNombre());
             
           }
           }else{
@@ -831,6 +794,10 @@ public class InscripcionV extends javax.swing.JFrame {
               cMunicipio.addItem("Selececione una municipio");
               cMunicipio.setEnabled(false);
                 }
+    }   
+    catch(Exception e){
+        System.out.println("ActionPerfomed de Provincia");
+    }
         
          
         
@@ -850,32 +817,47 @@ public class InscripcionV extends javax.swing.JFrame {
     }//GEN-LAST:event_bBorrarActionPerformed
 
     private void bAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAñadirActionPerformed
-        numInsc ++;
-        VaciarDatos();
+        
+        
+        try{
+        if(GuardarDatos()){
+            JOptionPane.showMessageDialog(this,"Inscripcion guardada correctamente");
+            VaciarDatos();
+        }
+    }
+    catch (Exception e){
+        JOptionPane.showMessageDialog(this,"Problemas" + e.getMessage());
+    }
+        
         
     }//GEN-LAST:event_bAñadirActionPerformed
 
     private void cMunicipioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cMunicipioActionPerformed
+
+    try{
+        cCalle.setEnabled(true);     
+        posicionMuni = cMunicipio.getSelectedIndex();
         
-        cCalle.setEnabled(true);
-        
-       
-            
-        int posicion = cMunicipio.getSelectedIndex();
-        
-        p.getListaMuni().get(posicion).setListaCalles(Main.CBMCalle(p.getListaMuni().get(posicion)));
+        ListaProv.get(posicionProv).getListaMuni().get(posicionMuni).setListaCalles(Main.CBMCalle(ListaProv.get(posicionProv).getListaMuni().get(posicionMuni)));
         
        cCalle.removeAllItems();
-          for (int x = 0; x < p.getListaMuni().get(posicion).getListaCalles().size();x++){
+       
+          for (int x = 0; x < ListaProv.get(posicionProv).getListaMuni().get(posicionMuni).getListaCalles().size();x++){
             
-            cCalle.addItem(p.getListaMuni().get(posicion).getListaCalles().get(x).getNombre());
-          }
+            cCalle.addItem(ListaProv.get(posicionProv).getListaMuni().get(posicionMuni).getListaCalles().get(x).getNombre());
+          } 
+    }
+    catch(Exception e){
+        System.out.println("ActionPerfomed de Municipio");
+    }
+        
          
     }//GEN-LAST:event_cMunicipioActionPerformed
 
     private void rAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rAlavaActionPerformed
         
         cCentro.removeAllItems();
+        cCentro.setEnabled(true);
         
        ArrayList<centro> ListaCentros = new ArrayList();
        
@@ -923,7 +905,7 @@ public class InscripcionV extends javax.swing.JFrame {
         
     try{
         if(tDNIT.getText().isEmpty() || tApe1T.getText().isEmpty() || tApe2T.getText().isEmpty() || tNombreT.getText().isEmpty() || tApe1M.getText().isEmpty() 
-                || tApe2M.getText().isEmpty() || tNombreM.getText().isEmpty() || tNumero.getText().isEmpty() || tTelef1.getText().isEmpty() || dNacimiento.getText().isEmpty()){
+                || tApe2M.getText().isEmpty() || tNombreM.getText().isEmpty() || tNumero.getText().isEmpty() || tTelef1.getText().isEmpty() || dNacimiento.getText().isEmpty()|| fCP.getText().isEmpty()){
             throw  new DatoVacio();
         }
         else
@@ -1078,16 +1060,34 @@ public class InscripcionV extends javax.swing.JFrame {
         }
         return tMano.getText();
     }
-    public void LlenarCombo(){
+    private String escalera() {
+        if(tEscalera.getText().isEmpty()){
+            return null;
+        }
+        return tEscalera.getText();
+    }
+    public void LlenarComboProv(){
         
-        for (int x = 0; x < ListaProv.size();x++){
+     try{
+        
+        cMunicipio.removeAllItems();
+        cCalle.removeAllItems();
+        cProvincia.setEnabled(true);
+        
+        for(int x = 0; x < ListaProv.size();x++){
             
             cProvincia.addItem(ListaProv.get(x).getNombre());
-        }
+        } 
+     }
+     catch(Exception e){
+         System.out.println("PUTA PROVINCIA DE MIERDA");
+     }
+        
         
     }
     public void VaciarDatos(){
-        //Datos_Tutor
+     try{
+         //Datos_Tutor
         tDNIT.setText(null);
         tNombreT.setText(null);
         tApe1T.setText(null);
@@ -1100,36 +1100,138 @@ public class InscripcionV extends javax.swing.JFrame {
         tTelef3.setText(null);
         cTelef4.setSelected(false);
         tTelef4.setText(null);
+        
         //Datos_Menor
         tDNIM.setText(null);
         tNombreM.setText(null);
         tApe1M.setText(null);
         tApe2M.setText(null);
         bgSexo.clearSelection();
-        //rHombre.setSelected(false);
-        //rMujer.setSelected(false);
         dNacimiento.setText(null);
+        
         //Datos_Direccion
-        cProvincia.setSelectedIndex(0);
-        cMunicipio.setSelectedIndex(0);
-        cCalle.setSelectedIndex(0);
+        cCalle.setEnabled(false);
+        cMunicipio.setEnabled(false);
+        LlenarComboProv();
         fCP.setText(null);
         tNumero.setText(null);
         tPiso.setText(null);
         tLetra.setText(null);
         tEscalera.setText(null);
         tMano.setText(null);
+        
         //Otros_Datos
         bgCentro.clearSelection();
-        //rAlava.setSelected(false);
-        //rFuera.setSelected(false);
-        cCentro.setSelectedIndex(0);
+        cCentro.setSelectedIndex(-1);
+        cCentro.setEnabled(false);
         bgModelo.clearSelection();
-        //rA.setSelected(false);
-        //rB.setSelected(false);
-        //rD.setSelected(false);
         cDisca.setSelected(false);
+     }
+     catch(Exception e){
+         JOptionPane.showMessageDialog(this,"Problemas al vaciar");
+     }
         
+        
+    }
+    public boolean GuardarDatos(){
+        
+        try{
+           if(NumInsc < 3){
+                   if(datosCorrectos())
+                   {
+                JOptionPane.showMessageDialog(this,"Guardando informacion del participante");
+                
+                //Datos_centro
+               centro c = new centro();
+               c.setNombre(cCentro.getSelectedItem().toString());
+               c.setModelo(modelo());
+               
+                //Datos_Tutor
+                tutor t = new tutor();
+                t.setDni(tDNIT.getText());
+                t.setNombre(tNombreT.getText());
+                t.setApe1(tApe1T.getText());
+                t.setApe2(tApe2T.getText());
+                telefonos(t);
+                
+                //Datos_Menor
+                menor m = new menor();
+                m.setDni(dniMenor());
+                m.setNombre(tNombreM.getText());
+                m.setApe1(tApe1M.getText());
+                m.setApe2(tApe2M.getText());
+                m.setSexo(sexo());
+                m.setFechaNac(fechaNac());
+                m.setDiscapacidad(discapacidad());
+                m.setCntr(c);
+                
+                //Datos_Vivienda
+               vivienda v = new vivienda();
+               v.setNumero(tNumero.getText());
+               v.setLetra(letra());
+               v.setEscalera(escalera());
+               v.setMano(mano());
+               v.setPiso(piso());
+               
+               //Datos_Calle
+              posicionCalle = cCalle.getSelectedIndex();
+              calle calle = ListaProv.get(posicionProv).getListaMuni().get(posicionMuni).getListaCalles().get(posicionCalle);
+              
+               //Datos_Direccion
+               direccion d = new direccion();
+               d.setCalle(calle);
+               d.setCp(fCP.getText());
+               d.setVivienda(v);
+               d.setMenor(m);
+               //Relacion_Menor_Direccion
+               m.setDrc(d);
+               
+               //Datos_Inscripcion
+              inscripcion ins = new inscripcion();
+              ins.setTutor(t);
+              ins.setMenor(m);
+              
+              //Guardamos los datos de la inscripcion en la ArrayList, para no perder los datos si nos añaden otro participante.
+              
+              ListaInscripcion.add(ins);
+              NumInsc ++;
+                    } //Acaba el if DatosCorrectos    
+                   
+                   else // Else de DatosCorrectos
+                   {
+                       throw new DatoIncorrecto();
+                   } 
+             return true;
+            }//Acaba el if NumeroInsc
+          
+           else //Else de NumeroInsc
+                {
+               throw new MaxInsc();
+                }
+            }//Acaba el try 
+            
+        catch (DatoIncorrecto e){
+            JOptionPane.showMessageDialog(this,"Los datos introducidos no son correctos");
+            return false;
+        }
+        catch (MaxInsc e){
+            JOptionPane.showMessageDialog(this,"Solo se permiten 3 inscripciones por solicitud.");
+            GuardarSolicitud();
+            return false;
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "error: " + e);
+            return false;
+            
+        }
+    }
+    public void GuardarSolicitud(){
+        solicitud sol = new solicitud();
+        //Añadimos las 3 inscripciones a la solicitud
+        
+        sol.setlInsc(ListaInscripcion);
+        
+        JOptionPane.showMessageDialog(this,"Solicitud guardada correctamente");
     }
     /**
      * @param args the command line arguments
@@ -1212,7 +1314,6 @@ public class InscripcionV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel pDatosM;
     private javax.swing.JPanel pDatosT;
     private javax.swing.JPanel pDireccion;
@@ -1225,6 +1326,7 @@ public class InscripcionV extends javax.swing.JFrame {
     private javax.swing.JRadioButton rFuera;
     private javax.swing.JRadioButton rHombre;
     private javax.swing.JRadioButton rMujer;
+    private javax.swing.JScrollPane sPanel;
     private javax.swing.JTextField tApe1M;
     private javax.swing.JTextField tApe1T;
     private javax.swing.JTextField tApe2M;
@@ -1243,4 +1345,6 @@ public class InscripcionV extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField tTelef3;
     private javax.swing.JFormattedTextField tTelef4;
     // End of variables declaration//GEN-END:variables
+
+    
 }
