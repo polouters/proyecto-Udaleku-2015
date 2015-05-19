@@ -25,7 +25,7 @@ public class usuario extends javax.swing.JFrame {
        String texto = "Tenemos varias opciones de solicitudes: \n";
         for(int x= 0;x<s1.size();x++){
         int n = 0;
-           texto = n + texto + "  " + "  "+ s1.get(x).getlInsc().get(0).getMenor().getNombre()+"\n";
+           texto = texto +n + "  "+ s1.get(x).getlInsc().get(0).getMenor().getNombre()+"\n";
         }
         int pregunta = Integer.parseInt(JOptionPane.showInputDialog(null,texto ));
         initComponents();
