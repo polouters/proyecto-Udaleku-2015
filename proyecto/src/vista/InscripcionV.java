@@ -48,6 +48,12 @@ public class InscripcionV extends javax.swing.JFrame {
         ListaProv = provinciaBD.ListaProv();
         LlenarComboProv();
         
+        
+        
+        
+        
+        
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
