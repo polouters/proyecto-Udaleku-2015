@@ -50,9 +50,9 @@ public class controladorV {
        vp = new principal();
        vp.setVisible(true);
    }
-   public static void accesoUsuario(ArrayList<solicitud> s1){
+   public static void accesoUsuario(ArrayList<solicitud> s1, String psc){
        va.dispose();
-       vu = new usuario(s1);
+       vu = new usuario(s1,psc);
        vu.setVisible(true);
    }
    public static void accesoAdmin(){
@@ -65,8 +65,8 @@ public class controladorV {
        vp = new principal();
        vp.setVisible(true);
    }
-   public static boolean usuarioExiste(String jDni, String fNacimiento){
-   return Main.usuarioExiste(jDni,fNacimiento);
+   public static void usuarioExiste(String jDni, String fNacimiento){
+    Main.usuarioExiste(jDni,fNacimiento);
    }
 
    public static void inscripcionProtecionDatos(){
@@ -83,7 +83,7 @@ public class controladorV {
        vi = new InscripcionV();
        vi.setVisible(true);
    }
-   public static void infoSolcitud(ArrayList<solicitud> s1){
-   accesoUsuario(s1);
+   public static void infoSolcitud(ArrayList<solicitud> s1,String psc){
+   accesoUsuario(s1,psc);
    }
 }

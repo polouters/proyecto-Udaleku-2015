@@ -6,10 +6,10 @@
 package controlador;
 
 
-import java.text.SimpleDateFormat;
 
 import bd.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import uml.*;
 import vista.*;
 
@@ -30,15 +30,13 @@ public class Main {
         //Apertura de ventana
         controladorV.abrirPrincipal();
     }
-    public static boolean usuarioExiste(String jDni, String fNacimiento){
+    public static void usuarioExiste(String jDni, String fNacimiento){
+     try{
       ArrayList<solicitud> s1 =  solicitudBD.consultaAcceso(jDni,fNacimiento);
-    if(  s1.get(0).getSituacion().toString().isEmpty())
-        return false;
-    else{
-        controladorV.infoSolcitud(s1);
-        return true;
-    }
-
+        String psc = fNacimiento;
+      controladorV.infoSolcitud(s1,psc);
+     }catch(NullPointerException Ex){JOptionPane.showMessageDialog(null,"Error en el acceso.");
+     }catch(Exception Ex){JOptionPane.showMessageDialog(null,"Error: " +Ex.getMessage());}
     }   
     
     

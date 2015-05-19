@@ -167,7 +167,7 @@ public class acceso extends javax.swing.JFrame {
                 int T = validadorT.checkNif(jDni.getText());
         
                  if(T < 0){throw new ValNif();}else{
-                    boolean existe=  controladorV.usuarioExiste(jDni.getText().toString(), tNacimiento.getText().toString());}
+                    controladorV.usuarioExiste(jDni.getText(), tNacimiento.getText());}
                 }   
         }catch(DatoVacio Ex){JOptionPane.showMessageDialog(this,"Error:\n Todo los datos son obligatorios.");
         }catch(ValNif ex){JOptionPane.showMessageDialog(this,"El dni no es valido");

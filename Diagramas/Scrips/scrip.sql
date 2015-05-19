@@ -392,9 +392,9 @@ CREATE SEQUENCE idVivienda_Seq MAXVALUE 1000;
 INSERT INTO Vivienda VALUES (idVivienda_Seq.nextval,5,4,NULL,'I');
 INSERT INTO Vivienda VALUES (idVivienda_Seq.nextval,6,1,NULL,'D');
 INSERT INTO Vivienda VALUES (idVivienda_Seq.nextval,8,3,NULL,'I');
-
+INSERT INTO Vivienda VALUES (idVivienda_Seq.nextval,7,2,'A',NULL);
 -- -----------------------------------------------------
--- Table Direcccion
+-- Table Direccion
 -- -----------------------------------------------------
 DROP TABLE  Direccion cascade CONSTRAINTS ;
 
@@ -415,6 +415,8 @@ CREATE SEQUENCE idDireccion_Seq MAXVALUE 1000;
 INSERT INTO Direccion VALUES (1,1,'01235');
 INSERT INTO Direccion VALUES (1,2,'01235');
 INSERT INTO Direccion VALUES (1,3,'01235');
+INSERT INTO Direccion VALUES (1,4,'01234');
+
 
 -- -----------------------------------------------------
 -- Table Centro
@@ -483,7 +485,8 @@ CREATE SEQUENCE codMenor_Seq MAXVALUE 500;
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2003','DD/MM/YYYY'),'NO',1,1,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/03/2002','DD/MM/YYYY'),'NO',1,2,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','De Santa','Olano','Hombre',NULL, TO_DATE('03/12/2003','DD/MM/YYYY'),'NO',1,3,1);
-
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2003','DD/MM/YYYY'),'NO',1,1,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2003','DD/MM/YYYY'),'NO',1,4,2);
 -- -----------------------------------------------------
 -- Table Tutor
 -- -----------------------------------------------------
@@ -526,7 +529,7 @@ DROP TABLE  Solicitud  cascade CONSTRAINTS;
 CREATE TABLE  Solicitud (
   nSolicitud NUMBER(4) NOT NULL,
   fecha DATE NULL,
-  hora TIMESTAMP DEFAULT DEFAULT TIMESTAMP '0000-01-01 00:00:00.00000000',
+  hora DATE NULL,
   situacion VARCHAR(35),
   nOrden NUMBER(4),
   idSorteo NUMBER(4) NOT NULL,
@@ -537,6 +540,7 @@ CREATE TABLE  Solicitud (
 
 CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
 
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
 
 -- -----------------------------------------------------
@@ -565,3 +569,5 @@ CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678Z',1); 
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678Z',2); 
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678Z',3); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,2,'12345678Z',4);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,2,'12345678Z',5);

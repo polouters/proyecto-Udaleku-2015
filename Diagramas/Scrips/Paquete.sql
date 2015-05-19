@@ -24,7 +24,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		CURSOR nSolicitud_cursor IS
 			SELECT nSolicitud 
 			FROM Inscripcion
-			WHERE dni = v_dniTutor AND codMenor = ALL (SELECT codMenor
+			WHERE dni = v_dniTutor AND codMenor = ANY (SELECT codMenor
 												       FROM Menor
 												       WHERE fechaNac = V_fechaNac);
 
@@ -33,9 +33,9 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		FOR nSol_reg IN nSolicitud_cursor LOOP
 
 			OPEN PaticipanteC FOR
-				SELECT S.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha
-				FROM Solicitud S, Inscripcion I, Menor M
-				WHERE I.nSolicitud = nSol_reg.nSolicitud AND I.codMenor = M.codMenor;
+				SELECT DISTINCT i.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha
+				FROM Solicitud S, Inscripcion I,Menor M
+				WHERE i.nsolicitud = nSol_reg.nSolicitud and I.codMenor = M.codMenor;
 
 		END LOOP;	
 

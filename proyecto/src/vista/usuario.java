@@ -5,7 +5,9 @@
  */
 package vista;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import uml.*;
 
@@ -21,36 +23,107 @@ public class usuario extends javax.swing.JFrame {
       initComponents();
       setLocationRelativeTo(null);
      }
-    public usuario(ArrayList<solicitud> s1) {
-       String texto = "Tenemos varias opciones de solicitudes: \n";
-        for(int x= 0;x<s1.size();x++){
-        int n = 0;
-           texto = texto +n + "  "+ s1.get(x).getlInsc().get(0).getMenor().getNombre()+"\n";
-        }
-        int pregunta = Integer.parseInt(JOptionPane.showInputDialog(null,texto ));
+    public usuario(ArrayList<solicitud> s1,String psc) {
         initComponents();
         setLocationRelativeTo(null);
-        tHora.setEnabled(false);
-        tNumero.setEnabled(false);
-        tParticipante.setEnabled(false);
-        dCita.setEnabled(false);
-        dNacimiento.setEnabled(false);
-        jOrden.setEnabled(false);
-        jSituacion.setEnabled(false);
-        jParticipante2.setEnabled(false);
-        jParticipante3.setEnabled(false);
+        int pos =0;
+        for(int z=0;z<s1.size();z++){
+            for(int z2=0;z2<s1.get(z).getlInsc().size();z2++){
+               Date fechaNac = s1.get(z).getlInsc().get(z2).getMenor().getFechaNac();
+               SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+               String fechaNacS = sdf.format(fechaNac);
+               if(psc.compareTo(fechaNacS)==0){pos = z2;}
+            }
+        }
+        if(s1.size()==1){
+            String participante = s1.get(0).getlInsc().get(pos).getMenor().getNombre()
+                    +" "+s1.get(0).getlInsc().get(pos).getMenor().getApe1()
+                    +" "+s1.get(0).getlInsc().get(pos).getMenor().getApe2();
+            tParticipante.setText(participante);
+            dNacimiento.setDate(s1.get(0).getlInsc().get(pos).getMenor().getFechaNac());
+            tNumero.setText(Integer.toString(s1.get(0).getnSolicitud()));
+            jSituacion.setText(s1.get(0).getSituacion());
+            jOrden.setText(Integer.toString(s1.get(0).getOrden()));
+            dCita.setDate(s1.get(0).getFecha());
+            //SimpleDateFormat sdf = new SimpleDateFormat("kk:mm:ss");
+            //String hora = sdf.format(s1.get(0).getFecha());
+            //tHora.setText(hora);
+            for(int x=0;x<s1.get(0).getlInsc().size();x++){
+                switch (x){
+                    case 0: if(x!=pos){
+                                participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
+                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
+                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
+                                jParticipante2.setText(participante);}
+                    break;
+                    case 1: if(x!=pos){
+                                if(jParticipante2.getText().isEmpty()){
+                                     participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
+                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
+                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
+                                    jParticipante2.setText(participante);
+                                }else{
+                                    participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
+                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
+                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
+                                    jParticipante3.setText(participante);
+                                 }
+                            }
+                    break;
+                    case 2: if(x!=pos){
+                                participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
+                                    +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
+                                    +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
+                                jParticipante3.setText(participante);
+                            }
+        }}}else{
+            String texto = "Tenemos varias opciones de solicitudes: \n";
+            for(int x= 0;x<s1.size();x++){
+                texto = texto + (x+1) + " - "+ s1.get(x).getlInsc().get(0).getMenor().getNombre()+"\n";
+            }
+            int posAsk = (Integer.parseInt(JOptionPane.showInputDialog(null,texto )))-1;
+            String participante = s1.get(posAsk).getlInsc().get(pos).getMenor().getNombre()
+                +" "+s1.get(posAsk).getlInsc().get(pos).getMenor().getApe1()
+                +" "+s1.get(posAsk).getlInsc().get(pos).getMenor().getApe2();
+            tParticipante.setText(participante);
+            dNacimiento.setDate(s1.get(posAsk).getlInsc().get(pos).getMenor().getFechaNac());
+            tNumero.setText(Integer.toString(s1.get(posAsk).getnSolicitud()));
+            jSituacion.setText(s1.get(posAsk).getSituacion());
+            jOrden.setText(Integer.toString(s1.get(posAsk).getOrden()));
+            dCita.setDate(s1.get(posAsk).getFecha());
+            //SimpleDateFormat sdf = new SimpleDateFormat("kk:mm:ss");
+            //String hora = sdf.format(s1.get(posAsk).getFecha());
+            //tHora.setText(hora);
+            for(int x=0;x<s1.get(posAsk).getlInsc().size();x++){
+                switch (x){
+                    case 0: if(x!=pos){
+                                participante = s1.get(posAsk).getlInsc().get(x).getMenor().getNombre()
+                                        +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe1()
+                                        +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe2();
+                                jParticipante2.setText(participante);}
+                    break;
+                    case 1: if(x!=pos){
+                                if(jParticipante2.getText().isEmpty()){
+                                     participante = s1.get(posAsk).getlInsc().get(x).getMenor().getNombre()
+                                        +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe1()
+                                        +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe2();
+                                    jParticipante2.setText(participante);
+                                }else{
+                                    participante = s1.get(posAsk).getlInsc().get(x).getMenor().getNombre()
+                                        +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe1()
+                                        +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe2();
+                                    jParticipante3.setText(participante);
+                                 }
+                            }
+                    break;
+                    case 2: if(x!=pos){
+                                participante = s1.get(posAsk).getlInsc().get(x).getMenor().getNombre()
+                                    +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe1()
+                                    +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe2();
+                                jParticipante3.setText(participante);
+                            }
+        }}}
         
-        tParticipante.setText(s1.get(pregunta).getlInsc().get(0).getMenor().getNombre().toString());
-        int numero = s1.get(pregunta).getnSolicitud();
-        String x = numero + "";
-        tNumero.setText(x);
-        dNacimiento.setDate(s1.get(pregunta).getlInsc().get(0).getMenor().getFechaNac());
-        jSituacion.setText(s1.get(pregunta).getSituacion());
-        jParticipante2.setText(s1.get(pregunta).getlInsc().get(1).getMenor().getNombre() + "  "+s1.get(pregunta).getlInsc().get(1).getMenor().getApe1());
-        jParticipante3.setText(s1.get(pregunta).getlInsc().get(2).getMenor().getNombre() + "  "+s1.get(pregunta).getlInsc().get(2).getMenor().getApe1());
-        jOrden.setText(s1.get(pregunta).getOrden()+"");
-        dCita.setDate(s1.get(pregunta).getFecha());
-       // tHora.setText(s1.get(pregunta).getHora().toString());
     }
 
     /**
@@ -98,7 +171,17 @@ public class usuario extends javax.swing.JFrame {
 
         jLabel4.setText("Número  inscripción");
 
+        tParticipante.setEditable(false);
+
+        tNumero.setEditable(false);
+
+        jSituacion.setEditable(false);
+
         jLabel5.setText("Fecha de nacimiento");
+
+        dNacimiento.setDateFormatString("dd/MM/yyyy");
+        dNacimiento.setEnabled(false);
+        dNacimiento.setIcon(null);
 
         javax.swing.GroupLayout pUdalekuakLayout = new javax.swing.GroupLayout(pUdalekuak);
         pUdalekuak.setLayout(pUdalekuakLayout);
@@ -113,16 +196,16 @@ public class usuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pUdalekuakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pUdalekuakLayout.createSequentialGroup()
-                        .addGroup(pUdalekuakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pUdalekuakLayout.createSequentialGroup()
                         .addComponent(tNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(dNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(dNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pUdalekuakLayout.createSequentialGroup()
+                        .addGroup(pUdalekuakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSituacion, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pUdalekuakLayout.setVerticalGroup(
@@ -156,6 +239,10 @@ public class usuario extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PARTICIPANTE");
 
+        jParticipante2.setEditable(false);
+
+        jParticipante3.setEditable(false);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -170,7 +257,7 @@ public class usuario extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jParticipante3, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,9 +275,17 @@ public class usuario extends javax.swing.JFrame {
 
         jLabel7.setText("Número orden sorteo");
 
+        jOrden.setEditable(false);
+
         jLabel8.setText("Fecha de la cita");
 
         jLabel9.setText("Hora de la cita");
+
+        tHora.setEditable(false);
+
+        dCita.setDateFormatString("dd/MM/yyyy");
+        dCita.setEnabled(false);
+        dCita.setIcon(null);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -198,7 +293,7 @@ public class usuario extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
@@ -206,12 +301,12 @@ public class usuario extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dCita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tHora, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(189, Short.MAX_VALUE))
+                        .addComponent(dCita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tHora, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,24 +338,22 @@ public class usuario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(153, 153, 153))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pUdalekuak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(volver)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pUdalekuak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(153, 153, 153))
+                            .addComponent(volver))))
                 .addGap(52, 52, 52))
         );
         layout.setVerticalGroup(
@@ -276,7 +369,7 @@ public class usuario extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(volver)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

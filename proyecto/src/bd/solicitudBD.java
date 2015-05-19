@@ -7,12 +7,9 @@ package bd;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-
 import java.sql.ResultSet;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
 import java.util.Date;
 import oracle.jdbc.OracleTypes;
 import uml.*;
@@ -22,12 +19,12 @@ import uml.*;
  * @author Ruben
  */
 public class solicitudBD {
-    public static Connection conn;
-    public static ResultSet rset;
-    public static ResultSet rset2;
-    public static ArrayList<solicitud> consultaAcceso(String jDni, String fNacimiento){
+    private static Connection conn;
+    private static ResultSet rset;
+    public static int psc;
+    
+    public static ArrayList<solicitud> consultaAcceso(String jDni, String fNacimiento) throws Exception{
         ArrayList<solicitud> solicitudes = new ArrayList();
-        try{
           genericoBD.setCon();
           conn= genericoBD.getCon();
           
@@ -39,7 +36,7 @@ public class solicitudBD {
             
             cs.setString(1,jDni);
             
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date de = sdf.parse(fNacimiento); 
             java.sql.Date sqlDate = new java.sql.Date(de.getTime());          
             cs.setDate(2,sqlDate);
@@ -55,7 +52,7 @@ public class solicitudBD {
             solicitud s = new solicitud();
             ArrayList<inscripcion> lInsc = new ArrayList();
             
-            
+            int y =0;
             while(rset.next()){
              menor m = new menor();
              inscripcion Insc = new inscripcion();
@@ -75,19 +72,26 @@ public class solicitudBD {
                 lInsc.add(Insc);
                //Orden
                 s.setOrden(rset.getInt(7));
+               //fecha
                 s.setFecha(rset.getDate(8));
+                //El if es para cuando el cursor devuelve mas de una solicitud
+                if(y==3){
+                    //Añadir las Añadir las inscripciones a la solicititud
+                    s.setlInsc(lInsc);
+                    //Añadir la solicittud a la arrayList de solicitudes
+                    solicitudes.add(s);
+                    y = 0;
+                }
+                y = y +1;
             }
+            //Si solo devuelve una solicitud entra en el if
+            if(y<=3){
+                //Añadir las Añadir las inscripciones a la solicititud
                 s.setlInsc(lInsc);
-               
+                //Añadir la solicittud a la arrayList de solicitudes
                 solicitudes.add(s);
-              
-            
-           
-           
-    }
-    catch(Exception e){
-        System.out.println("Problemas" + e);
-    }
+            }
+            genericoBD.desconectar();
     return solicitudes;
-    }
+    } 
 }
