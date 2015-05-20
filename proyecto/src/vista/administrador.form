@@ -23,6 +23,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Realizar Sorteo"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miRSorteoActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>
@@ -177,7 +180,7 @@
                       <Component id="bMod" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="bBaja" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -230,7 +233,7 @@
                       <Component id="bBusqeda" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="bGenerarPDF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

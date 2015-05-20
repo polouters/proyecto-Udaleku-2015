@@ -43,7 +43,10 @@ public class usuario extends javax.swing.JFrame {
             dNacimiento.setDate(s1.get(0).getlInsc().get(pos).getMenor().getFechaNac());
             tNumero.setText(Integer.toString(s1.get(0).getnSolicitud()));
             jSituacion.setText(s1.get(0).getSituacion());
-            jOrden.setText(Integer.toString(s1.get(0).getOrden()));
+            int orden = s1.get(0).getOrden();
+            if(orden !=0){ 
+                jOrden.setText(Integer.toString(orden));}
+           
             dCita.setDate(s1.get(0).getFecha());
             //SimpleDateFormat sdf = new SimpleDateFormat("kk:mm:ss");
             //String hora = sdf.format(s1.get(0).getFecha());
@@ -89,7 +92,9 @@ public class usuario extends javax.swing.JFrame {
             dNacimiento.setDate(s1.get(posAsk).getlInsc().get(pos).getMenor().getFechaNac());
             tNumero.setText(Integer.toString(s1.get(posAsk).getnSolicitud()));
             jSituacion.setText(s1.get(posAsk).getSituacion());
-            jOrden.setText(Integer.toString(s1.get(posAsk).getOrden()));
+            int orden = s1.get(posAsk).getOrden();
+            if(orden !=0){ 
+                jOrden.setText(Integer.toString(orden));}
             dCita.setDate(s1.get(posAsk).getFecha());
             //SimpleDateFormat sdf = new SimpleDateFormat("kk:mm:ss");
             //String hora = sdf.format(s1.get(posAsk).getFecha());

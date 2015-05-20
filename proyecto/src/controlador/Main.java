@@ -59,7 +59,9 @@ public class Main {
         
         return centroBD.ListaCentro(centro);
     }
-    
+    public static void realizarSorteo() throws Exception{
+        SorteoBD.RealizarSorteo();
+    }
     
     
 }

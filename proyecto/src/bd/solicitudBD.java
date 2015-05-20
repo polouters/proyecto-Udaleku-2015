@@ -21,7 +21,6 @@ import uml.*;
 public class solicitudBD {
     private static Connection conn;
     private static ResultSet rset;
-    public static int psc;
     
     public static ArrayList<solicitud> consultaAcceso(String jDni, String fNacimiento) throws Exception{
         ArrayList<solicitud> solicitudes = new ArrayList();
