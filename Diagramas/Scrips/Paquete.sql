@@ -8,6 +8,7 @@ CREATE OR REPLACE PACKAGE paquete IS
 	 	v_fechaNac IN Menor.fechaNac%TYPE,
 	 	PaticipanteC OUT Paticipante_cusor
 	 	);
+	
 	/*Declarar el procedimiento realizarSorteo*/
 	PROCEDURE realizarSorteo;
 
@@ -65,9 +66,9 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		SELECT DBMS_RANDOM.VALUE(3,9) INTO v_cadencia
 		FROM dual;
 		
-		CREATE SEQUENCE nOrden_seq MAXVALUE v_max;
-
 		v_x NUMBER(5) := v_ganador; 
+		
+		-- CREATE SEQUENCE nOrden_seq MAXVALUE v_max;
 		
 		WHILE nOrden_seq.currval == v_max LOOP
 		
@@ -75,17 +76,23 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 			FROM solicitud
 			WHERE nSolicitud = v_x;
 			
+			IF v_x > v_max THEN 
+				v_x := 1; 
+			END IF;
+			
 			IF v_nOrden IS NULL THEN
 		
 				UPDATE Solicitud
-				SET nOrden = nOrden_seq.nextval, fecha = to_date(v_fecha,'dd/mm/yyyy'), hora = to_date(v_hora , 'hh/mi/ss')
+				SET nOrden = nOrden_seq.nextval
 				WHERE nSolicitud = v_x;
-			ELSE
 				
+				v_x := v_x + v_cadencia;
+			ELSE
+				v_x := v_x + v_cadencia;	
 			END IF;
 			
-			v_x := v_x
-			
 		END LOOP;
+	
+	END realizarSorteo;
 		
 END paquete;
