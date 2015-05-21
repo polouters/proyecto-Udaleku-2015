@@ -20,10 +20,12 @@ public class SorteoBD {
         genericoBD.setCon();
         conn = genericoBD.getCon();
         
-        String plantilla = "{call paquete.realizarSorteo()}";
+        String plantilla = "{call paquete.realizarSorteo}";
         
         CallableStatement cs = conn.prepareCall(plantilla);
         
         cs.execute();
+        
+        genericoBD.desconectar();
     }
 }
