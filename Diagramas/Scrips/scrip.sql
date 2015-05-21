@@ -335,23 +335,23 @@ CREATE TABLE  Calle (
 
 CREATE SEQUENCE idCalle_Seq MAXVALUE 1000;
 
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Barratxi',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Portal de Zurbano',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Olmos',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Chiquita',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Dato',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Plaza de la Constitución',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Fueros',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Barratxi',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Portal de Zurbano',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Olmos',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Chiquita',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Dato',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Plaza de la Constitución',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Fueros',46);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Mayor',5);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sagamin',5);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Alaiza',6);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Santsaerreka',7);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Ermitaurre',7);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Pio XII',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Pio XII',46);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Ruperto Urquijo',32);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Virgen del Carmen',32);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Lamuza',32);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Zumalacárregui',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Zumalacárregui',46);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Cerrajería',33);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Maskuribai',33);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Lucas Rey',34);
