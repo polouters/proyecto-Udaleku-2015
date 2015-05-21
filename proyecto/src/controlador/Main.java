@@ -35,7 +35,8 @@ public class Main {
       ArrayList<solicitud> s1 =  solicitudBD.consultaAcceso(jDni,fNacimiento);
         String psc = fNacimiento;
       controladorV.infoSolcitud(s1,psc);
-     }catch(NullPointerException Ex){JOptionPane.showMessageDialog(null,"Error en el acceso.");
+   
+     }catch(NullPointerException Ex){JOptionPane.showMessageDialog(null,"Error en el acceso");
      }catch(Exception Ex){JOptionPane.showMessageDialog(null,"Error: " +Ex.getMessage());}
     }   
     
