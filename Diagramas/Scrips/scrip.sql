@@ -509,6 +509,7 @@ INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Salo','San','Hombre',NUL
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Andor','Solo','San','Hombre',NULL, TO_DATE('01/08/2011','DD/MM/YYYY'),'NO',1,4,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Endar','Selo','San','Hombre',NULL, TO_DATE('20/07/2014','DD/MM/YYYY'),'NO',1,4,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Indur','Salo','San','Hombre',NULL, TO_DATE('30/04/2012','DD/MM/YYYY'),'NO',1,4,2);
+
 -- -----------------------------------------------------
 -- Table Tutor
 -- -----------------------------------------------------

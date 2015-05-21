@@ -34,7 +34,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 	BEGIN 
 
 		FOR nSol_reg IN nSolicitud_cursor LOOP
-
+	
 			OPEN PaticipanteC FOR
 				SELECT DISTINCT I.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha,to_char(S.hora,'hh24:mi:ss')
 				FROM Solicitud S, Inscripcion I,Menor M
@@ -56,6 +56,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		v_cont NUMBER(5);
 		v_fecha Solicitud.fecha%TYPE := SYSDATE +1;
 		v_hora Solicitud.hora%TYPE := to_date('01/01/0001 08:00:00','dd/mm/yyyy hh24:mi:ss');
+		v_Tiempo NUMBER(3):=1;
 		
 	BEGIN 
 	
@@ -96,6 +97,15 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 				
 				v_Seq := v_Seq +1;
 				v_cont := v_cont + v_cadencia;
+				v_hora := v_hora + 15/1440;
+				
+				IF v_tiempo > 16 THEN
+					v_fecha := v_fecha + 1;
+					v_hora := to_date('01/01/0001 08:00:00','dd/mm/yyyy hh24:mi:ss');
+					v_Tiempo:=0;
+				END IF;
+				
+				v_tiempo := v_Tiempo + 1;			
 			ELSE
 				v_cont := v_cont + 1;
 			END IF;
