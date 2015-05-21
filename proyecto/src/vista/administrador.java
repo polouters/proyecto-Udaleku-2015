@@ -5,6 +5,9 @@
  */
 package vista;
 
+import JPA.exceptions.IllegalOrphanException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -40,7 +43,6 @@ public class administrador extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        miCSorteo = new javax.swing.JMenuItem();
         miRSorteo = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenu3 = new javax.swing.JMenu();
@@ -115,9 +117,6 @@ public class administrador extends javax.swing.JFrame {
 
         jMenu2.setText("Sorteo");
 
-        miCSorteo.setText("Crear Sorteo");
-        jMenu2.add(miCSorteo);
-
         miRSorteo.setText("Realizar Sorteo");
         miRSorteo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +134,11 @@ public class administrador extends javax.swing.JFrame {
         jMenu3.add(miMod);
 
         miBaja.setText("Baja");
+        miBaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miBajaActionPerformed(evt);
+            }
+        });
         jMenu3.add(miBaja);
 
         jMenu1.add(jMenu3);
@@ -213,6 +217,19 @@ public class administrador extends javax.swing.JFrame {
         if(dok == true){JOptionPane.showMessageDialog(this,"Sorteo Realizado");}
     }//GEN-LAST:event_miRSorteoActionPerformed
 
+    private void miBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBajaActionPerformed
+        try {
+            // TODO add your handling code here:
+
+            lladadaBaja();
+        } catch (Exception ex) {
+            Logger.getLogger(administrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_miBajaActionPerformed
+public  void lladadaBaja() throws Exception{
+     short numS = Short.parseShort(JOptionPane.showInputDialog("Teclee el nSorteo que desea elinimar:"));
+   //  JPA.SolicitudJpaController.destroy(numS);
+}
     /**
      * @param args the command line arguments
      */
@@ -266,7 +283,6 @@ public class administrador extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JMenuItem miBaja;
     private javax.swing.JMenuItem miBusqueda;
-    private javax.swing.JMenuItem miCSorteo;
     private javax.swing.JMenuItem miGenerarPDF;
     private javax.swing.JMenuItem miMod;
     private javax.swing.JMenuItem miRSorteo;

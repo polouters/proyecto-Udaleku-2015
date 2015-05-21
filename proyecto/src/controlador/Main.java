@@ -80,7 +80,11 @@ public class Main {
         SorteoBD.RealizarSorteo();
 
     }
+    public static  void lladadaBaja() throws Exception{
+     short numS = Short.parseShort(JOptionPane.showInputDialog("Teclee el nSorteo que desea elinimar:"));
+    // JPA.SolicitudJpaController.destroy(numS);
     
+    } 
     
 }
     
