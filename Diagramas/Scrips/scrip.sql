@@ -487,7 +487,7 @@ INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Salas','Hombre',N
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','De Santa','Olano','Hombre',NULL, TO_DATE('05/12/2003','DD/MM/YYYY'),'NO',1,3,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('19/04/2003','DD/MM/YYYY'),'NO',1,1,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/06/2003','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('13/24/2003','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('13/11/2003','DD/MM/YYYY'),'NO',1,1,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/12/2002','DD/MM/YYYY'),'NO',1,2,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','De Santa','Olano','Hombre',NULL, TO_DATE('12/12/2003','DD/MM/YYYY'),'NO',1,3,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2002','DD/MM/YYYY'),'NO',1,1,2);
