@@ -168,11 +168,6 @@ public class administrador extends javax.swing.JFrame {
                 cerrarSesionMouseClicked(evt);
             }
         });
-        cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cerrarSesionActionPerformed(evt);
-            }
-        });
         jMenuBar1.add(cerrarSesion);
 
         setJMenuBar(jMenuBar1);
@@ -208,13 +203,9 @@ public class administrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionActionPerformed
-        // TODO add your handling code here:
-        controladorV.adminPrincipal();
-    }//GEN-LAST:event_cerrarSesionActionPerformed
-
     private void cerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarSesionMouseClicked
         // TODO add your handling code here:
+        System.out.println("Sesion de admistrador cerrada");
         controladorV.adminPrincipal();
     }//GEN-LAST:event_cerrarSesionMouseClicked
 

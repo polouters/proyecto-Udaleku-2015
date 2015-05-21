@@ -482,33 +482,45 @@ CREATE TABLE  Menor (
 
 CREATE SEQUENCE codMenor_Seq MAXVALUE 500;
 
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2014','DD/MM/YYYY'),'NO',1,1,1);
+CREATE OR REPLACE TRIGGER menor_tri BEFORE INSERT OR UPDATE ON Menor FOR EACH ROW
+BEGIN
+		IF (EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM :new.fechaNac)) < 7 
+		OR (EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM :new.fechaNac)) > 13 THEN
+		
+				RAISE_APPLICATION_ERROR(-20100, 'El Menor debe ser ser mayor de 7 años o menor de 13 años.');
+				
+		END IF;
+END diaSorteo_tri;
+
+/
+
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2005','DD/MM/YYYY'),'NO',1,1,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Solo','Hombre',NULL, TO_DATE('21/03/2002','DD/MM/YYYY'),'NO',1,2,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Aguirre','Olano','Hombre',NULL, TO_DATE('05/12/2003','DD/MM/YYYY'),'NO',1,3,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('19/04/2003','DD/MM/YYYY'),'NO',1,1,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Aguirre','Olano','Hombre',NULL, TO_DATE('05/12/2008','DD/MM/YYYY'),'NO',1,3,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('19/04/2005','DD/MM/YYYY'),'NO',1,1,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Frias','Hombre',NULL, TO_DATE('02/06/2003','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('13/11/2003','DD/MM/YYYY'),'NO',1,1,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Aguirre','Hombre',NULL, TO_DATE('21/12/2002','DD/MM/YYYY'),'NO',1,2,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Perez','Olano','Hombre',NULL, TO_DATE('12/12/2003','DD/MM/YYYY'),'NO',1,3,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('13/11/2006','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Aguirre','Hombre',NULL, TO_DATE('21/12/2003','DD/MM/YYYY'),'NO',1,2,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Perez','Olano','Hombre',NULL, TO_DATE('12/12/2002','DD/MM/YYYY'),'NO',1,3,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2002','DD/MM/YYYY'),'NO',1,1,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Salas','Hombre',NULL, TO_DATE('02/05/2001','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2006','DD/MM/YYYY'),'NO',1,1,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Frias','Hombre',NULL, TO_DATE('21/03/2008','DD/MM/YYYY'),'NO',1,2,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Aguirre','Olano','Hombre',NULL, TO_DATE('03/12/2009','DD/MM/YYYY'),'NO',1,3,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2010','DD/MM/YYYY'),'NO',1,1,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Murga','Hombre',NULL, TO_DATE('02/05/2011','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Perez','Hombre',NULL, TO_DATE('02/05/2012','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2001','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xuan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2006','DD/MM/YYYY'),'NO',1,1,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Cepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/03/2008','DD/MM/YYYY'),'NO',1,2,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Sabi','bono','Olano','Hombre',NULL, TO_DATE('03/12/2009','DD/MM/YYYY'),'NO',1,3,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Añigo','Parez','Aguirre','Hombre',NULL, TO_DATE('14/04/2010','DD/MM/YYYY'),'NO',1,1,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2011','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Snder','Selo','San','Hombre',NULL, TO_DATE('02/05/2012','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Salo','San','Hombre',NULL, TO_DATE('16/05/2012','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Andor','Solo','San','Hombre',NULL, TO_DATE('01/08/2011','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Endar','Selo','San','Hombre',NULL, TO_DATE('20/07/2014','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Indur','Salo','San','Hombre',NULL, TO_DATE('30/04/2012','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Salas','Hombre',NULL, TO_DATE('02/05/2007','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2008','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Frias','Hombre',NULL, TO_DATE('21/03/2002','DD/MM/YYYY'),'NO',1,2,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Aguirre','Olano','Hombre',NULL, TO_DATE('03/12/2006','DD/MM/YYYY'),'NO',1,3,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2003','DD/MM/YYYY'),'NO',1,1,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Murga','Hombre',NULL, TO_DATE('02/05/2008','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Perez','Hombre',NULL, TO_DATE('02/05/2004','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2006','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xuan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2003','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Cepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/03/2007','DD/MM/YYYY'),'NO',1,2,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Sabi','bono','Olano','Hombre',NULL, TO_DATE('03/12/2003','DD/MM/YYYY'),'NO',1,3,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Añigo','Parez','Aguirre','Hombre',NULL, TO_DATE('14/04/2006','DD/MM/YYYY'),'NO',1,1,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2008','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Snder','Selo','San','Hombre',NULL, TO_DATE('02/05/2003','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Salo','San','Hombre',NULL, TO_DATE('16/05/2005','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Andor','Solo','San','Hombre',NULL, TO_DATE('01/08/2002','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Endar','Selo','San','Hombre',NULL, TO_DATE('20/07/2004','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Indur','Salo','San','Hombre',NULL, TO_DATE('30/04/2006','DD/MM/YYYY'),'NO',1,4,2);
 
 -- -----------------------------------------------------
 -- Table Tutor
@@ -542,7 +554,7 @@ DROP TABLE  Sorteo cascade CONSTRAINTS ;
 
 CREATE SEQUENCE idSorteo_Seq MAXVALUE 10;
 
-INSERT INTO sorteo VALUES(idSorteo_Seq.nextval, to_date ('10/05/2015' ,'dd/mm/yyyy'), to_date ('20/05/2015' ,'dd/mm/yyyy'),to_date ('21/05/2015' ,'dd/mm/yyyy'));
+INSERT INTO sorteo VALUES(idSorteo_Seq.nextval, to_date ('10/05/2015' ,'dd/mm/yyyy'), to_date ('20/05/2015' ,'dd/mm/yyyy'), to_date ('21/05/2015' ,'dd/mm/yyyy'));
 
 -- -----------------------------------------------------
 -- Table Solicitud
@@ -622,3 +634,4 @@ CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,14,'12345678Z',17);
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,15,'12345678Z',18);
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,16,'12345678Z',19);
+  
