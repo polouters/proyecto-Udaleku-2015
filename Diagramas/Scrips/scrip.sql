@@ -621,4 +621,3 @@ CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,14,'12345678Z',17);
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,15,'12345678Z',18);
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,16,'12345678Z',19);
-  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,17,'12345678Z',20);
