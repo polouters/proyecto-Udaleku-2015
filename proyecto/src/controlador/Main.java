@@ -10,9 +10,11 @@ package controlador;
 import JPA.SolicitudJpaController;
 import bd.*;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
+import lib.pdf;
 import uml.*;
 import vista.*;
 
@@ -91,6 +93,27 @@ public class Main {
      System.out.println("Eliniado correctamente");
     
     } 
+    
+    public static  void busquedaPDF() throws Exception{
+     
+     EntityManagerFactory emf = Persistence.createEntityManagerFactory("proyectoPU");
+     SolicitudJpaController sjc = new SolicitudJpaController(emf);
+     solicitud[] array = sjc.findSolicitudEntities().toArray(new solicitud[]{});
+    String texto = "Listado de Solicitudes:\n NumeroSolcitud/dniTutor/nombres menores/Orden sorteo";
+     for(int x=0;x<array.length;x++){
+         int y=1;
+       texto = texto + array[x].getnSolicitud() + " / "+ array[x].getlInsc().get(y).getTutor().getDni();
+        
+    }
+     System.out.println("Busqueda realizada");
+    
+    } 
+    
+    public static void pdfC(String texto){
+    pdf p = new pdf();
+    p.crearPDF(texto);
+    System.out.println("pdf generado");
+    }
     
 }
     
