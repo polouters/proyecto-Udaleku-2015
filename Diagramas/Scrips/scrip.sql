@@ -492,12 +492,16 @@ INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Salas','Hombre',N
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','De Santa','Olano','Hombre',NULL, TO_DATE('12/12/2003','DD/MM/YYYY'),'NO',1,3,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2002','DD/MM/YYYY'),'NO',1,1,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2001','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2006','DD/MM/YYYY'),'NO',1,1,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/03/2008','DD/MM/YYYY'),'NO',1,2,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','De Santa','Olano','Hombre',NULL, TO_DATE('03/12/2009','DD/MM/YYYY'),'NO',1,3,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2010','DD/MM/YYYY'),'NO',1,1,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xuan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2006','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Cepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/03/2008','DD/MM/YYYY'),'NO',1,2,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Sabi','bono','Olano','Hombre',NULL, TO_DATE('03/12/2009','DD/MM/YYYY'),'NO',1,3,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Añigo','Parez','Aguirre','Hombre',NULL, TO_DATE('14/04/2010','DD/MM/YYYY'),'NO',1,1,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2011','DD/MM/YYYY'),'NO',1,4,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2012','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Snder','Selo','San','Hombre',NULL, TO_DATE('02/05/2012','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Salo','San','Hombre',NULL, TO_DATE('16/05/2012','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Andor','Solo','San','Hombre',NULL, TO_DATE('01/08/2011','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Endar','Selo','San','Hombre',NULL, TO_DATE('20/07/2014','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Indur','Salo','San','Hombre',NULL, TO_DATE('30/04/2012','DD/MM/YYYY'),'NO',1,4,2);
 -- -----------------------------------------------------
 -- Table Tutor
 -- -----------------------------------------------------
@@ -567,6 +571,7 @@ INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
 -- -----------------------------------------------------
 -- Table Inscripcion
 -- -----------------------------------------------------
@@ -606,4 +611,14 @@ CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,11,'12345678Z',14); 
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,12,'12345678Z',15); 
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,13,'12345678Z',16);
-  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,14,'12345678Z',16);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,14,'12345678Z',17);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,15,'12345678Z',18);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,16,'12345678Z',19);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,17,'12345678Z',20);
+
+
+
+
+
+
+
