@@ -7,6 +7,7 @@ package vista;
 
 import controlador.Main;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import uml.solicitud;
 
 /**
@@ -86,4 +87,12 @@ public class controladorV {
    public static void infoSolcitud(ArrayList<solicitud> s1,String psc){
    accesoUsuario(s1,psc);
    }
+   public static boolean realizarSorteoV(){
+       boolean dok=false;
+       try{
+           
+           Main.realizarSorteo();
+       }catch(Exception Ex){JOptionPane.showMessageDialog(vad,"Error: "+Ex.getMessage());return dok;}
+       return dok = true;
+   } 
 }

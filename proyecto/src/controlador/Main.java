@@ -76,6 +76,11 @@ public class Main {
         }
     }
     
+    public static void realizarSorteo() throws Exception{
+        SorteoBD.RealizarSorteo();
+
+    }
+    
     
 }
     

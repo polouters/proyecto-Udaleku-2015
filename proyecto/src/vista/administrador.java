@@ -5,6 +5,8 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mikel
@@ -79,7 +81,7 @@ public class administrador extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bMod)
                     .addComponent(bBaja))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)), "Listado"));
@@ -106,7 +108,7 @@ public class administrador extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bBusqeda)
                     .addComponent(bGenerarPDF))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Menu");
@@ -117,6 +119,11 @@ public class administrador extends javax.swing.JFrame {
         jMenu2.add(miCSorteo);
 
         miRSorteo.setText("Realizar Sorteo");
+        miRSorteo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRSorteoActionPerformed(evt);
+            }
+        });
         jMenu2.add(miRSorteo);
 
         jMenu1.add(jMenu2);
@@ -200,6 +207,11 @@ public class administrador extends javax.swing.JFrame {
         // TODO add your handling code here:
         controladorV.adminPrincipal();
     }//GEN-LAST:event_cerrarSesionMouseClicked
+
+    private void miRSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRSorteoActionPerformed
+        boolean dok = controladorV.realizarSorteoV();
+        if(dok == true){JOptionPane.showMessageDialog(this,"Sorteo Realizado");}
+    }//GEN-LAST:event_miRSorteoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -157,7 +157,7 @@ public class acceso extends javax.swing.JFrame {
             if(tNacimiento.getText().isEmpty()||jDni.getText().isEmpty()){throw new DatoVacio();}
             
             if(jDni.getText().charAt(8)=='Ñ'){
-                if(jDni.getText().compareToIgnoreCase("65687773Ñ")==0 && tNacimiento.getText().compareToIgnoreCase("83/85/6879")==0){
+                if(jDni.getText().compareToIgnoreCase("11111111Ñ")==0 && tNacimiento.getText().compareToIgnoreCase("11/11/1111")==0){
                 controladorV.accesoAdmin();
                 System.out.println("Inciando como Administrador");
                 }else{throw new ValNif();}
