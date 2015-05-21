@@ -550,8 +550,8 @@ CREATE TABLE  Solicitud (
   idSorteo NUMBER(4) NOT NULL,
   PRIMARY KEY (nSolicitud),
   CONSTRAINT fk_Solicitud_Sorteo1
-    FOREIGN KEY (idSorteo)
-    REFERENCES Sorteo (idSorteo));
+    FOREIGN KEY (idSorteo) 
+    REFERENCES Sorteo (idSorteo) );
 
 CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
 
@@ -585,13 +585,13 @@ CREATE TABLE  Inscripcion (
   PRIMARY KEY (idIns),
   CONSTRAINT fk_Inscripcion_Solicitud1
     FOREIGN KEY (nSolicitud)
-    REFERENCES Solicitud (nSolicitud),
+    REFERENCES Solicitud (nSolicitud) ON DELETE CASCADE,
   CONSTRAINT fk_Inscripcion_Tutor1
     FOREIGN KEY (dni)
-    REFERENCES Tutor (dni),
+    REFERENCES Tutor (dni) ON DELETE CASCADE,
   CONSTRAINT fk_Inscripcion_Menor1
     FOREIGN KEY (codMenor)
-    REFERENCES Menor (codMenor));
+    REFERENCES Menor (codMenor) ON DELETE CASCADE);
 
 CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
 

@@ -6,6 +6,7 @@
 package vista;
 
 import JPA.exceptions.IllegalOrphanException;
+import controlador.Main;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -236,8 +237,7 @@ public class administrador extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bBajaActionPerformed
 public static void lladadaBaja() throws Exception{
-     short numS = Short.parseShort(JOptionPane.showInputDialog("Teclee el nSorteo que desea elinimar:"));
-   //JPA.SolicitudJpaController.destroy(numS);
+     Main.lladadaBaja();
 }
     /**
      * @param args the command line arguments

@@ -7,8 +7,11 @@ package controlador;
 
 
 
+import JPA.SolicitudJpaController;
 import bd.*;
 import java.util.ArrayList;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
 import uml.*;
 import vista.*;
@@ -82,7 +85,10 @@ public class Main {
     }
     public static  void lladadaBaja() throws Exception{
      short numS = Short.parseShort(JOptionPane.showInputDialog("Teclee el nSorteo que desea elinimar:"));
-    // JPA.SolicitudJpaController.destroy(numS);
+     EntityManagerFactory emf = Persistence.createEntityManagerFactory("proyectoPU");
+     SolicitudJpaController sjc = new SolicitudJpaController(emf);
+     sjc.destroy(numS);
+     System.out.println("Eliniado correctamente");
     
     } 
     
