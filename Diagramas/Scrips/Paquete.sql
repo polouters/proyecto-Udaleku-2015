@@ -38,7 +38,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 			OPEN PaticipanteC FOR
 				SELECT DISTINCT I.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha
 				FROM Solicitud S, Inscripcion I,Menor M
-				WHERE I.nsolicitud = nSol_reg.nSolicitud and I.codMenor = M.codMenor;
+				WHERE I.nsolicitud = nSol_reg.nSolicitud AND I.nSolicitud = S.nSolicitud AND I.codMenor = M.codMenor;
 
 		END LOOP;	
 
@@ -54,7 +54,6 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		v_cadencia NUMBER(1);
 		v_Seq NUMBER(5) := 1;
 		v_cont NUMBER(5);
-		v_resto NUMBER(3);
 		v_fecha Solicitud.fecha%TYPE;
 		v_hora Solicitud.hora%TYPE;
 		
@@ -74,8 +73,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		WHILE v_Seq <= v_max LOOP
 		
 			IF v_cont > v_max THEN 
-				v_resto := v_cadencia - (v_max - v_cont);
-				v_cont := v_resto;
+				v_cont := v_cont - v_max;
 			END IF;
 			
 			SELECT nOrden INTO v_nOrden
@@ -85,7 +83,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 			IF v_nOrden IS NULL THEN
 		
 				UPDATE Solicitud
-				SET nOrden = v_Seq, fecha = to_date(v_fecha,'dd/mm/yyyy'), hora = to_date(v_hora , 'hh/mi/ss')
+				SET nOrden = v_Seq, situacion = 'Adjudicada' ,fecha = to_date(v_fecha,'dd/mm/yyyy'), hora = to_date(v_hora , 'hh/mi/ss')
 				WHERE nSolicitud = v_cont;
 				
 				v_Seq := v_Seq +1;
