@@ -64,6 +64,11 @@ public class administrador extends javax.swing.JFrame {
         bMod.setText("Modificacion");
 
         bBaja.setText("Baja");
+        bBaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBajaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -218,17 +223,21 @@ public class administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_miRSorteoActionPerformed
 
     private void miBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBajaActionPerformed
-        try {
-            // TODO add your handling code here:
+        
+    }//GEN-LAST:event_miBajaActionPerformed
 
+    private void bBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBajaActionPerformed
+        // TODO add your handling code here: try {
+            // TODO add your handling code here:
+        try{
             lladadaBaja();
         } catch (Exception ex) {
-            Logger.getLogger(administrador.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error, la solicitud no exite u otras cosas" + ex);
         }
-    }//GEN-LAST:event_miBajaActionPerformed
-public  void lladadaBaja() throws Exception{
+    }//GEN-LAST:event_bBajaActionPerformed
+public static void lladadaBaja() throws Exception{
      short numS = Short.parseShort(JOptionPane.showInputDialog("Teclee el nSorteo que desea elinimar:"));
-   //  JPA.SolicitudJpaController.destroy(numS);
+   //JPA.SolicitudJpaController.destroy(numS);
 }
     /**
      * @param args the command line arguments
