@@ -731,7 +731,6 @@ public class InscripcionV extends javax.swing.JFrame {
             
             GuardarSolicitud();
             
-            JOptionPane.showMessageDialog(this,"Solicitud guardada correctamente");
         }
     }
     catch (Exception e){
@@ -882,7 +881,7 @@ public class InscripcionV extends javax.swing.JFrame {
 
     private void rFueraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rFueraActionPerformed
        cCentro.removeAllItems();
-        
+       cCentro.setEnabled(true);
        ArrayList<centro> ListaCentros = new ArrayList();
        
        ListaCentros = Main.CBMCentros("fuera");
@@ -1232,10 +1231,13 @@ public class InscripcionV extends javax.swing.JFrame {
         }
     }
     public void GuardarSolicitud(){
+        
         solicitud sol = new solicitud();
         //Añadimos las 3 inscripciones a la solicitud
         
         sol.setlInsc(ListaInscripcion);
+        
+        Main.AñadirSolicitud(sol);
         
         JOptionPane.showMessageDialog(this,"Solicitud guardada correctamente");
     }

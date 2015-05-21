@@ -59,7 +59,22 @@ public class Main {
         
         return centroBD.ListaCentro(centro);
     }
-    
+    public static void AñadirSolicitud (solicitud sol){
+        
+        int x;
+        
+        for(x = 0;x < sol.getlInsc().size();x++){
+            
+            //Añadimos el tutor
+            tutorBD.AñadirTutor(sol.getlInsc().get(x).getTutor());
+            //Añadimos la vivienda
+            viviendaBD.AñadirVivienda(sol.getlInsc().get(x).getMenor().getDrc().getVivienda());
+            
+            
+            
+            
+        }
+    }
     
     
 }
