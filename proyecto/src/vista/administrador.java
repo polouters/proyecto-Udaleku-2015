@@ -97,6 +97,11 @@ public class administrador extends javax.swing.JFrame {
         bBusqeda.setText("Busqueda");
 
         bGenerarPDF.setText("Generar PDF");
+        bGenerarPDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bGenerarPDFActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -227,6 +232,15 @@ public class administrador extends javax.swing.JFrame {
             System.out.println("Error, la solicitud no exite u otras cosas" + ex);
         }
     }//GEN-LAST:event_bBajaActionPerformed
+
+    private void bGenerarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGenerarPDFActionPerformed
+        try {
+            // TODO add your handling code here:
+            Main.busquedaPDF();
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+    }//GEN-LAST:event_bGenerarPDFActionPerformed
 public static void lladadaBaja() throws Exception{
      Main.lladadaBaja();
 }
