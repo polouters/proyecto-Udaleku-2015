@@ -491,7 +491,6 @@ INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre'
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Aguirre','Hombre',NULL, TO_DATE('21/12/2002','DD/MM/YYYY'),'NO',1,2,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Perez','Olano','Hombre',NULL, TO_DATE('12/12/2003','DD/MM/YYYY'),'NO',1,3,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2002','DD/MM/YYYY'),'NO',1,1,2);
-<<<<<<< HEAD
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Salas','Hombre',NULL, TO_DATE('02/05/2001','DD/MM/YYYY'),'NO',1,4,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2006','DD/MM/YYYY'),'NO',1,1,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Frias','Hombre',NULL, TO_DATE('21/03/2008','DD/MM/YYYY'),'NO',1,2,1);
@@ -499,7 +498,6 @@ INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Aguirre','Olano','Hombre'
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2010','DD/MM/YYYY'),'NO',1,1,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Murga','Hombre',NULL, TO_DATE('02/05/2011','DD/MM/YYYY'),'NO',1,4,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Perez','Hombre',NULL, TO_DATE('02/05/2012','DD/MM/YYYY'),'NO',1,4,2);
-=======
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2001','DD/MM/YYYY'),'NO',1,4,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xuan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2006','DD/MM/YYYY'),'NO',1,1,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Cepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/03/2008','DD/MM/YYYY'),'NO',1,2,1);
@@ -511,7 +509,6 @@ INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Salo','San','Hombre',NUL
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Andor','Solo','San','Hombre',NULL, TO_DATE('01/08/2011','DD/MM/YYYY'),'NO',1,4,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Endar','Selo','San','Hombre',NULL, TO_DATE('20/07/2014','DD/MM/YYYY'),'NO',1,4,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Indur','Salo','San','Hombre',NULL, TO_DATE('30/04/2012','DD/MM/YYYY'),'NO',1,4,2);
->>>>>>> 964509247fd81281a18f4e28d244dd9970708bf5
 -- -----------------------------------------------------
 -- Table Tutor
 -- -----------------------------------------------------
@@ -565,7 +562,6 @@ CREATE TABLE  Solicitud (
 
 CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
 
-<<<<<<< HEAD
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
@@ -582,25 +578,7 @@ INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',N
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
 INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
-=======
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
->>>>>>> 964509247fd81281a18f4e28d244dd9970708bf5
+
 -- -----------------------------------------------------
 -- Table Inscripcion
 -- -----------------------------------------------------
@@ -644,10 +622,3 @@ CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,15,'12345678Z',18);
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,16,'12345678Z',19);
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,17,'12345678Z',20);
-
-
-
-
-
-
-
