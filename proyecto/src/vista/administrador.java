@@ -228,7 +228,7 @@ public class administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_miBajaActionPerformed
 public  void lladadaBaja() throws Exception{
      short numS = Short.parseShort(JOptionPane.showInputDialog("Teclee el nSorteo que desea elinimar:"));
-     JPA.SolicitudJpaController.destroy(numS);
+   //  JPA.SolicitudJpaController.destroy(numS);
 }
     /**
      * @param args the command line arguments

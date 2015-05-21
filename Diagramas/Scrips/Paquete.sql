@@ -51,6 +51,8 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		v_max Solicitud.nSolicitud%TYPE;
 		v_nOrden Solicitud.nOrden%TYPE;
 		v_cadencia NUMBER(1);
+		v_Seq NUMBER(5) := 1;
+		v_x NUMBER(5);
 		v_fecha Solicitud.fecha%TYPE;
 		v_hora Solicitud.hora%TYPE;
 		
@@ -64,12 +66,11 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		
 		SELECT DBMS_RANDOM.VALUE(3,9) INTO v_cadencia
 		FROM dual;
-		
-		CREATE SEQUENCE nOrden_seq MAXVALUE v_max;
+	
 
-		v_x NUMBER(5) := v_ganador; 
+		v_x := v_ganador; 
 		
-		WHILE nOrden_seq.currval == v_max LOOP
+		WHILE v_Seq < v_max LOOP
 		
 			SELECT nOrden INTO v_nOrden
 			FROM solicitud
@@ -78,14 +79,16 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 			IF v_nOrden IS NULL THEN
 		
 				UPDATE Solicitud
-				SET nOrden = nOrden_seq.nextval, fecha = to_date(v_fecha,'dd/mm/yyyy'), hora = to_date(v_hora , 'hh/mi/ss')
+				SET nOrden = v_Seq, fecha = to_date(v_fecha,'dd/mm/yyyy'), hora = to_date(v_hora , 'hh/mi/ss')
 				WHERE nSolicitud = v_x;
-			ELSE
 				
+				v_Seq := v_Seq +1;
+			ELSE
+				v_x := v_x + v_cadencia;
 			END IF;
-			
-			v_x := v_x
-			
+				v_x := v_x + v_cadencia;
 		END LOOP;
+		
+	END realizarSorteo;	
 		
 END paquete;

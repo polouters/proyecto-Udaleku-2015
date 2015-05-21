@@ -44,8 +44,13 @@ public class genericoBD {
         //con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","jon","Jm12345");
         
         //Mikel
+
        // DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
        // con = DriverManager.getConnection("jdbc:oracle:thin:@172.16.153.133:1521:Mikel",usuario,"0907");
+
+        //DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
+        //con = DriverManager.getConnection("jdbc:oracle:thin:@172.16.153.133:1521:Mikel",usuario,"0907");
+
  
          if (con!=null){
             System.out.println("Conección a base de datos OK");
