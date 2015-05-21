@@ -509,6 +509,7 @@ INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Salo','San','Hombre',NUL
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Andor','Solo','San','Hombre',NULL, TO_DATE('01/08/2011','DD/MM/YYYY'),'NO',1,4,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Endar','Selo','San','Hombre',NULL, TO_DATE('20/07/2014','DD/MM/YYYY'),'NO',1,4,2);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Indur','Salo','San','Hombre',NULL, TO_DATE('30/04/2012','DD/MM/YYYY'),'NO',1,4,2);
+
 -- -----------------------------------------------------
 -- Table Tutor
 -- -----------------------------------------------------
@@ -621,4 +622,3 @@ CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,14,'12345678Z',17);
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,15,'12345678Z',18);
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,16,'12345678Z',19);
-  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,17,'12345678Z',20);
