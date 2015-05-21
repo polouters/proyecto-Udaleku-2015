@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import oracle.jdbc.OracleTypes;
 import uml.*;
@@ -73,6 +74,9 @@ public class solicitudBD {
                 s.setOrden(rset.getInt(7));
                //fecha
                 s.setFecha(rset.getDate(8));
+               //hora
+                s.setHora(rset.getString(9));
+                 
                 //El if es para cuando el cursor devuelve mas de una solicitud
                 if(y==3){
                     //Añadir las Añadir las inscripciones a la solicititud

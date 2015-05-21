@@ -9,7 +9,7 @@ public class solicitud {
 
 	private int nSolicitud;
 	private Date fecha;
-	private Calendar hora;
+	private String hora;
         private sorteo srt;
         private String situacion;
         private int orden;
@@ -17,14 +17,14 @@ public class solicitud {
 
     public solicitud() {
     }
- public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt, String situacion) {
+ public solicitud(int nSolicitud, Date fecha, String hora, sorteo srt, String situacion) {
         this.nSolicitud = nSolicitud;
         this.fecha = fecha;
         this.hora = hora;
         this.srt = srt;
         this.situacion = situacion;
     }
-    public solicitud(int nSolicitud, Date fecha, Calendar hora, sorteo srt) {
+    public solicitud(int nSolicitud, Date fecha, String hora, sorteo srt) {
         this.nSolicitud = nSolicitud;
         this.fecha = fecha;
         this.hora = hora;
@@ -73,11 +73,11 @@ public class solicitud {
         this.fecha = fecha;
     }
 
-    public Calendar getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Calendar hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 

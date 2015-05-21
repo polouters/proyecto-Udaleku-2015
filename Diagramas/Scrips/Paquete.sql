@@ -36,9 +36,9 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		FOR nSol_reg IN nSolicitud_cursor LOOP
 
 			OPEN PaticipanteC FOR
-				SELECT DISTINCT I.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha
+				SELECT DISTINCT I.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha,to_char(S.hora,'hh24:mi:ss')
 				FROM Solicitud S, Inscripcion I,Menor M
-				WHERE I.nsolicitud = nSol_reg.nSolicitud and I.codMenor = M.codMenor;
+				WHERE I.nsolicitud = nSol_reg.nSolicitud AND I.nSolicitud = S.nSolicitud AND I.codMenor = M.codMenor;
 
 		END LOOP;	
 
@@ -54,9 +54,8 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		v_cadencia NUMBER(1);
 		v_Seq NUMBER(5) := 1;
 		v_cont NUMBER(5);
-		v_resto NUMBER(3);
-		v_fecha Solicitud.fecha%TYPE;
-		v_hora Solicitud.hora%TYPE;
+		v_fecha Solicitud.fecha%TYPE := SYSDATE +1;
+		v_hora Solicitud.hora%TYPE := to_date('01/01/0001 08:00:00','dd/mm/yyyy hh24:mi:ss');
 		
 	BEGIN 
 	
@@ -71,11 +70,18 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 
 		v_cont := v_ganador; 
 		
+		SELECT nOrden INTO v_nOrden    
+        FROM solicitud
+        WHERE nSolicitud = v_cont;
+        
+        IF v_nOrden IS NOT NULL THEN 
+            RAISE_APPLICATION_ERROR(-20001,'El sorteo ya se a realizado');
+        END IF;
+		
 		WHILE v_Seq <= v_max LOOP
 		
 			IF v_cont > v_max THEN 
-				v_resto := v_cadencia - (v_max - v_cont);
-				v_cont := v_resto;
+				v_cont := v_cont - v_max;
 			END IF;
 			
 			SELECT nOrden INTO v_nOrden
@@ -85,7 +91,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 			IF v_nOrden IS NULL THEN
 		
 				UPDATE Solicitud
-				SET nOrden = v_Seq, fecha = to_date(v_fecha,'dd/mm/yyyy'), hora = to_date(v_hora , 'hh/mi/ss')
+				SET nOrden = v_Seq, situacion = 'Adjudicada' ,fecha = v_fecha, hora = v_hora
 				WHERE nSolicitud = v_cont;
 				
 				v_Seq := v_Seq +1;
