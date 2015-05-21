@@ -54,6 +54,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		v_cadencia NUMBER(1);
 		v_Seq NUMBER(5) := 1;
 		v_cont NUMBER(5);
+		v_resto NUMBER(3);
 		v_fecha Solicitud.fecha%TYPE;
 		v_hora Solicitud.hora%TYPE;
 		
@@ -70,10 +71,11 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 
 		v_cont := v_ganador; 
 		
-		WHILE v_Seq < v_max LOOP
+		WHILE v_Seq <= v_max LOOP
 		
 			IF v_cont > v_max THEN 
-				v_cont := 1; 
+				v_resto := v_cadencia - (v_max - v_cont);
+				v_cont := v_resto;
 			END IF;
 			
 			SELECT nOrden INTO v_nOrden
@@ -89,7 +91,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 				v_Seq := v_Seq +1;
 				v_cont := v_cont + v_cadencia;
 			ELSE
-				v_cont := v_cont + v_cadencia;
+				v_cont := v_cont + 1;
 			END IF;
 				
 		END LOOP;
