@@ -1,4 +1,4 @@
-﻿Para realizar las pruebas:
+Para realizar las pruebas:
 
 	-La provincia tiene que ser obligatoriamente "Alava/Araba".
 	-Aunque las demás provincias contienen municipios, no contienen calles.
@@ -21,6 +21,14 @@
 	 y estamos con la segunda inscripcion y no seleccionamos correctamente un municipio, o bien cancelamos la inscripion ( que nos devuelve a la ventana principal)
 	 o bien damos al boton borrar.
 	-Este boton va al controlador de vista y realiza un dispose de la ventana inscripcion. Es como si volvieramos a empezar.
+
+
+IMPORTANTE!!!!!!!
+HEMOS PROBADO EL PROYECTO EN TRES PORTATILES CON NUESTRAS CONEXIONES A ORACLE EN EL PORTATIL, UTILIZANDO EL JAR DE CONEXION QUE NOS DISTEIS  Y ASI, EN EL DE CLASE DA ERRORES, HEMOS SEGUIDO PROBANDO y hemos conseguido que funcine finalmente todo excepto la persistencia que sigue sin funcionar en el de clase, en los 3 nuestros funciona, Cualquier consulta que veas que no funciona que no te creas que funciona te podemos enseñar que funciona. No dudes en preguntarnos. 
+Un Saludo.
+
+
+
 	
 	
 	
