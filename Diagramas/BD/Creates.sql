@@ -1,3 +1,8 @@
+/*  
+  Descripcion: Creacion de las tablas, secuencias y el trigger
+  Autor: Jon, Polo y Mikel
+*/
+
 /* Eliminar Secuencias */
 
 /* idProv_Seq */

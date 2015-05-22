@@ -1,7 +1,13 @@
-/* Creacion del Paquete */
+/* 
+  Descripcion: Creacion del paquete con los procedimiento incluidos en él
+  Autor: Jon, Polo y Mikel
+*/
+
+/* Creacion la cabecera del Paquete */
 CREATE OR REPLACE PACKAGE paquete IS
-	/*Declarar el cursor usado en el procedimiento consultaSolicitud*/
+	/*Declarar el cursor usado como parametro de salida en el procedimiento consultaSolicitud*/
 	TYPE Paticipante_cusor IS REF CURSOR;
+
 	/*Declarar el procedimiento consultaSolicitud*/
 	PROCEDURE consultaSolicitud(
 		v_dniTutor IN Tutor.dni%TYPE,
@@ -20,8 +26,8 @@ CREATE OR REPLACE PACKAGE paquete IS
 		v_mano IN vivienda.mano%TYPE,
 		v_id OUT vivienda.idvivienda%TYPE
 	);
+
 	/* Declarar el procedimiento InsertarMenor */
-	
 	PROCEDURE InsertarMenor(
 		v_nombre IN menor.nombre%TYPE,
 		v_ape1 IN menor.ape1%TYPE,
@@ -35,8 +41,8 @@ CREATE OR REPLACE PACKAGE paquete IS
 		v_idcentro IN menor.idcentro%TYPE,
 		v_codMenor OUT menor.codMenor%TYPE
 	);
+
 	/* Declarar el procedimiento InsertarInscripcion */
-	
 	PROCEDURE InsertarInscripcion(
 		v_idSolicitud IN inscripcion.nSolicitud%TYPE,
 		v_dniTutor IN inscripcion.dni%TYPE,
@@ -44,7 +50,6 @@ CREATE OR REPLACE PACKAGE paquete IS
 	);
 	
 	/*Declarar el procedimiento InsertarSolicitud*/
-	
 	PROCEDURE InsertarSolicitud(
 	v_idSolicitud OUT Solicitud.nSolicitud%TYPE
 	);
@@ -52,7 +57,7 @@ CREATE OR REPLACE PACKAGE paquete IS
 END paquete;
 
 /
-
+/* Creacion del  cuerpo del paquete*/
 CREATE OR REPLACE PACKAGE BODY paquete IS
 
 	/*Procedimiento consultaSolicitud*/
@@ -61,7 +66,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 	 v_fechaNac IN Menor.fechaNac%TYPE,
 	 PaticipanteC OUT Paticipante_cusor
 	)IS
-
+		/* Declacion del cursor nSolicitud_cursor que obtiene nSolicitud dependiendo de los dos parametros de entrada */
 		CURSOR nSolicitud_cursor IS
 			SELECT nSolicitud 
 			FROM Inscripcion
@@ -70,11 +75,11 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 												       WHERE fechaNac = V_fechaNac);
 
 	BEGIN 
-
+		/*Obtener los datos de la solicitud  partiendo nSolicitud*/
 		FOR nSol_reg IN nSolicitud_cursor LOOP
 	
 			OPEN PaticipanteC FOR
-				SELECT DISTINCT I.nSolicitud, S.situacion, M.nombre, M.ape1, M.ape2, M.fechaNac, S.nOrden, S.fecha,to_char(S.hora,'hh24:mi:ss')
+				SELECT DISTINCT I.nSolicitud, S.situacion, INITCAP(M.nombre), INITCAP(M.ape1), INITCAP(M.ape2), M.fechaNac, S.nOrden, S.fecha,to_char(S.hora,'hh24:mi:ss')
 				FROM Solicitud S, Inscripcion I,Menor M
 				WHERE I.nsolicitud = nSol_reg.nSolicitud AND I.nSolicitud = S.nSolicitud AND I.codMenor = M.codMenor;
 
@@ -97,13 +102,14 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		v_Tiempo NUMBER(3):=1;
 		
 	BEGIN 
-	
+		/* Obtenr la nSolicitud mas peuqueña y las mas grande */
 		SELECT MIN(nSolicitud), MAX(nSolicitud) INTO v_min, v_max
 		FROM solicitud;
-		
+
+		/* Selecciona al ganador */
 		SELECT DBMS_RANDOM.VALUE(v_min,v_max) INTO v_ganador
 		FROM dual;
-		
+		/* Selecciona la cadencia */
 		SELECT DBMS_RANDOM.VALUE(3,9) INTO v_cadencia
 		FROM dual;
 
@@ -112,13 +118,13 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		SELECT nOrden INTO v_nOrden    
         FROM solicitud
         WHERE nSolicitud = v_cont;
-        
+        /*Comprueba que el sorteo no se este realizado */
         IF v_nOrden IS NOT NULL THEN 
             RAISE_APPLICATION_ERROR(-20001,'El sorteo ya se a realizado');
         END IF;
-		
+		/* Sorteo */
 		WHILE v_Seq <= v_max LOOP
-		
+			/* Calcula el resto si  supera el numero solicitudes y pasa al pricipio */
 			IF v_cont > v_max THEN 
 				v_cont := v_cont - v_max;
 			END IF;
@@ -128,7 +134,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 			WHERE nSolicitud = v_cont;
 			
 			IF v_nOrden IS NULL THEN
-		
+				/* Añade los datos del sorteo y el dia y la hora de la cita */
 				UPDATE Solicitud
 				SET nOrden = v_Seq, situacion = 'Adjudicada' ,fecha = v_fecha, hora = v_hora
 				WHERE nSolicitud = v_cont;
@@ -138,6 +144,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 				v_hora := v_hora + 15/1440;
 				
 				IF v_tiempo > 16 THEN
+					/* Reinicia el dia y la hora */
 					v_fecha := v_fecha + 1;
 					v_hora := to_date('01/01/0001 08:00:00','dd/mm/yyyy hh24:mi:ss');
 					v_Tiempo:=0;
@@ -163,7 +170,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 	)IS
 		
 	BEGIN
-	
+		/* Inserta la vivienda y devuelve la idVivienda */
 		INSERT INTO vivienda (idvivienda,numero,piso,letra,mano)
 		VALUES(idVivienda_Seq.nextval,
 			   v_Numero,
@@ -194,7 +201,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 	)IS
 	
 	BEGIN
-	
+		/* Inserta al menor y devuelve el codMenor */
 		INSERT INTO menor VALUES(
 		codMenor_Seq.nextval,
 		v_nombre,
@@ -224,7 +231,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 	)IS
 	
 	BEGIN
-	
+		/* Inserta la inscripcion */
 		INSERT INTO inscripcion
 		VALUES(
 		idIns_Seq.NEXTVAL,
@@ -244,7 +251,7 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 	
 	BEGIN
 		
-		
+		/* Inserte la solicitud y devuelve nSolicitud*/
 		INSERT INTO solicitud(NSOLICITUD,IDSORTEO,SITUACION)
 		VALUES(
 		nSolicitud_Seq.NEXTVAL,
