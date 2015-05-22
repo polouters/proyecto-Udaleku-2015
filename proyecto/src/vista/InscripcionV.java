@@ -93,6 +93,7 @@ public class InscripcionV extends javax.swing.JFrame {
         rMujer = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
         dNacimiento = new javax.swing.JFormattedTextField();
+        jLabel26 = new javax.swing.JLabel();
         pDireccion = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         cProvincia = new javax.swing.JComboBox();
@@ -242,6 +243,8 @@ public class InscripcionV extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        jLabel26.setText("¡Nota! --> La edad del menor tiene que estar entre 7 y 13 años.");
+
         javax.swing.GroupLayout pDatosMLayout = new javax.swing.GroupLayout(pDatosM);
         pDatosM.setLayout(pDatosMLayout);
         pDatosMLayout.setHorizontalGroup(
@@ -283,8 +286,10 @@ public class InscripcionV extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(dNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(dNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel26)))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         pDatosMLayout.setVerticalGroup(
             pDatosMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,7 +317,8 @@ public class InscripcionV extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pDatosMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26))
                 .addGap(22, 22, 22))
         );
 
@@ -854,8 +860,11 @@ public class InscripcionV extends javax.swing.JFrame {
         }
         catch (MaxInsc e){
             JOptionPane.showMessageDialog(this,"Solo se permiten 3 inscripciones por solicitud.");
+            if(GuardarDatos()){
             GuardarSolicitud();
             controladorV.inscripcionPrincipal();
+        }
+            
         }
         catch (Exception e){
         JOptionPane.showMessageDialog(this,"Problemas" + e.getMessage());
@@ -1338,6 +1347,7 @@ public class InscripcionV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
