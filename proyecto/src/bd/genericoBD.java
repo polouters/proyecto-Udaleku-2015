@@ -21,8 +21,8 @@ import java.sql.SQLException;
  */
 public class genericoBD {
     
-    private static String usuario="daw12";
-    private static String password="daw12";
+    private static String usuario="daw03";
+    private static String password="daw03";
     
     private static Connection con;
     

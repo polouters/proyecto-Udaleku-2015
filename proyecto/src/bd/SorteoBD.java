@@ -21,10 +21,7 @@ import java.sql.Connection;
 public class SorteoBD {
     
    private static Connection conn;
-/**
- * 
- * @throws Exception 
- */  
+  
     public static void RealizarSorteo() throws Exception{
        /**
         * realiza el sorteo mediante PL/SQL
