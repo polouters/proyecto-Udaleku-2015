@@ -4,7 +4,16 @@
  * and open the template in the editor.
  */
 package bd;
-
+/**
+ *
+ * 
+ * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
+ */
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

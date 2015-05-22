@@ -2,7 +2,16 @@ package uml;
 
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ *
+ * 
+ * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
+ */
 public class sorteo {
 
 	private Date diaInicio;

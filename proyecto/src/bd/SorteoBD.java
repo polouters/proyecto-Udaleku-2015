@@ -10,13 +10,23 @@ import java.sql.Connection;
 
 /**
  *
- * @author Mikel Ereño
+ * 
+ * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
 public class SorteoBD {
     
    private static Connection conn;
-   
+  
     public static void RealizarSorteo() throws Exception{
+       /**
+        * realiza el sorteo mediante PL/SQL
+        */
+ 
         genericoBD.setCon();
         conn = genericoBD.getCon();
         

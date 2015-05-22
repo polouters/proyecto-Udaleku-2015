@@ -7,12 +7,18 @@ package vista;
 
 /**
  *
+ * 
+ * @author Ruben
  * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
 public class proteccionDatos extends javax.swing.JFrame {
 
     /**
-     * Creates new form ProtecionDatos
+     * Ventana absurda que todo el mundo se salta siempre.
      */
     public proteccionDatos() {
         initComponents();

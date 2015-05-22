@@ -12,7 +12,13 @@ import javax.swing.JOptionPane;
 
 /**
  *
+ * 
  * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
 public class acceso extends javax.swing.JFrame {
 
@@ -149,10 +155,17 @@ public class acceso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInscribirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInscribirseActionPerformed
+       /**
+        *
+        * para entrar en la ventana inscripcion
+        */
         controladorV.accesoInscripcion();
     }//GEN-LAST:event_bInscribirseActionPerformed
 
     private void bAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAccederActionPerformed
+      /**
+       * para acceder a ventana admin o usuario
+       */
         try{
             if(tNacimiento.getText().isEmpty()||jDni.getText().isEmpty()){throw new DatoVacio();}
             

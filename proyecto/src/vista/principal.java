@@ -11,7 +11,13 @@ import javax.swing.JOptionPane;
 
 /**
  *
+ * 
  * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
 public class principal extends javax.swing.JFrame {
 
@@ -126,6 +132,9 @@ public class principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
+        /**
+         * salta a la web insertada
+         */
         try {
             // TODO add your handling code here:
             Desktop.getDesktop().browse(new URI("http://www.alava.net/cs/Satellite/Juventud/es_ES/inicio/jovenes/actividades-y-programas/udalekuak/informacion-general"));
@@ -136,11 +145,17 @@ public class principal extends javax.swing.JFrame {
 
     private void bEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEntrarActionPerformed
         // TODO add your handling code here:
+       /**
+         * cambia de ventana
+         */
         controladorV.principalAcceso();
     }//GEN-LAST:event_bEntrarActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
         try {
+            /**
+         * salta a la web insertada
+         */
             // TODO add your handling code here:
             Desktop.getDesktop().browse(new URI("http://www.alava.net/ifj/Adjuntos/udalekuak/index.html"));
         } catch (Exception ex) {
@@ -150,6 +165,9 @@ public class principal extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
+            /**
+         * salta a la web insertada
+         */
             // TODO add your handling code here:
             Desktop.getDesktop().browse(new URI("http://www.alava.net/cs/Satellite/Juventud/es_ES/inicio/"
                                             + "jovenes/actividades-y-programas/udalekuak/instalaciones-albergues"));

@@ -22,6 +22,11 @@ import vista.*;
  *
  * 
  * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
 public class Main {
 
@@ -35,6 +40,9 @@ public class Main {
     }
     public static void usuarioExiste(String jDni, String fNacimiento){
      try{
+         /**
+          * envia datos a solcicitud BD para acceder a la ventana usurio
+          */
       ArrayList<solicitud> s1 =  solicitudBD.consultaAcceso(jDni,fNacimiento);
         String psc = fNacimiento;
       controladorV.infoSolcitud(s1,psc);

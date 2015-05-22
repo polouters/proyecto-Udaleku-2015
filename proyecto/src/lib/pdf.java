@@ -7,7 +7,13 @@ package lib;
 
 /**
  *
+ * 
  * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;

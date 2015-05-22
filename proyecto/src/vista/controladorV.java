@@ -10,12 +10,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import uml.solicitud;
-
 /**
  *
+ * 
  * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
-
 public class controladorV {
     
    private static principal vp;
@@ -24,7 +28,9 @@ public class controladorV {
    private static usuario vu;
    private static administrador vad;
    private static proteccionDatos vpd;
-   
+        /**
+         * transiociones entre ventanas 
+         */
    
    public static void abrirPrincipal(){
    vp = new principal();    
