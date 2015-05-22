@@ -102,9 +102,9 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Okondo', 1);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Oyón-Oion', 1);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Peñacerrada-Urizaharra', 1);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Ribera Baja/Erribera Beitia', 1);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Salvatierra/Agurain', 1);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Samaniego', 1);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'San Millán/Donemiliaga', 1);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Sin Adjudicarlvatierra/Agurain', 1);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Sin Adjudicarmaniego', 1);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Sin Adjudicarn Millán/Donemiliaga', 1);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Urkabustaiz', 1);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Valdegovía/Gaubea', 1);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Villabuena de Álava/Eskuernaga', 1);
@@ -130,7 +130,7 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Arrigorriaga', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Bakio', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Barakaldo', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Barrika', 2);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Basauri', 2);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'BaSin Adjudicaruri', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Berango', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Bermeo', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Berriatua', 2);
@@ -166,7 +166,7 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Gizaburuaga', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Ibarrangelu', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Ispaster', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Izurtza', 2);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Lanestosa', 2);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'LanestoSin Adjudicar', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Larrabetzu', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Laukiz', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Leioa', 2);
@@ -197,7 +197,7 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Portugalete', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Errigoiti', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Valle de Trápaga-Trapagaran', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Lezama', 2);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Santurtzi', 2);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Sin Adjudicarnturtzi', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Ortuella', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Sestao', 2);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval, 'Sopelana', 2);
@@ -245,14 +245,14 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Anoeta', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Antzuola', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Arama', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Aretxabaleta', 3);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Arrasate/Mondragón', 3);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'ArraSin Adjudicarte/Mondragón', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Asteasu', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Astigarraga', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Ataun', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Azkoitia', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Azpeitia', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Baliarrain', 3);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Beasain', 3);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'BeaSin Adjudicarin', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Beizama', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Belauntza', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Berastegi', 3);
@@ -260,7 +260,7 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Bergara', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Berrobi', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Bidegoian', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Deba', 3);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Donostia-San Sebastián', 3);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Donostia-Sin Adjudicarn Sebastián', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Eibar', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Elduain', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Elgeta', 3);
@@ -268,7 +268,7 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Elgoibar', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Errenteria', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Errezil', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Eskoriatza', 3);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Ezkio-Itsaso', 3);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Ezkio-ItSin Adjudicarso', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Gabiria', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Gaintza', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Gaztelu', 3);
@@ -281,9 +281,9 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Idiazabal', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Ikaztegieta', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Irun', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Irura', 3);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Itsasondo', 3);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'ItSin Adjudicarsondo', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Larraul', 3);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Lasarte-Oria', 3);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'LaSin Adjudicarrte-Oria', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Lazkao', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Leaburu', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Legazpi', 3);
@@ -302,10 +302,10 @@ INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Orendain', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Orexa', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Orio', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Ormaiztegi', 3);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Pasaia', 3);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'PaSin Adjudicaria', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Segura', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Soraluze/Placencia de las Armas', 3);
-INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Tolosa', 3);
+INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'ToloSin Adjudicar', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Urnieta', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Urretxu', 3);
 INSERT INTO Municipio VALUES (idMunicipio_Seq.nextval,'Usurbil', 3);
@@ -335,23 +335,23 @@ CREATE TABLE  Calle (
 
 CREATE SEQUENCE idCalle_Seq MAXVALUE 1000;
 
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Barratxi',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Portal de Zurbano',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Olmos',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Chiquita',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Dato',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Plaza de la Constitución',47);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Fueros',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Barratxi',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Portal de Zurbano',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Olmos',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Chiquita',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Dato',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Plaza de la Constitución',46);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Fueros',46);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Mayor',5);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sagamin',5);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sin Adjudicargamin',5);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Alaiza',6);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Santsaerreka',7);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sin AdjudicarntSin Adjudicarerreka',7);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Ermitaurre',7);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Pio XII',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Pio XII',46);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Ruperto Urquijo',32);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Virgen del Carmen',32);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Lamuza',32);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Zumalacárregui',47);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Zumalacárregui',46);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Cerrajería',33);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Maskuribai',33);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Lucas Rey',34);
@@ -360,18 +360,18 @@ INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'María Díaz de Haro',4);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Julio Urquijo',4);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'María Díaz de Haro',4);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Mayor',4);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Basagoiti',4);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'BaSin Adjudicargoiti',4);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Konporte',4);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Adolfo Urioste',4);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Juan Calzada',4);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Mayor',3);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'San Juan',3);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'San Marcial',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sin Adjudicarn Juan',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sin Adjudicarn Marcial',3);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'El Boulevard',3);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Elkano',3);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Libertad',3);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Aldaba Txiki',3);
-INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Santa Clara',3);
+INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Sin Adjudicarnta Clara',3);
 INSERT INTO CALLE VALUES(idCalle_Seq.nextval,'Amarotz',3);
 
 -- -----------------------------------------------------
@@ -437,23 +437,23 @@ CREATE SEQUENCE idCentro_Seq MAXVALUE 100;
 
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Abedaño Ikastola','A',1);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aranbizkarra Ikastola','D',1);
-INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Carmelitas-Sagrado Corazón','A',1);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Carmelitas-Sin Adjudicargrado Corazón','A',1);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aguraingo Haurreskola','B',1);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Laudio Ikastola','D',1);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aresketa Ikastola','A',1);
-INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'San Bizente Ikastola','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Sin Adjudicarn Bizente Ikastola','D',2);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Abusu Ikastola','D',2);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Adagio Eskola','B',2);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Barrutialde','B',2);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Barrutia','D',2);
-INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Allende Salazar-pasealeku','D',3);
-INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'San Fidel Ikastola','D',2);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Allende Sin Adjudicarlazar-pasealeku','D',3);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Sin Adjudicarn Fidel Ikastola','D',2);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Gernika Ikastola','D',2);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Corazón de María','A',3);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Aldako','D',3);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Bidebieta','D',3);
 INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Catalina Erauso','A',3);
-INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'Tolosako Haurreskola','D',3);
+INSERT INTO CENTRO VALUES(idCentro_Seq.nextval,'ToloSin Adjudicarko Haurreskola','D',3);
 
 -- -----------------------------------------------------
 -- Table Menor
@@ -482,11 +482,46 @@ CREATE TABLE  Menor (
 
 CREATE SEQUENCE codMenor_Seq MAXVALUE 500;
 
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2003','DD/MM/YYYY'),'NO',1,1,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/03/2002','DD/MM/YYYY'),'NO',1,2,1);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','De Santa','Olano','Hombre',NULL, TO_DATE('03/12/2003','DD/MM/YYYY'),'NO',1,3,1);
+CREATE OR REPLACE TRIGGER menor_tri BEFORE INSERT OR UPDATE ON Menor FOR EACH ROW
+BEGIN
+		IF (EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM :new.fechaNac)) < 7 
+		OR (EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM :new.fechaNac)) > 13 THEN
+		
+				RAISE_APPLICATION_ERROR(-20100, 'El Menor debe ser ser mayor de 7 años o menor de 13 años.');
+				
+		END IF;
+END diaSorteo_tri;
+
+/
+
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2005','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Solo','Hombre',NULL, TO_DATE('21/03/2002','DD/MM/YYYY'),'NO',1,2,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Aguirre','Olano','Hombre',NULL, TO_DATE('05/12/2008','DD/MM/YYYY'),'NO',1,3,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('19/04/2005','DD/MM/YYYY'),'NO',1,1,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Frias','Hombre',NULL, TO_DATE('02/06/2003','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('13/11/2006','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Aguirre','Hombre',NULL, TO_DATE('21/12/2003','DD/MM/YYYY'),'NO',1,2,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Perez','Olano','Hombre',NULL, TO_DATE('12/12/2002','DD/MM/YYYY'),'NO',1,3,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2002','DD/MM/YYYY'),'NO',1,1,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Salas','Hombre',NULL, TO_DATE('02/05/2007','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Juan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2008','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Pepe','Tolai','Frias','Hombre',NULL, TO_DATE('21/03/2002','DD/MM/YYYY'),'NO',1,2,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xabi','Aguirre','Olano','Hombre',NULL, TO_DATE('03/12/2006','DD/MM/YYYY'),'NO',1,3,1);
 INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Iñigo','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2003','DD/MM/YYYY'),'NO',1,1,2);
-INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2003','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Murga','Hombre',NULL, TO_DATE('02/05/2008','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','Perez','Hombre',NULL, TO_DATE('02/05/2004','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2006','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Xuan','Perez','Aguirre','Hombre',NULL, TO_DATE('14/04/2003','DD/MM/YYYY'),'NO',1,1,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Cepe','Tolai','Salas','Hombre',NULL, TO_DATE('21/03/2007','DD/MM/YYYY'),'NO',1,2,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Sabi','bono','Olano','Hombre',NULL, TO_DATE('03/12/2003','DD/MM/YYYY'),'NO',1,3,1);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Añigo','Parez','Aguirre','Hombre',NULL, TO_DATE('14/04/2006','DD/MM/YYYY'),'NO',1,1,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Solo','San','Hombre',NULL, TO_DATE('02/05/2008','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Snder','Selo','San','Hombre',NULL, TO_DATE('02/05/2003','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Ander','Salo','San','Hombre',NULL, TO_DATE('16/05/2005','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Andor','Solo','San','Hombre',NULL, TO_DATE('01/08/2002','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Endar','Selo','San','Hombre',NULL, TO_DATE('20/07/2004','DD/MM/YYYY'),'NO',1,4,2);
+INSERT INTO Menor VALUES (codMenor_Seq.nextval,'Indur','Salo','San','Hombre',NULL, TO_DATE('30/04/2006','DD/MM/YYYY'),'NO',1,4,2);
+
 -- -----------------------------------------------------
 -- Table Tutor
 -- -----------------------------------------------------
@@ -519,7 +554,7 @@ DROP TABLE  Sorteo cascade CONSTRAINTS ;
 
 CREATE SEQUENCE idSorteo_Seq MAXVALUE 10;
 
-INSERT INTO sorteo VALUES(idSorteo_Seq.nextval, to_date ('10/05/2015' ,'dd/mm/yyyy'), to_date ('20/05/2015' ,'dd/mm/yyyy'),to_date ('21/05/2015' ,'dd/mm/yyyy'));
+INSERT INTO sorteo VALUES(idSorteo_Seq.nextval, to_date ('10/05/2015' ,'dd/mm/yyyy'), to_date ('20/05/2015' ,'dd/mm/yyyy'), to_date ('21/05/2015' ,'dd/mm/yyyy'));
 
 -- -----------------------------------------------------
 -- Table Solicitud
@@ -535,13 +570,27 @@ CREATE TABLE  Solicitud (
   idSorteo NUMBER(4) NOT NULL,
   PRIMARY KEY (nSolicitud),
   CONSTRAINT fk_Solicitud_Sorteo1
-    FOREIGN KEY (idSorteo)
-    REFERENCES Sorteo (idSorteo));
+    FOREIGN KEY (idSorteo) 
+    REFERENCES Sorteo (idSorteo) );
 
 CREATE SEQUENCE nSolicitud_Seq MAXVALUE 1000;
 
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
-INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'SA',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
+INSERT INTO Solicitud VALUES (nSolicitud_Seq.nextval,NULL,NULL,'Sin Adjudicar',NULL,1);
 
 -- -----------------------------------------------------
 -- Table Inscripcion
@@ -556,13 +605,13 @@ CREATE TABLE  Inscripcion (
   PRIMARY KEY (idIns),
   CONSTRAINT fk_Inscripcion_Solicitud1
     FOREIGN KEY (nSolicitud)
-    REFERENCES Solicitud (nSolicitud),
+    REFERENCES Solicitud (nSolicitud) ON DELETE CASCADE,
   CONSTRAINT fk_Inscripcion_Tutor1
     FOREIGN KEY (dni)
-    REFERENCES Tutor (dni),
+    REFERENCES Tutor (dni) ON DELETE CASCADE,
   CONSTRAINT fk_Inscripcion_Menor1
     FOREIGN KEY (codMenor)
-    REFERENCES Menor (codMenor));
+    REFERENCES Menor (codMenor) ON DELETE CASCADE);
 
 CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
 
@@ -571,3 +620,18 @@ CREATE SEQUENCE idIns_Seq MAXVALUE 1000;
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,1,'12345678Z',3); 
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,2,'12345678Z',4);
   INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,2,'12345678Z',5);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,3,'12345678Z',6); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,4,'12345678Z',7); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,5,'12345678Z',8); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,6,'12345678Z',9);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,7,'12345678Z',10);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,8,'12345678Z',11);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,9,'12345678Z',12);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,10,'12345678Z',13); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,11,'12345678Z',14); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,12,'12345678Z',15); 
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,13,'12345678Z',16);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,14,'12345678Z',17);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,15,'12345678Z',18);
+  INSERT INTO Inscripcion VALUES (idIns_Seq.nextval,16,'12345678Z',19);
+  

@@ -26,45 +26,8 @@
             </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
             </MenuItem>
-            <Menu class="javax.swing.JMenu" name="jMenu3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Solicitudes"/>
-              </Properties>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="miMod">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Modificacion"/>
-                  </Properties>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="miBaja">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Baja"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miBajaActionPerformed"/>
-                  </Events>
-                </MenuItem>
-              </SubComponents>
-            </Menu>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
             </MenuItem>
-            <Menu class="javax.swing.JMenu" name="jMenu4">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Listado"/>
-              </Properties>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="miBusqueda">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Busqueda"/>
-                  </Properties>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="miGenerarPDF">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Generar PDF"/>
-                  </Properties>
-                </MenuItem>
-              </SubComponents>
-            </Menu>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="cerrarSesion">
@@ -73,7 +36,6 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cerrarSesionMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cerrarSesionActionPerformed"/>
           </Events>
         </Menu>
       </SubComponents>
@@ -162,9 +124,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="bMod" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="88" max="32767" attributes="0"/>
+                  <EmptySpace pref="254" max="32767" attributes="0"/>
                   <Component id="bBaja" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
@@ -174,25 +134,20 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="bMod" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="bBaja" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="bBaja" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="bMod">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Modificacion"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="bBaja">
           <Properties>
             <Property name="text" type="java.lang.String" value="Baja"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bBajaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -215,8 +170,6 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="bBusqeda" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="bGenerarPDF" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -227,25 +180,21 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="bBusqeda" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="bGenerarPDF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="bGenerarPDF" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="bBusqeda">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Busqueda"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="bGenerarPDF">
           <Properties>
             <Property name="text" type="java.lang.String" value="Generar PDF"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bGenerarPDFActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -27,6 +27,7 @@ public class usuario extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         int pos =0;
+        //Selecvionar al buscado
         for(int z=0;z<s1.size();z++){
             for(int z2=0;z2<s1.get(z).getlInsc().size();z2++){
                Date fechaNac = s1.get(z).getlInsc().get(z2).getMenor().getFechaNac();
@@ -35,70 +36,36 @@ public class usuario extends javax.swing.JFrame {
                if(psc.compareTo(fechaNacS)==0){pos = z2;}
             }
         }
-        if(s1.size()==1){
-            String participante = s1.get(0).getlInsc().get(pos).getMenor().getNombre()
-                    +" "+s1.get(0).getlInsc().get(pos).getMenor().getApe1()
-                    +" "+s1.get(0).getlInsc().get(pos).getMenor().getApe2();
-            tParticipante.setText(participante);
-            dNacimiento.setDate(s1.get(0).getlInsc().get(pos).getMenor().getFechaNac());
-            tNumero.setText(Integer.toString(s1.get(0).getnSolicitud()));
-            jSituacion.setText(s1.get(0).getSituacion());
-            int orden = s1.get(0).getOrden();
-            if(orden !=0){ 
-                jOrden.setText(Integer.toString(orden));}
-           
-            dCita.setDate(s1.get(0).getFecha());
-            //SimpleDateFormat sdf = new SimpleDateFormat("kk:mm:ss");
-            //String hora = sdf.format(s1.get(0).getFecha());
-            //tHora.setText(hora);
-            for(int x=0;x<s1.get(0).getlInsc().size();x++){
-                switch (x){
-                    case 0: if(x!=pos){
-                                participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
-                                jParticipante2.setText(participante);}
-                    break;
-                    case 1: if(x!=pos){
-                                if(jParticipante2.getText().isEmpty()){
-                                     participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
-                                    jParticipante2.setText(participante);
-                                }else{
-                                    participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
-                                    jParticipante3.setText(participante);
-                                 }
-                            }
-                    break;
-                    case 2: if(x!=pos){
-                                participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
-                                    +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
-                                    +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
-                                jParticipante3.setText(participante);
-                            }
-        }}}else{
+        //Si solo es una consulta
+        int posAsk =0;
+        if(s1.size()>1){ 
+            //Preguntar cual mostrar
             String texto = "Tenemos varias opciones de solicitudes: \n";
             for(int x= 0;x<s1.size();x++){
                 texto = texto + (x+1) + " - "+ s1.get(x).getlInsc().get(0).getMenor().getNombre()+"\n";
             }
-            int posAsk = (Integer.parseInt(JOptionPane.showInputDialog(null,texto )))-1;
+            posAsk = (Integer.parseInt(JOptionPane.showInputDialog(null,texto )))-1;
+        }
+            //Participante
             String participante = s1.get(posAsk).getlInsc().get(pos).getMenor().getNombre()
                 +" "+s1.get(posAsk).getlInsc().get(pos).getMenor().getApe1()
                 +" "+s1.get(posAsk).getlInsc().get(pos).getMenor().getApe2();
             tParticipante.setText(participante);
+            //fecha nacimiento
             dNacimiento.setDate(s1.get(posAsk).getlInsc().get(pos).getMenor().getFechaNac());
+            //nSolicitud
             tNumero.setText(Integer.toString(s1.get(posAsk).getnSolicitud()));
+            //Situacion
             jSituacion.setText(s1.get(posAsk).getSituacion());
             int orden = s1.get(posAsk).getOrden();
+            //nOrden
             if(orden !=0){ 
                 jOrden.setText(Integer.toString(orden));}
+            //fecha cita
             dCita.setDate(s1.get(posAsk).getFecha());
-            //SimpleDateFormat sdf = new SimpleDateFormat("kk:mm:ss");
-            //String hora = sdf.format(s1.get(posAsk).getFecha());
-            //tHora.setText(hora);
+            //hora cita
+            tHora.setText(s1.get(posAsk).getHora());
+            //otros participantes
             for(int x=0;x<s1.get(posAsk).getlInsc().size();x++){
                 switch (x){
                     case 0: if(x!=pos){
@@ -127,7 +94,7 @@ public class usuario extends javax.swing.JFrame {
                                     +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe2();
                                 jParticipante3.setText(participante);
                             }
-        }}}
+        }}
         
     }
 
