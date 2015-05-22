@@ -1,0 +1,39 @@
+﻿Para realizar las pruebas:
+
+	-La provincia tiene que ser obligatoriamente "Alava/Araba".
+	-Aunque las demás provincias contienen municipios, no contienen calles.
+	-Los municipios de "Alava/Araba" que contienen calles son los siguientes:
+
+		+Añana.
+		+Aramaio.
+		+Armiñon.
+		+Arraia-Maeztu.
+		+Arrazua-Ubarrundia.
+		+Legutio.
+		+Leza.
+		+Moreda de Álava.
+		+Okondo.
+		+Vitoria-Gasteiz.
+		
+	*NOTA*
+	-Es necesario elegir una calle para que se realize correctamente las inserts.
+	-El boton borrar elimina todas las inscripciones guardadas anteriormente, es decir, si hemos añadido una inscripcion 
+	 y estamos con la segunda inscripcion y no seleccionamos correctamente un municipio, o bien cancelamos la inscripion ( que nos devuelve a la ventana principal)
+	 o bien damos al boton borrar.
+	-Este boton va al controlador de vista y realiza un dispose de la ventana inscripcion. Es como si volvieramos a empezar.
+	
+	
+	
+Login como root:
+
+	DNI --> 11111111Ñ
+	Fecha de Nacimiento --> 11/11/1111
+
+
+
+
+
+
+
+
+
