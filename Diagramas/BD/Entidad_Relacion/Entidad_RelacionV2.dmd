@@ -1,9 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Entidad_RelacionV2" id="77578831-AC72-0353-E148-E039E332A378" version="3.5">
-<createdBy>jon</createdBy>
-<createdTime>2015-05-04 10:15:55 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>Entidad_Relacion</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>77578831-AC72-0353-E148-E039E332A378</designId>
-</OSDM_Design>
