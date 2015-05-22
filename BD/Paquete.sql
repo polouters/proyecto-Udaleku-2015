@@ -107,10 +107,10 @@ CREATE OR REPLACE PACKAGE BODY paquete IS
 		FROM solicitud;
 
 		/* Selecciona al ganador */
-		SELECT DBMS_RANDOM.VALUE(v_min,v_max) INTO v_ganador
+		SELECT TRUNC(DBMS_RANDOM.VALUE(v_min,v_max)) INTO v_ganador
 		FROM dual;
 		/* Selecciona la cadencia */
-		SELECT DBMS_RANDOM.VALUE(3,9) INTO v_cadencia
+		SELECT TRUNC(DBMS_RANDOM.VALUE(3,9)) INTO v_cadencia
 		FROM dual;
 
 		v_cont := v_ganador; 
