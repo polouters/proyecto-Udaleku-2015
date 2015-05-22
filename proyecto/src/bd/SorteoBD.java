@@ -21,8 +21,12 @@ import java.sql.Connection;
 public class SorteoBD {
     
    private static Connection conn;
-   
+  
     public static void RealizarSorteo() throws Exception{
+       /**
+        * realiza el sorteo mediante PL/SQL
+        */
+ 
         genericoBD.setCon();
         conn = genericoBD.getCon();
         

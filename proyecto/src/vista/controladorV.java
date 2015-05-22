@@ -28,7 +28,9 @@ public class controladorV {
    private static usuario vu;
    private static administrador vad;
    private static proteccionDatos vpd;
-   
+        /**
+         * transiociones entre ventanas 
+         */
    
    public static void abrirPrincipal(){
    vp = new principal();    

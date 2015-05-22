@@ -177,6 +177,9 @@ public class administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_cerrarSesionMouseClicked
 
     private void miRSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRSorteoActionPerformed
+        /**
+         * paa realizar el sorteo
+         */
         boolean dok = controladorV.realizarSorteoV();
         if(dok == true){JOptionPane.showMessageDialog(this,"Sorteo Realizado");}
     }//GEN-LAST:event_miRSorteoActionPerformed
