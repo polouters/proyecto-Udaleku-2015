@@ -13,7 +13,13 @@ import uml.*;
 
 /**
  *
- * @author jon
+ * 
+ * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
 public class usuario extends javax.swing.JFrame {
 

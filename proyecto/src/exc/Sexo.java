@@ -7,7 +7,13 @@ package exc;
 
 /**
  *
- * @author jon
+ * 
+ * @author Ruben
+ * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
 public class Sexo extends Exception{
     

@@ -13,7 +13,13 @@ import javax.swing.JOptionPane;
 
 /**
  *
+ * 
+ * @author Ruben
  * @author Mikel
+ * @author Jon
+ * @version Beta 1.0
+ * @since Early May
+ * 
  */
 public class administrador extends javax.swing.JFrame {
 
