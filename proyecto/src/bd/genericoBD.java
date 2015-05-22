@@ -21,10 +21,8 @@ import java.sql.SQLException;
  */
 public class genericoBD {
     
-    private static String nombreBaseDatos ="proyecto";
-    
-    private static String usuario="SCOTT";
-    private static String password="polo";
+    private static String usuario="daw12";
+    private static String password="daw12";
     
     private static Connection con;
     
@@ -34,21 +32,10 @@ public class genericoBD {
     }
     public static void setCon() {
         try{
-            
-       
-            
-        //Polo                             //driver@machineName:port:SID ,  userid,  password
+                 
+        //Conexion -- driver@machineName:port:SID ,  userid,  password
         DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
-        con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.56.2:1521:polo",usuario,password);
-                                              
-         //Jon 
-        //DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());        
-        //con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","jon","Jm12345");
-        
-        //Mikel
-        //DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
-        //con = DriverManager.getConnection("jdbc:oracle:thin:@172.16.153.133:1521:Mikel",usuario,"0907");
-
+        con = DriverManager.getConnection("jdbc:oracle:thin:@server224:1521:orcl",usuario,password);
 
          if (con!=null){
             System.out.println("Conección a base de datos OK");
