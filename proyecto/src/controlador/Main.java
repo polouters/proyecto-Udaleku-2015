@@ -134,7 +134,7 @@ public class Main {
         }
     }
     /**
-     * 
+     * para buscar calle
      * @param c
      * @return 
      */
@@ -143,7 +143,7 @@ public class Main {
         return CalleBD.QueryByNombre(c);
     }
     /**
-     * 
+     * para buscar centro
      * @param c
      * @return 
      */
