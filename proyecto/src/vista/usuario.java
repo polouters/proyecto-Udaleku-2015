@@ -37,63 +37,15 @@ public class usuario extends javax.swing.JFrame {
             }
         }
         //Si solo es una consulta
-        if(s1.size()==1){
-            //Participante
-            String participante = s1.get(0).getlInsc().get(pos).getMenor().getNombre()
-                    +" "+s1.get(0).getlInsc().get(pos).getMenor().getApe1()
-                    +" "+s1.get(0).getlInsc().get(pos).getMenor().getApe2();
-            tParticipante.setText(participante);
-            //Fecha de nacimiento
-            dNacimiento.setDate(s1.get(0).getlInsc().get(pos).getMenor().getFechaNac());
-            //nSolicitud
-            tNumero.setText(Integer.toString(s1.get(0).getnSolicitud()));
-            //Situacion
-            jSituacion.setText(s1.get(0).getSituacion());
-            //Numero sorteo
-            int orden = s1.get(0).getOrden();
-            if(orden !=0){ 
-                jOrden.setText(Integer.toString(orden));}
-           //Fecha cita
-            dCita.setDate(s1.get(0).getFecha());
-            //Hora de cita
-            tHora.setText(s1.get(0).getHora());
-            //Otros participantes
-            for(int x=0;x<s1.get(0).getlInsc().size();x++){
-                switch (x){
-                    case 0: if(x!=pos){
-                                participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
-                                jParticipante2.setText(participante);}
-                    break;
-                    case 1: if(x!=pos){
-                                if(jParticipante2.getText().isEmpty()){
-                                     participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
-                                    jParticipante2.setText(participante);
-                                }else{
-                                    participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
-                                        +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
-                                    jParticipante3.setText(participante);
-                                 }
-                            }
-                    break;
-                    case 2: if(x!=pos){
-                                participante = s1.get(0).getlInsc().get(x).getMenor().getNombre()
-                                    +" "+s1.get(0).getlInsc().get(x).getMenor().getApe1()
-                                    +" "+s1.get(0).getlInsc().get(x).getMenor().getApe2();
-                                jParticipante3.setText(participante);
-                            }
-        //Mas de dos una solicitud
-        }}}else{
+        int posAsk =0;
+        if(s1.size()>1){ 
             //Preguntar cual mostrar
             String texto = "Tenemos varias opciones de solicitudes: \n";
             for(int x= 0;x<s1.size();x++){
                 texto = texto + (x+1) + " - "+ s1.get(x).getlInsc().get(0).getMenor().getNombre()+"\n";
             }
-            int posAsk = (Integer.parseInt(JOptionPane.showInputDialog(null,texto )))-1;
+            posAsk = (Integer.parseInt(JOptionPane.showInputDialog(null,texto )))-1;
+        }
             //Participante
             String participante = s1.get(posAsk).getlInsc().get(pos).getMenor().getNombre()
                 +" "+s1.get(posAsk).getlInsc().get(pos).getMenor().getApe1()
@@ -142,7 +94,7 @@ public class usuario extends javax.swing.JFrame {
                                     +" "+s1.get(posAsk).getlInsc().get(x).getMenor().getApe2();
                                 jParticipante3.setText(participante);
                             }
-        }}}
+        }}
         
     }
 
