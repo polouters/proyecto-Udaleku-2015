@@ -21,6 +21,13 @@
 	 y estamos con la segunda inscripcion y no seleccionamos correctamente un municipio, o bien cancelamos la inscripion ( que nos devuelve a la ventana principal)
 	 o bien damos al boton borrar.
 	-Este boton va al controlador de vista y realiza un dispose de la ventana inscripcion. Es como si volvieramos a empezar.
+	
+	
+	
+Login como root:
+
+	DNI --> 11111111Ñ
+	Fecha de Nacimiento --> 11/11/1111
 
 
 
