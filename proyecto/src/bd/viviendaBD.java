@@ -5,10 +5,14 @@
  */
 package bd;
 
+import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
+import oracle.jdbc.OracleTypes;
 import uml.vivienda;
 
 /**
@@ -24,12 +28,12 @@ public class viviendaBD extends genericoBD{
     
     
     
-    public static void AñadirVivienda(vivienda v){
+    public static int AñadirVivienda(vivienda v){
         
         try{
             genericoBD.setCon();
             
-            String sql ="{call paquete.insert_vivienda(?,?,?,?)}";
+            String sql ="{call paquete.InsertVivienda(?,?,?,?,?)}";
             CallableStatement cs = genericoBD.getCon().prepareCall(sql);
                
             // Cargamos los parametros de entrada IN
@@ -38,20 +42,29 @@ public class viviendaBD extends genericoBD{
             cs.setString(3,v.getPiso());
             cs.setString(4,v.getMano());
             
+             //El procedimiento nos devuelve un valor
+            cs.registerOutParameter(5, OracleTypes.NUMBER);
+            
             // Ejecutamos
             cs.execute();
-            System.out.println("Procedimiento insert ejecutado");
-           
             
+            BigDecimal bd = cs.getBigDecimal(5);
+            
+            int ID = bd.intValue();
+            System.out.println("Procedimiento insert de Vivienda ejecutado");
+
             genericoBD.desconectar();
-        } 
+            
+            return ID;
+        }
+        catch(SQLException e){
+            System.out.println("Error en la insert de la vivienda");
+            return 0;
+        }
         catch(Exception e){
-               System.out.println("Error en la insert de la vivienda");
-                }
-            
-            
-            
-            
+               System.out.println("Problemas con la vivienda");
+               return 0;
+                }     
             
         }
         

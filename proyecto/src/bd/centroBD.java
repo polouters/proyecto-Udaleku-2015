@@ -68,5 +68,41 @@ public class centroBD extends genericoBD{
           return null;
       }
  
-    }   
+    }
+ public static int QueryByNombre(centro c){
+     
+     try{
+          genericoBD.setCon();
+        
+        plantilla = "SELECT idcentro FROM centro WHERE nombre = ?";
+        sentenciaCon = genericoBD.getCon().prepareStatement(plantilla);
+        sentenciaCon.setString(1,c.getNombre());
+        
+        resultado = sentenciaCon.executeQuery();
+        
+        if(resultado.next()){
+            int idCentro = resultado.getInt(1);
+            genericoBD.desconectar();
+            return idCentro;
+        }
+        else{
+            genericoBD.desconectar();
+            return 0;
+      
+        }
+      
+      }
+      catch(SQLException e){
+          JOptionPane.showMessageDialog(null,"Problemas con busqueda de la calle");
+          return 0;
+      }
+      catch (Exception e){
+          JOptionPane.showMessageDialog(null,"Problemas con calle" + e.getMessage());
+          return 0;
+      }  
+     
+     
+     
+     
+ }
 }

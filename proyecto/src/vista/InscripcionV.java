@@ -726,17 +726,30 @@ public class InscripcionV extends javax.swing.JFrame {
 
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
 
-    try{
-        if(GuardarDatos()){
-            
-            GuardarSolicitud();
+        try{
+            if(NumInsc < 3)
+            {
+                if(GuardarDatos())
+                        {
+                            JOptionPane.showMessageDialog(this,"Inscripcion guardada correctamente");
+                            GuardarSolicitud();
+                            controladorV.inscripcionPrincipal();
+                        }
+                
+             }
+            else{
+                throw new MaxInsc();
+        }
             
         }
-    }
-    catch (Exception e){
+        catch (MaxInsc e){
+            JOptionPane.showMessageDialog(this,"Solo se permiten 3 inscripciones por solicitud.");
+            GuardarSolicitud();
+            controladorV.inscripcionPrincipal();
+        }
+        catch (Exception e){
         JOptionPane.showMessageDialog(this,"Problemas" + e.getMessage());
-    }
-        
+    } 
     }//GEN-LAST:event_bGuardarActionPerformed
 
 
@@ -825,12 +838,26 @@ public class InscripcionV extends javax.swing.JFrame {
         
         
         try{
-        if(GuardarDatos()){
-            JOptionPane.showMessageDialog(this,"Inscripcion guardada correctamente");
-            VaciarDatos();
+            if(NumInsc < 2)
+            {
+                if(GuardarDatos())
+                        {
+                            JOptionPane.showMessageDialog(this,"Inscripcion guardada correctamente");
+                             VaciarDatos();
+                        }
+                
+             }
+            else{
+                throw new MaxInsc();
         }
-    }
-    catch (Exception e){
+            
+        }
+        catch (MaxInsc e){
+            JOptionPane.showMessageDialog(this,"Solo se permiten 3 inscripciones por solicitud.");
+            GuardarSolicitud();
+            controladorV.inscripcionPrincipal();
+        }
+        catch (Exception e){
         JOptionPane.showMessageDialog(this,"Problemas" + e.getMessage());
     }
         
@@ -983,7 +1010,8 @@ public class InscripcionV extends javax.swing.JFrame {
     }
     public Date fechaNac(){
         try{
-        SimpleDateFormat sdf = new SimpleDateFormat("DD/MM/YYYY");
+            
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date fecha = sdf.parse(dNacimiento.getText());
         
         return fecha;
@@ -996,12 +1024,12 @@ public class InscripcionV extends javax.swing.JFrame {
         
         
     }
-    public boolean discapacidad(){
+    public String discapacidad(){
         if(cDisca.isSelected()){
-            return true;
+            return "Tiene una discapacidad";
         }
         else
-            return false;
+            return "No tiene ninguna discapacidad";
     }
     public String modelo(){
         if(rA.isSelected()){
@@ -1141,7 +1169,7 @@ public class InscripcionV extends javax.swing.JFrame {
     public boolean GuardarDatos(){
         
         try{
-           if(NumInsc < 3){
+           
                    if(datosCorrectos())
                    {
                 JOptionPane.showMessageDialog(this,"Guardando informacion del participante");
@@ -1200,6 +1228,7 @@ public class InscripcionV extends javax.swing.JFrame {
               
               ListaInscripcion.add(ins);
               NumInsc ++;
+              JOptionPane.showMessageDialog(this,NumInsc);
                     } //Acaba el if DatosCorrectos    
                    
                    else // Else de DatosCorrectos
@@ -1207,29 +1236,23 @@ public class InscripcionV extends javax.swing.JFrame {
                        throw new DatoIncorrecto();
                    } 
              return true;
-            }//Acaba el if NumeroInsc
-          
-           else //Else de NumeroInsc
-                {
-               throw new MaxInsc();
-                }
+           
             }//Acaba el try 
             
         catch (DatoIncorrecto e){
             JOptionPane.showMessageDialog(this,"Los datos introducidos no son correctos");
             return false;
         }
-        catch (MaxInsc e){
-            JOptionPane.showMessageDialog(this,"Solo se permiten 3 inscripciones por solicitud.");
-            GuardarSolicitud();
-            return false;
-        }
+        
+        
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "error: " + e);
             return false;
             
         }
+        
     }
+    
     public void GuardarSolicitud(){
         
         solicitud sol = new solicitud();

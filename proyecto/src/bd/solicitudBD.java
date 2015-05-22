@@ -5,9 +5,11 @@
  */
 package bd;
 
+import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -93,4 +95,40 @@ public class solicitudBD {
             genericoBD.desconectar();
     return solicitudes;
     } 
+    public static int AñadirSolicitud(){
+      try{
+          
+        genericoBD.setCon();
+        
+        String sql = "{call paquete.InsertarSolicitud(?)}";
+        CallableStatement cs = genericoBD.getCon().prepareCall(sql); 
+        
+        //Este procedimiento nos devuelve el id de la solicitud.
+        cs.registerOutParameter(1,OracleTypes.NUMBER);
+        
+        cs.execute();
+        
+        BigDecimal bd = cs.getBigDecimal(1);
+        
+        int NSolicitud = bd.intValue();
+        
+            System.out.println("Procedimiento insert de Solicitud ejecutado");
+
+            genericoBD.desconectar();
+            
+            return NSolicitud;
+        
+      }
+      catch(SQLException e){
+          
+         System.out.println("Problemas en la insert de la solicitud \n " + e.getMessage());
+         return 0;
+      }
+      catch (Exception e){
+          System.out.println("Problemas en solicitud \n " + e.getMessage());
+         return 0;
+      }
+        
+        
+    }
 }

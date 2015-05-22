@@ -47,7 +47,7 @@ public class CalleBD extends genericoBD{
            ListaCalle.add(c);
            
        }
-       
+       genericoBD.desconectar();
        return ListaCalle;
        
     }
@@ -60,6 +60,40 @@ public class CalleBD extends genericoBD{
           JOptionPane.showMessageDialog(null,"Problemas con la sentencia SELECT");
           return null;
       }
+        
+        
+        
+    }
+    public static int QueryByNombre(calle c){
+      try{
+          genericoBD.setCon();
+        
+        plantilla = "SELECT idcalle FROM calle WHERE nombre = ?";
+        sentenciaCon = genericoBD.getCon().prepareStatement(plantilla);
+        sentenciaCon.setString(1,c.getNombre());
+        
+        resultado = sentenciaCon.executeQuery();
+        
+        if(resultado.next()){
+            int idcalle = resultado.getInt(1);
+            genericoBD.desconectar();
+            return idcalle;
+        }
+        else{
+            genericoBD.desconectar();
+            return 0;
+      
+        }
+      
+      }
+      catch(SQLException e){
+          JOptionPane.showMessageDialog(null,"Problemas con busqueda de la calle");
+          return 0;
+      }
+      catch (Exception e){
+          JOptionPane.showMessageDialog(null,"Problemas con calle" + e.getMessage());
+          return 0;
+      }  
         
         
         

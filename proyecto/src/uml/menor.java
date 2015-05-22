@@ -9,14 +9,14 @@ public class menor extends persona {
 	private String sexo;
 	private String dni;
 	private Date fechaNac;
-	private boolean discapacidad;
+	private String discapacidad;
         private centro cntr;
         private direccion drc;
 
     public menor() {
     }
 
-    public menor(String sexo, String dni, Date fechaNac, boolean discapacidad, centro cntr, direccion drc, String nombre, String ape1, String ape2) {
+    public menor(String sexo, String dni, Date fechaNac, String discapacidad, centro cntr, direccion drc, String nombre, String ape1, String ape2) {
         super(nombre, ape1, ape2);
         this.sexo = sexo;
         this.dni = dni;
@@ -50,11 +50,11 @@ public class menor extends persona {
         this.fechaNac = fechaNac;
     }
 
-    public boolean isDiscapacidad() {
+    public String getDiscapacidad() {
         return discapacidad;
     }
 
-    public void setDiscapacidad(boolean discapacidad) {
+    public void setDiscapacidad(String discapacidad) {
         this.discapacidad = discapacidad;
     }
 

@@ -20,9 +20,7 @@ import vista.*;
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
+   private static int NSolicitud;
     
     public static void main(String[] args) {
         // TODO code application logic here
@@ -63,17 +61,42 @@ public class Main {
         
         int x;
         
+        //Variables donde guardo los id para poder realizar los diferentes Insert (Son las claves primarias).
+        int idVivienda;
+        int idCalle;
+        int CodMenor;
+        
+        
         for(x = 0;x < sol.getlInsc().size();x++){
             
             //Añadimos el tutor
             tutorBD.AñadirTutor(sol.getlInsc().get(x).getTutor());
-            //Añadimos la vivienda
-            viviendaBD.AñadirVivienda(sol.getlInsc().get(x).getMenor().getDrc().getVivienda());
+            //Añadimos la vivienda. Y nos quedamos su ID
+            idVivienda = viviendaBD.AñadirVivienda(sol.getlInsc().get(x).getMenor().getDrc().getVivienda());
+            //Añadimos la direccion. Y nos quedamos con el ID de la calle.
+            idCalle = direccionBD.AñadirDireccion(sol.getlInsc().get(x).getMenor().getDrc(),idVivienda);
+            //Añadimos al menor
+            CodMenor = menorBD.AñadirMenor(sol.getlInsc().get(x).getMenor(),idVivienda,idCalle);
+            if(x==0){
+            //Añadimos la solicitud.
+            NSolicitud = solicitudBD.AñadirSolicitud();
+            }
+            //Si no es una nueva solicitud me quedo con el id hasta terminar.
             
+            //Añadimos la inscripción a la base de datos.
+            inscripcionBD.AñadirInscripcion(sol.getlInsc().get(x),CodMenor,NSolicitud);
             
             
             
         }
+    }
+    public static int BuscarCalle(calle c){
+        
+        return CalleBD.QueryByNombre(c);
+    }
+    public static int BuscarCentro(centro c){
+        
+        return centroBD.QueryByNombre(c);
     }
     
     public static void realizarSorteo() throws Exception{
