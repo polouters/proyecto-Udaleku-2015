@@ -1,3 +1,8 @@
+/* 
+  Descripcion: Insert de Provincas, Municipios, Calle, Centros y Sorteo
+  Autor: Jon, Polo y Mikel
+*/
+
 /* Insert de provincias */
 INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Alava/Araba');
 INSERT INTO Provincia VALUES (idProv_Seq.nextval,'Vizcaya/Bizkaia');
