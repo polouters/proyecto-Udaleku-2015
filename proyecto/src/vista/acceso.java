@@ -156,6 +156,7 @@ public class acceso extends javax.swing.JFrame {
 
     private void bInscribirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInscribirseActionPerformed
        /**
+        *
         * para entrar en la ventana inscripcion
         */
         controladorV.accesoInscripcion();

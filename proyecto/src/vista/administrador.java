@@ -178,7 +178,7 @@ public class administrador extends javax.swing.JFrame {
 
     private void miRSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRSorteoActionPerformed
         /**
-         * paa realizar el sorteo
+         * para realizar el sorteo
          */
         boolean dok = controladorV.realizarSorteoV();
         if(dok == true){JOptionPane.showMessageDialog(this,"Sorteo Realizado");}
